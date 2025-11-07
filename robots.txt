@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.bloomonconsulting.com/sitemap.xml
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow important files
+Allow: /styles.css
+Allow: /script.js
+Allow: /video/
+Allow: /images/
+
+# Crawl-delay (optional - adjust if needed)
+# Crawl-delay: 1
+
