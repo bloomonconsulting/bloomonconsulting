@@ -869,10 +869,10 @@ img, video, iframe {
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto)); /* <-- CSS FIX */
-    justify-content: start; /* <-- CSS FIX */
-    gap: 4rem; /* <-- CSS FIX */
+    display: flex;
+    flex-direction: row;
+    justify-content: start; /* Pushes items to the left */
+    gap: 6rem; /* A healthy space between the two columns */
     margin-bottom: 2rem;
 }
 
