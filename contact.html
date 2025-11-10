@@ -1,48 +1,193 @@
-<form class="contact-form" id="contact-form">
-    <div class="form-group">
-        <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" required>
-        <span class="error-message" id="name-error"></span>
-    </div>
-    <div class="form-group">
-        <label for="business">Business Name *</label>
-        <input type="text" id="business" name="business" required>
-        <span class="error-message" id="business-error"></span>
-    </div>
-    <div class="form-group">
-        <label for="business-type">Type of Business *</label>
-        <input type="text" id="business-type" name="business-type" required>
-        <span class="error-message" id="business-type-error"></span>
-    </div>
-    <div class="form-group">
-        <label for="staff">Number of Staff *</label>
-        <input type="number" id="staff" name="staff" min="1" required>
-        <span class="error-message" id="staff-error"></span>
-    </div>
-    <div class="form-group">
-        <label for="budget">Budget (if any)</label>
-        <input type="text" id="budget" name="budget" placeholder="Enter budget or leave blank">
-    </div>
-    <div class="form-group">
-        <label for="message">How can we work together? *</label>
-        <textarea id="message" name="message" rows="6" required placeholder="Describe your needs, goals, or any ideas for collaboration..."></textarea>
-        <span class="error-message" id="message-error"></span>
-    </div>
-    <div class="form-group">
-        <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" required>
-        <span class="error-message" id="email-error"></span>
-    </div>
-    <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone">
-        <span class="error-message" id="phone-error"></span>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary btn-large" id="submit-btn">
-            <span class="btn-text">Send Message</span>
-            <span class="btn-loading" style="display: none;">Sending...</span>
-        </button>
-    </div>
-    <div class="form-message" id="form-message"></div>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Operational Consulting Consultation | Bloom On Consulting</title>
+    <meta name="title" content="Contact Us - Operational Consulting Consultation | Bloom On Consulting">
+    <meta name="description" content="Get in touch with Bloom On Consulting for a free consultation focused on improving and optimizing your operations. We help small businesses and clinics go from an overwhelming to-do list to organized, completed tasks.">
+    <meta name="keywords" content="contact operations consultant, free operational consultation, small business operations improvement, operational consulting services, schedule consultation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bloomonconsulting.com/contact.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bloomonconsulting.com/contact.html">
+    <meta property="og:title" content="Contact Bloom On Consulting - Free Consultation">
+    <meta property="og:description" content="Schedule a free consultation to discuss how we can help you improve your business operations.">
+    <meta property="og:image" content="https://www.bloomonconsulting.com/images/og-contact.jpg">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Contact Bloom On Consulting">
+    <meta name="twitter:description" content="Get a free operations consulting consultation for your business">
+
+    <link rel="stylesheet" href="styles.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Bloom On Consulting",
+      "description": "Contact us for operations consulting services",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Bloom On Consulting",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-555-123-4567",
+          "contactType": "Customer Service",
+          "email": "info@bloomonconsulting.com",
+          "availableLanguage": "English"
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Bloom On Consulting Home">
+                    <span class="logo-text">Bloom On Consulting</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link">About Us</a></li>
+                <li role="none"><a href="contact.html" class="nav-link active" aria-current="page">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title fade-in">Get in Touch</h1>
+            <p class="page-subtitle fade-in-delay">Let's discuss how we can help organize and optimize your business operations</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info fade-in">
+                    <h2>Let's Start a Conversation</h2>
+                    <p>We're here to help you move from an endless, overwhelming to-do list to completed tasks and organized systems. Whether you're feeling stuck, need an operational refresh, or want to streamline your processes, we're ready to help you succeed with confidence.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@bloomonconsulting.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-note">
+                        <h4>What to Expect</h4>
+                        <p>After you submit the form, we'll review your information and get back to you within 24-48 hours to schedule a free consultation. During this call, we'll discuss your priorities, identify quick wins, and help you map out a clear plan to reach your goals.</p>
+                        <ul>
+                            <li>Learn about your business and current challenges</li>
+                            <li>Identify ways to improve and organize operations</li>
+                            <li>Answer any questions you may have</li>
+                            <li>Determine if we're a good fit for your needs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper fade-in-delay">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="business">Business Name *</label>
+                            <input type="text" id="business" name="business" required>
+                            <span class="error-message" id="business-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="type">Type of Business *</label>
+                            <input type="text" id="type" name="type" required>
+                            <span class="error-message" id="type-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="staff">Number of Staff *</label>
+                            <input type="number" id="staff" name="staff" required min="1">
+                            <span class="error-message" id="staff-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget (if any)</label>
+                            <input type="text" id="budget" name="budget" placeholder="Enter budget or leave blank">
+                            <span class="error-message" id="budget-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">How can we work together? *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Describe what an ideal collaboration looks like for you..."></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+1 555 123-4567">
+                            <span class="error-message" id="phone-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-large" id="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="btn-loading" style="display: none;">Sending...</span>
+                            </button>
+                        </div>
+                        <div class="form-message" id="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bloom On Consulting</h3>
+                    <p>Helping businesses bloom by optimizing operations.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Operational Assessment</li>
+                        <li>Systems Implementation</li>
+                        <li>Training & Support</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bloom On Consulting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
