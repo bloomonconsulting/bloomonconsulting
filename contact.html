@@ -1,68 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- ... head and meta tags remain as above ... -->
-</head>
-<body>
-    <!-- ... navigation ... -->
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title fade-in">Get in Touch</h1>
-            <p class="page-subtitle fade-in-delay">Let's discuss how we can help organize and optimize your business operations</p>
-        </div>
-    </section>
-    <!-- Contact Section -->
-    <section class="section contact-section">
-        <div class="container">
-            <div class="contact-wrapper">
-                <!-- ... intro narrative ... -->
-                <div class="contact-form-wrapper fade-in-delay">
-                    <form class="contact-form" id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="business">Business Name *</label>
-                            <input type="text" id="business" name="business" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="business-type">Type of Business *</label>
-                            <input type="text" id="business-type" name="business-type" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="staff">Number of Staff *</label>
-                            <input type="number" id="staff" name="staff" min="1" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="budget">Budget (if any)</label>
-                            <input type="text" id="budget" name="budget" placeholder="Enter budget or leave blank">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">How can we work together? *</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Describe your needs, goals, or any ideas for collaboration..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary btn-large" id="submit-btn">
-                                <span class="btn-text">Send Message</span>
-                                <span class="btn-loading" style="display: none;">Sending...</span>
-                            </button>
-                        </div>
-                        <div class="form-message" id="form-message"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ... FAQ, Footer, etc ... -->
-</body>
-</html>
+<form class="contact-form" id="contact-form">
+    <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required>
+        <span class="error-message" id="name-error"></span>
+    </div>
+    <div class="form-group">
+        <label for="business">Business Name *</label>
+        <input type="text" id="business" name="business" required>
+        <span class="error-message" id="business-error"></span>
+    </div>
+    <div class="form-group">
+        <label for="business-type">Type of Business *</label>
+        <input type="text" id="business-type" name="business-type" required>
+        <span class="error-message" id="business-type-error"></span>
+    </div>
+    <div class="form-group">
+        <label for="staff">Number of Staff *</label>
+        <input type="number" id="staff" name="staff" min="1" required>
+        <span class="error-message" id="staff-error"></span>
+    </div>
+    <div class="form-group">
+        <label for="budget">Budget (if any)</label>
+        <input type="text" id="budget" name="budget" placeholder="Enter budget or leave blank">
+    </div>
+    <div class="form-group">
+        <label for="message">How can we work together? *</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Describe your needs, goals, or any ideas for collaboration..."></textarea>
+        <span class="error-message" id="message-error"></span>
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error-message" id="email-error"></span>
+    </div>
+    <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+        <span class="error-message" id="phone-error"></span>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-large" id="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loading" style="display: none;">Sending...</span>
+        </button>
+    </div>
+    <div class="form-message" id="form-message"></div>
+</form>
