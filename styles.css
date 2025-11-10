@@ -758,7 +758,7 @@ img, video, iframe {
 .footer {
     background: var(--primary-dark);
     color: var(--bg-white);
-    padding: 3rem 0 1rem;
+    padding: 1rem 0 1rem;
 }
 
 .footer-content {
