@@ -411,7 +411,7 @@ img, video, iframe {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem 3rem; /* row-gap, column-gap */
-    max-width: 1000px; /* Constrains the content to be tighter */
+    max-width: 1000px; 
     margin: 3rem auto 0; /* Centers the grid */
     text-align: center;
 }
@@ -762,10 +762,10 @@ img, video, iframe {
 }
 
 .footer-content {
-    display: flex; /* <-- CSS FIX */
-    flex-direction: row; /* <-- CSS FIX */
-    justify-content: start; /* <-- CSS FIX */
-    gap: 4rem; /* <-- CSS FIX */
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap: 4rem;
     margin-bottom: 2rem;
 }
 
@@ -1038,7 +1038,6 @@ img, video, iframe {
         gap: 2.5rem;
     }
 
-    .card,
     .what-we-do-item {
         padding: 2rem;
     }
@@ -1154,7 +1153,6 @@ img, video, iframe {
         padding: 0 10px;
     }
 
-    .card,
     .what-we-do-item,
     .why-item {
         padding: 1.75rem;
@@ -1266,7 +1264,6 @@ img, video, iframe {
         font-size: 1.7rem;
     }
 
-    .card,
     .what-we-do-item {
         padding: 1.5rem;
     }
@@ -1299,42 +1296,4 @@ img, video, iframe {
 }
 
 /* Touch Device Optimizations */
-@media (hover: none) and (pointer: coarse) {
-    .btn {
-        min-height: 44px; /* Minimum touch target size */
-    }
-
-    .nav-link {
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-/* Print Styles */
-@media print {
-    .navbar,
-    .hero-video-wrapper,
-    .hero-overlay,
-    .btn,
-    .contact-form {
-        display: none;
-    }
-
-    .hero {
-        background: white;
-        color: black;
-        min-height: auto;
-        padding: 2rem 0;
-    }
-
-    .section {
-        page-break-inside: avoid;
-    }
-}
-
-/* === CSS FIX: Force left-align on solution text === */
-.solution-text p {
-    text-align: left;
-}
+@
