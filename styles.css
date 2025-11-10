@@ -453,7 +453,7 @@ img, video, iframe {
 
 /* ===== Sections ===== */
 .section {
-    padding: 100px 0;
+    padding: 60px 0; /* Reduced from 100px */
     position: relative;
 }
 
