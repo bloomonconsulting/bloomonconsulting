@@ -406,7 +406,7 @@ img, video, iframe {
     margin-right: auto;
 }
 
-/* ===== NEW Homepage Text-Only Grids ===== */
+/* ===== Homepage Text-Only Grids ===== */
 .simple-text-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -434,9 +434,9 @@ img, video, iframe {
 .simple-text-grid-services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
     max-width: 1000px;
-    margin: 2rem auto 0; /* Added margin-top */
+    margin: 3rem auto 0; /* Added margin-top */
 }
 
 .simple-text-grid-services .simple-text-item {
@@ -456,7 +456,7 @@ img, video, iframe {
 .solution-content {
     display: grid;
     grid-template-columns: 1fr; /* <-- CSS FIX */
-    gap: 2rem;
+    gap: 4rem;
     align-items: center;
     margin-top: 3rem;
 }
@@ -758,15 +758,15 @@ img, video, iframe {
 .footer {
     background: var(--primary-dark);
     color: var(--bg-white);
-    padding: 1rem 0 1rem;
+    padding: 3rem 0 1rem;
 }
 
 .footer-content {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 4rem; /* This sets the space between the two columns */
+    margin-bottom: 2rem;
 }
 
 .footer-section h3,
@@ -800,8 +800,8 @@ img, video, iframe {
 
 .footer-bottom {
     text-align: center;
-    padding-top: .5rem;
-    border-top: .5px solid var(--accent-color);
+    padding-top: 2rem;
+    border-top: 1px solid var(--accent-color);
     color: rgba(255, 255, 255, 0.7);
 }
 
@@ -935,7 +935,7 @@ img, video, iframe {
     }
 
     .section {
-        padding: 80px 0;
+        padding: 40px 0; /* REDUCED */
     }
 
     .solution-content {
@@ -1018,7 +1018,7 @@ img, video, iframe {
     }
 
     .section {
-        padding: 70px 0;
+        padding: 40px 0; /* REDUCED */
     }
 
     .section-title {
@@ -1080,7 +1080,7 @@ img, video, iframe {
     }
 
     .footer-content {
-        flex-direction: column; /* <-- CSS FIX */
+        flex-direction: column; /* Stacks footer on mobile */
         gap: 2rem;
     }
 }
@@ -1139,7 +1139,7 @@ img, video, iframe {
     }
 
     .section {
-        padding: 60px 0;
+        padding: 40px 0; /* REDUCED */
     }
 
     .section-title {
@@ -1242,58 +1242,43 @@ img, video, iframe {
     }
 }
 
-/* Extra Small Phones */
-@media (max-width: 360px) {
-    .container {
-        padding: 0 12px;
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 44px; /* Minimum touch target size */
     }
 
-    .hero-title {
-        font-size: 1.65rem;
-    }
-
-    .hero-subtitle {
-        font-size: 0.9rem;
-    }
-
-    .section-title {
-        font-size: 1.6rem;
-    }
-
-    .page-title {
-        font-size: 1.7rem;
-    }
-
-    .what-we-do-item {
-        padding: 1.5rem;
-    }
-
-    .contact-form {
-        padding: 1.25rem;
+    .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
-/* Landscape Orientation for Mobile */
-@media (max-height: 500px) and (orientation: landscape) {
+/* Print Styles */
+@media print {
+    .navbar,
+    .hero-video-wrapper,
+    .hero-overlay,
+    .btn,
+    .contact-form {
+        display: none;
+    }
+
     .hero {
-        min-height: 100vh;
-        padding-top: 60px;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+        background: white;
+        color: black;
+        min-height: auto;
+        padding: 2rem 0;
     }
 
     .section {
-        padding: 50px 0;
+        page-break-inside: avoid;
     }
 }
 
-/* Touch Device Optimizations */
-@
+/* === CSS FIX: Force left-align on solution text === */
+.solution-text p {
+    text-align: left;
+}
