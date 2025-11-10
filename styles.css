@@ -44,6 +44,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.text-center {
+    text-align: center;
+}
+
 /* Prevent horizontal scroll for media elements */
 img, video, iframe {
     max-width: 100%;
