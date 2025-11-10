@@ -167,7 +167,7 @@ img, video, iframe {
 
 /* ===== Hero Section ===== */
 .hero {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -457,7 +457,7 @@ img, video, iframe {
 
 /* ===== Sections ===== */
 .section {
-    padding: 60px 0; /* Reduced from 100px */
+    padding: 40px 0; /* Reduced from 100px */
     position: relative;
 }
 
@@ -505,7 +505,7 @@ img, video, iframe {
     text-align: center;
     color: var(--text-light);
     font-size: 1.1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -546,7 +546,7 @@ img, video, iframe {
 .problem-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     margin-top: 3rem;
 }
 
@@ -824,7 +824,7 @@ img, video, iframe {
 .what-we-do-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     margin-top: 3rem;
 }
 
