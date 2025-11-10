@@ -434,9 +434,9 @@ img, video, iframe {
 .simple-text-grid-services {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2.5rem;
+    gap: 2rem;
     max-width: 1000px;
-    margin: 3rem auto 0; /* Added margin-top */
+    margin: 2rem auto 0; /* Added margin-top */
 }
 
 .simple-text-grid-services .simple-text-item {
@@ -456,7 +456,7 @@ img, video, iframe {
 .solution-content {
     display: grid;
     grid-template-columns: 1fr; /* <-- CSS FIX */
-    gap: 4rem;
+    gap: 2rem;
     align-items: center;
     margin-top: 3rem;
 }
