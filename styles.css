@@ -1153,11 +1153,11 @@ img, video, iframe {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto)); /* This stops the stretching */
+    justify-content: start; /* This bunches the columns to the left */
+    gap: 4rem; /* This adds a healthy space between the two columns */
     margin-bottom: 2rem;
 }
-
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
