@@ -585,14 +585,15 @@ img, video, iframe {
 /* ===== Solution Section ===== */
 .solution-content {
     display: grid;
-    grid-template-columns: 1fr; /* <--- THIS IS THE FIX */
+    grid-template-columns: 1fr; /* <--- CSS FIX #1 IS HERE */
     gap: 4rem;
     align-items: center;
     margin-top: 3rem;
 }
-/* FIX: Force left-align on solution text */
-.solution-text p {
-    text-align: left;
+
+.solution-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
 .solution-text .lead {
@@ -1834,4 +1835,10 @@ img, video, iframe {
     .section {
         page-break-inside: avoid;
     }
+}
+
+/* === CSS FIX #2 IS HERE === */
+/* Force left-align on solution text */
+.solution-text p {
+    text-align: left;
 }
