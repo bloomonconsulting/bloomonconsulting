@@ -766,7 +766,7 @@ img, video, iframe {
     flex-direction: row;
     justify-content: start;
     gap: 4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .footer-section h3,
@@ -800,7 +800,7 @@ img, video, iframe {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 2rem;
+    padding-top: 1rem;
     border-top: 1px solid var(--accent-color);
     color: rgba(255, 255, 255, 0.7);
 }
