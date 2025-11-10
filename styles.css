@@ -590,9 +590,9 @@ img, video, iframe {
     align-items: center;
     margin-top: 3rem;
 }
-.solution-text {
-    font-size: 1.1rem;
-    line-height: 1.8;
+/* FIX: Force left-align on solution text */
+.solution-text p {
+    text-align: left;
 }
 
 .solution-text .lead {
