@@ -765,7 +765,7 @@ img, video, iframe {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    gap: 4rem;
+    gap: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -800,8 +800,8 @@ img, video, iframe {
 
 .footer-bottom {
     text-align: center;
-    padding-top: 1rem;
-    border-top: 1px solid var(--accent-color);
+    padding-top: .5rem;
+    border-top: .5px solid var(--accent-color);
     color: rgba(255, 255, 255, 0.7);
 }
 
