@@ -585,7 +585,7 @@ img, video, iframe {
 /* ===== Solution Section ===== */
 .solution-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr; /* <--- THIS IS THE FIX */
     gap: 4rem;
     align-items: center;
     margin-top: 3rem;
