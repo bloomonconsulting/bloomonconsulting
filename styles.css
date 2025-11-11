@@ -805,6 +805,14 @@ img, video, iframe {
     color: rgba(255, 255, 255, 0.7);
 }
 
+/* ===== NEW Style for Pricing ===== */
+.service-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
 /* ===== Animations (Refactored) ===== */
 .fade-in,
 .fade-up,
