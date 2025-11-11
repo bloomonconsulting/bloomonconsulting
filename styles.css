@@ -1085,6 +1085,46 @@ img, video, iframe {
     }
 }
 
+/* ===== NEW Homepage Strengths List ===== */
+.strengths-list {
+    max-width: 900px; /* Keeps the list readable */
+    margin: 3rem auto 0;
+    list-style: none;
+    padding-left: 0;
+}
+.strengths-list li {
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+}
+.strengths-list li:first-child {
+    border-top: 1px solid var(--border-color);
+}
+.strengths-list li::before {
+    content: '→'; /* A simple, non-aggressive bullet */
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-right: 1.5rem;
+    margin-top: -2px; /* Aligns the arrow with the text */
+}
+
+/* Responsive fix for the list on mobile */
+@media (max-width: 480px) {
+    .strengths-list li {
+        font-size: 1.1rem;
+    }
+    .strengths-list li::before {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+        margin-top: 0;
+    }
+}
 /* Mobile Phones */
 @media (max-width: 480px) {
     .container {
