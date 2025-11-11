@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Services & Pricing | Bloom On Consulting</title>
+    <meta name="title" content="Services & Pricing | Bloom On Consulting">
+    <meta name="description" content="Clear, transparent pricing for operations consulting. From a single System Build to Ongoing Operations Support.">
+    <meta name="keywords" content="operations consulting pricing, operations support, fractional ops management, system build, business process automation">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.bloomonconsulting.com/services.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.bloomonconsulting.com/services.html">
+    <meta property="og:title" content="Services & Pricing | Bloom On Consulting">
+    <meta property="og:description" content="Clear, transparent pricing for operations consulting. From a single System Build to Ongoing Operations Support.">
+    <meta property="og:image" content="https://www.bloomonconsulting.com/images/og-about.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Services & Pricing | Bloom On Consulting">
+    <meta name="twitter:description" content="Clear, transparent pricing for operations consulting for service-based businesses.">
+
+    <link rel="stylesheet" href="styles.css?v=1.6"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Operations Consulting Services",
+      "description": "Transparent pricing for operations consulting, system builds, and ongoing support.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Bloom On Consulting"
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "The Full System Build",
+        "priceCurrency": "USD",
+        "price": "3000" /* Placeholder */
+      }
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" aria-label="Bloom On Consulting Home">
+                    <span class="logo-text">Bloom On Consulting</span>
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu" role="menubar">
+                <li role="none"><a href="index.html" class="nav-link">Home</a></li>
+                <li role="none"><a href="about.html" class="nav-link">About Us</a></li>
+                <li role="none"><a href="services.html" class="nav-link active" aria-current="page">Services</a></li>
+                <li role="none"><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title fade-in">Services & Pricing</h1>
+            <p class="page-subtitle fade-in-delay">Clear, transparent, and built for you. No hidden fees, no complex retainers. Just the help you need.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="what-we-do-grid">
+                
+                <div class="what-we-do-item fade-up">
+                    <h3>The Full System Build</h3>
+                    <p class="service-price">Starting at [YOUR PRICE HERE]</p>
+                    <p>My complete, "done-with-you" service. We go from assessment to a fully automated business. This includes finding the bottlenecks, building your "single hub," automating your admin, and training you and your team.</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem;"><span>Book a Discovery Call</span></a>
+                </div>
+
+                <div class="what-we-do-item fade-up-delay-2">
+                    <h3>Ongoing Operations Support</h3>
+                    <p class="service-price">[YOUR PRICE HERE, e.g., Monthly Retainer]</p>
+                    <p>This is for the business owner who has a system but needs a partner to help run it. I'll take on those projects and tasks that keep getting pushed to the bottom of your to-do list so you can focus on growth.</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem;"><span>Book a Discovery Call</span></a>
+                </div>
+
+                <div class="what-we-do-item fade-up-delay-3">
+                    <h3>The Discovery Call</h3>
+                    <p class="service-price">Free (30 Minutes)</p>
+                    <p>Not sure what you need? Let's start with a free, no-obligation call. We'll map out your biggest challenge and you'll leave with an actionable plan, whether you hire me or not.</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem;"><span>Book Your Free Call</span></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready for a More Sustainable Practice?</h2>
+                <p>Let's go from "too much to do" to "job done." Book your free, no-obligation discovery call and let's start the conversation.</p>
+                <a href="contact.html" class="btn btn-primary btn-large"><span>Book My Free Discovery Call</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bloom On Consulting</h3>
+                    <p>Human-centered operations for service-based businesses.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Bloom On Consulting. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
