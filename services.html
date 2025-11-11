@@ -21,7 +21,9 @@
     <meta name="twitter:title" content="Services & Pricing | Bloom On Consulting">
     <meta name="twitter:description" content="Clear, transparent pricing for operations consulting for service-based businesses.">
 
-    <link rel="stylesheet" href="styles.css?v=1.7"> <script type="application/ld+json">
+    <link rel="stylesheet" href="styles.css?v=1.8"> <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -52,8 +54,7 @@
                 <li role="none"><a href="index.html" class="nav-link">Home</a></li>
                 <li role="none"><a href="about.html" class="nav-link">About Us</a></li>
                 <li role="none"><a href="services.html" class="nav-link active" aria-current="page">Services</a></li>
-                <li role="none"><a href="contact.html" class="nav-link">Contact Us</a></li>
-            </ul>
+                </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -65,6 +66,7 @@
     <section class="page-header">
         <div class="container">
             <h1 class="page-title fade-in">Services & Pricing</h1>
+            <p class="page-subtitle fade-in-delay">Clear, transparent, and built for you. No hidden fees. Just the help you need.</p>
         </div>
     </section>
 
@@ -76,21 +78,18 @@
                     <h3>The Full System Build</h3>
                     <p class="service-price">Starting at $3,000</p>
                     <p>My complete, "done-with-you" service. In 4-6 weeks, we go from assessment to a fully automated practice. This includes finding the bottlenecks, building your "single hub," automating your admin, and training you and your team.</p>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem;"><span>Book a Discovery Call</span></a>
                 </div>
 
                 <div class="what-we-do-item fade-up-delay-2">
                     <h3>Ongoing Operations Support</h3>
                     <p class="service-price">$250/month + $75/hr</p>
                     <p>For the established practice that needs a long-term partner. The monthly fee gives you priority access and a strategy call. Implementation work (the "to-do list") is billed at a 50% discounted hourly rate.</p>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem;"><span>Book a Discovery Call</span></a>
                 </div>
 
                 <div class="what-we-do-item fade-up-delay-3">
                     <h3>Hourly Consulting</h3>
                     <p class="service-price">$150/hr</p>
                     <p>For the practice that isn't ready for a full retainer but needs a one-off strategy session, a system audit, or help with a small, defined project. This is billed a la carte.</p>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1.5rem;"><span>Book Your Free Call</span></a>
                 </div>
 
             </div>
@@ -101,8 +100,25 @@
         <div class="container">
             <div class="cta-content fade-in">
                 <h2>Ready for a More Sustainable Practice?</h2>
-                <p>Let's go from "too much to do" to "job done." Book your free, no-obligation discovery call and let's start the conversation.</p>
-                <a href="contact.html" class="btn btn-primary btn-large"><span>Book My Free Discovery Call</span></a>
+                <p>Let's go from "too much to do" to "job done." Book your free, no-obligation consultation call and let's start the conversation.</p>
+                
+                <div class="contact-form-wrapper" style="margin-top: 2rem;">
+                    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                    <script>
+                    (function() {
+                      var target = document.currentScript;
+                      window.addEventListener('load', function() {
+                        calendar.schedulingButton.load({
+                          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
+                          color: '#006D77', /* Brand color */
+                          label: 'Book your free consultation call', /* UPDATED TEXT */
+                          target,
+                        });
+                      });
+                    })();
+                    </script>
+                    </div>
+
             </div>
         </div>
     </section>
@@ -120,8 +136,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                        </ul>
                 </div>
             </div>
             <div class="footer-bottom">
