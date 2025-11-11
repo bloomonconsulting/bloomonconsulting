@@ -694,7 +694,7 @@ img, video, iframe {
 .footer-content {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: left-align;
     gap: 4rem;
     margin-bottom: 2rem;
 }
