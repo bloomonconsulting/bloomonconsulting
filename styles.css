@@ -558,9 +558,10 @@ img, video, iframe {
 /* ===== Contact Page ===== */
 .contact-wrapper {
     display: grid;
-    grid-template-columns: 1fr; /* STACKS the columns */
-    gap: 3rem; /* REDUCED gap */
+    grid-template-columns: 1fr; /* This makes it one single column */
+    gap: 3rem;
     margin-top: 3rem;
+}
 }
 
 .contact-info {
