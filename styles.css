@@ -39,7 +39,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Klarna Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; /* <-- THIS IS THE CHANGE */
     color: var(--text-dark);
     line-height: 1.6;
     background-color: var(--bg-white); /* <-- THIS IS THE FIX */
@@ -518,12 +518,15 @@ img, video, iframe {
 }
 
 .about-text p {
-    font-size: 1.1rem;
+    font-size: 1.25rem; /* Makes it larger and more substantial */
     line-height: 1.8;
-    color: var(--text-light);
+    color: var(--text-dark); /* Uses the main bold, dark text color */
     margin-bottom: 1.5rem;
+    text-align: center; /* Centers the text */
+    max-width: 850px; /* Allows the text block to be wider */
+    margin-left: auto; /* Centers the block itself */
+    margin-right: auto; /* Centers the block itself */
 }
-
 /* This is the 3-column card grid (Used on Services page) */
 .what-we-do-grid {
     display: grid;
@@ -532,6 +535,7 @@ img, video, iframe {
     margin-top: 3rem;
 }
 
+/* ===== Service Card Hover Animation ===== */
 .what-we-do-item {
     background: white;
     padding: 2rem;
@@ -539,8 +543,13 @@ img, video, iframe {
     box-shadow: var(--shadow-md);
     display: flex;
     flex-direction: column;
+    transition: var(--transition); /* This makes the animation smooth */
 }
 
+.what-we-do-item:hover {
+    transform: scale(1.03); /* Gently scales the card up */
+    box-shadow: var(--shadow-lg); /* Adds a deeper shadow */
+}
 .what-we-do-item h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -741,7 +750,44 @@ img, video, iframe {
     border-top: 1px solid var(--accent-color);
     color: rgba(255, 255, 255, 0.7);
 }
+/* ===== New "Values" Section Styles ===== */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
+.value-card {
+    background: var(--bg-white);
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden; /* This keeps the image corners rounded */
+    text-align: center;
+    border-top: 4px solid var(--primary-color); /* Adds a nice brand accent */
+}
+
+.value-card .value-image img {
+    width: 100%;
+    height: 200px; /* You can adjust this */
+    object-fit: cover; /* This makes all images uniform */
+    display: block;
+}
+
+.value-card .value-content {
+    padding: 2rem;
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 0.75rem;
+}
+
+.value-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
 /* ===== Animations (Refactored) ===== */
 .fade-in,
 .fade-up,
