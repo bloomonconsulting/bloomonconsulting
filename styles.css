@@ -20,11 +20,11 @@
 
 /* About Page Header Background */
 .page-header.about-page-header {
-    background-image: url('Floral-Tech Fusion on Teal.png'); /* <-- FIXED FILENAME */
+    background-image: url('Floral-Tech Fusion on Teal.png');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
-    color: #fff; /* This makes your white "Philosophy" text visible */
+    color: #fff; 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
