@@ -18,21 +18,17 @@
     --transition: all 0.3s ease;
 }
 
+/* About Page Header Background */
 .page-header.about-page-header {
-    background-image: url('Floral-Tech Fusion on Teal.jpg-2dea0233-0122-4239-9f75-c2eeb7ba9407'); /* <-- FIXED */
+    background-image: url('Floral-Tech Fusion on Teal.png'); /* <-- FIXED FILENAME */
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
     color: #fff; /* This makes your white "Philosophy" text visible */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
-}    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    color: #fff; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 
-/* Optional: If text is still hard to read, add a subtle overlay */
+/* This adds the dark overlay for text readability */
 .page-header.about-page-header::before {
     content: '';
     position: absolute;
@@ -40,7 +36,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Darkens the image slightly for text readability */
+    background: rgba(0, 0, 0, 0.3); 
     z-index: 1;
 }
 
