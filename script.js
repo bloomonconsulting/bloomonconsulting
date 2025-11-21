@@ -523,6 +523,13 @@ const debouncedScroll = debounce(() => {
 window.addEventListener('scroll', debouncedScroll);
 
 document.addEventListener('DOMContentLoaded', () => {
+  const CONSULT_LABEL = 'Book your free consultation call';
+  document.querySelectorAll('.consult-btn').forEach((btn) => {
+    btn.textContent = CONSULT_LABEL;
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   // existing consult button code...
 
   // make value pills clickable to toggle definition (for touch devices)
