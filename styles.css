@@ -258,91 +258,134 @@ ul {
 .about-body {
     background: linear-gradient(
         180deg,
-        #D4EEEA 0%,   /* soft teal */
-        #F7FAF9 55%   /* fades into light */
+        #D4EEEA 0%,
+        #F7FAF9 40%,
+        #FDE9C3 100%
     );
-    padding: 4rem 0 4rem;
+    padding: 3.5rem 0 5rem;
 }
 
 .about-body .container {
-    max-width: 800px;
+    max-width: 960px;
 }
 
-.about-body p {
-    margin-bottom: 1.4rem;
-    font-size: 1.06rem;
+.about-panel {
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 24px;
+    padding: 2.75rem 3rem;
+    box-shadow: var(--shadow-lg);
+    border-left: 6px solid var(--secondary-color);
+    margin-top: 2rem;  /* pulls it visually closer to the header */
 }
+
+.about-kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.about-heading {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.about-panel p {
+    margin-bottom: 1.1rem;
+    font-size: 1.05rem;
+}
+
+.about-highlight {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
 
 
 /* ==============================
-   VALUES SECTION (big whimsical curves)
+   VALUES SECTION (cascading teal pills)
 ============================== */
 .values-organic-section {
-    background: linear-gradient(
-        180deg,
-        #FDE9C3 0%,   /* warm, soft mustard-cream */
-        #FDFBF5 100%
-    );
-    padding: 6rem 0 6rem;
+    background: #FDFBF5;
+    padding: 5rem 0 6rem;
 }
 
 .values-organic-container {
     max-width: 720px;
-    text-align: center;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
 .values-organic-container h2 {
-    font-size: 2.6rem;
-    margin-bottom: 3.2rem;
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 2.5rem;
 }
 
-.value-block {
-    margin-bottom: 4.8rem;
+.values-cascade {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
-.value-title {
-    font-size: 1.85rem;
-    margin-bottom: 0.8rem;
+/* base pill style */
+.value-pill {
+    position: relative;
+    border: none;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: inherit;
+    text-align: left;
+    padding: 0.9rem 1.4rem;
+    border-radius: 999px 0 0 999px;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    outline: none;
+    width: 100%;
+    max-width: 540px;
 }
 
-.value-text {
-    font-size: 1.1rem;
-    max-width: 620px;
-    margin: 0.5rem auto 0;
-    line-height: 1.7;
+/* cascade offsets + different lengths */
+.pill-1 { margin-left: 0;           max-width: 540px; }
+.pill-2 { margin-left: 1.5rem;      max-width: 520px; }
+.pill-3 { margin-left: 3rem;        max-width: 500px; }
+.pill-4 { margin-left: 4.5rem;      max-width: 480px; }
+
+.pill-label {
+    font-weight: 600;
+    font-size: 1.05rem;
 }
 
-/* Large whimsical mustard swoops */
-.value-accent {
-    width: 260px;
-    height: 24px;
-    margin: 0 auto 2rem;
-    background-repeat: no-repeat;
-    background-size: contain;
+/* definition is hidden by default */
+.pill-definition {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.96rem;
+    color: #FFFAF1;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.22s ease, opacity 0.22s ease;
 }
 
-.accent-1 {
-    background-image: url('data:image/svg+xml;utf8,\
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="24"><path d="M5 16 Q80 4 140 14 T255 10" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
+/* hover/focus/active state */
+.value-pill:hover,
+.value-pill:focus-visible,
+.value-pill.is-open {
+    background: #055b63;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
-.accent-2 {
-    background-image: url('data:image/svg+xml;utf8,\
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="24"><path d="M5 12 Q100 26 145 8 T255 15" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
+.value-pill:hover .pill-definition,
+.value-pill:focus-visible .pill-definition,
+.value-pill.is-open .pill-definition {
+    max-height: 200px;
+    opacity: 1;
 }
-
-.accent-3 {
-    background-image: url('data:image/svg+xml;utf8,\
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="24"><path d="M5 14 Q65 2 125 18 T255 12" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
-}
-
-.accent-4 {
-    background-image: url('data:image/svg+xml;utf8,\
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="24"><path d="M5 18 Q90 28 140 6 T255 16" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
-}
-
 
 /* ==============================
    SERVICES HEADER (image)
