@@ -1,60 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Services & Pricing | Bloom On Consulting</title>
-    <meta name="title" content="Services & Pricing | Bloom On Consulting">
-    <meta name="description" content="Clear, transparent pricing for operations consulting. From a single System Build to Ongoing Operations Support.">
-    <meta name="keywords" content="operations consulting pricing, operations support, fractional ops management, system build, business process automation">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Services - Bloom On Consulting</title>
+    <meta name="description" content="Explore human-centered operations services designed to support remote service providers through sustainable, streamlined processes.">
+    <meta name="author" content="Bloom On Consulting">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.bloomonconsulting.com/services.html">
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.bloomonconsulting.com/services.html">
-    <meta property="og:title" content="Services & Pricing | Bloom On Consulting">
-    <meta property="og:description" content="Clear, transparent pricing for operations consulting. From a single System Build to Ongoing Operations Support.">
-    <meta property="og:image" content="https://www.bloomonconsulting.com/images/og-about.jpg">
-    
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Services & Pricing | Bloom On Consulting">
-    <meta name="twitter:description" content="Clear, transparent pricing for operations consulting for service-based businesses.">
-
-    <link rel="stylesheet" href="styles.css?v=new"> <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Operations Consulting Services",
-      "description": "Transparent pricing for operations consulting, system builds, and ongoing support.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Bloom On Consulting"
-      },
-      "offers": {
-        "@type": "Offer",
-        "name": "The Full System Build",
-        "priceCurrency": "USD",
-        "price": "3000"
-      }
-    }
-    </script>
+    <link rel="stylesheet" href="styles.css?v=new">
+    <link rel="stylesheet" href="fonts.css">
 </head>
+
 <body>
-    <nav class="navbar" id="navbar">
+
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
                 <a href="index.html" aria-label="Bloom On Consulting Home">
                     <span class="logo-text">Bloom On Consulting</span>
                 </a>
             </div>
+
             <ul class="nav-menu" id="nav-menu" role="menubar">
                 <li role="none"><a href="index.html" class="nav-link">Home</a></li>
                 <li role="none"><a href="about.html" class="nav-link">About</a></li>
-                <li role="none"><a href="services.html" class="nav-link active" aria-current="page">Services</a></li>
-                </ul>
+                <li role="none"><a href="services.html" class="nav-link active">Services</a></li>
+            </ul>
+
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -63,96 +38,75 @@
         </div>
     </nav>
 
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title fade-in">Services & Pricing</h1>
-            </div>
+
+    <!-- ================= SERVICES HEADER ================= -->
+    <section class="services-header">
+        <h1>Services</h1>
     </section>
 
-    <section class="section">
+
+    <!-- ================= SERVICES GRID ================= -->
+    <section class="services-section">
+        <div class="services-grid">
+
+            <!-- CARD 1 -->
+            <div class="service-card">
+                <h3>Systems Setup & Simplification</h3>
+                <p>
+                    Streamline your operations with intentionally designed systems tailored to your workflow.
+                    Together, we’ll reduce overwhelm and build clarity into your day-to-day processes.
+                </p>
+                <a href="services.html" class="btn btn-primary">Learn More</a>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="service-card">
+                <h3>Client Journey Optimization</h3>
+                <p>
+                    Create a smooth, sustainable client journey from onboarding to offboarding —
+                    one that supports your clients and saves you time.
+                </p>
+                <a href="services.html" class="btn btn-primary">Learn More</a>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="service-card">
+                <h3>Operational Audits</h3>
+                <p>
+                    Get a clear picture of what’s working, what’s not, and what can be improved.
+                    This audit gives you a roadmap toward a more easeful business.
+                </p>
+                <a href="services.html" class="btn btn-primary">Learn More</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= CTA SECTION ================= -->
+    <section class="section cta-section">
         <div class="container">
-            <div class="what-we-do-grid">
-                
-                <div class="what-we-do-item fade-up">
-                    <h3>The Full System Build</h3>
-                    <p class="service-price">Starting at $3,000</p>
-                    <p>Complete package to either revamp or build your operations from scratch. We go from assessment to a fully automated business. This includes building your single hub, automating your admin, and training you and your team.</p>
-                    
-                    <div style="margin-top: 1.5rem;">
-                        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-                        <script>
-                        (function() {
-                          var target = document.currentScript;
-                          window.addEventListener('load', function() {
-                            calendar.schedulingButton.load({
-                              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
-                              color: '#006D77',
-                              label: 'Book your free consultation call',
-                              target,
-                            });
-                          });
-                        })();
-                        </script>
-                    </div>
-                    </div>
-
-                <div class="what-we-do-item fade-up-delay-2">
-                    <h3>Ongoing Operations Support</h3>
-                    <p class="service-price">$150/month + $40/hr</p>
-                    <p>For the business that needs a long-term partner. The monthly fee gives you priority access and a strategy call.</p>
-                    
-                    <div style="margin-top: 1.5rem;">
-                        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-                        <script>
-                        (function() {
-                          var target = document.currentScript;
-                          window.addEventListener('load', function() {
-                            calendar.schedulingButton.load({
-                              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
-                              color: '#006D77',
-                              label: 'Book your free consultation call',
-                              target,
-                            });
-                          });
-                        })();
-                        </script>
-                    </div>
-                    </div>
-
-                <div class="what-we-do-item fade-up-delay-3">
-                    <h3>Hourly Consulting</h3>
-                    <p class="service-price">$80/hr</p>
-                    <p>For the business that isn't ready for a full retainer but needs a one-off strategy session, a system audit, or help with a small, defined project.</p>
-                    
-                    <div style="margin-top: 1.5rem;">
-                        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-                        <script>
-                        (function() {
-                          var target = document.currentScript;
-                          window.addEventListener('load', function() {
-                            calendar.schedulingButton.load({
-                              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
-                              color: '#006D77',
-                              label: 'Book your free consultation call',
-                              target,
-                            });
-                          });
-                        })();
-                        </script>
-                    </div>
-                    </div>
-
+            <div class="cta-content fade-in">
+                <h2>Ready for a More Sustainable Business?</h2>
+                <p>Let’s go from too much to do to everything in flow.</p>
+                <a href="services.html" class="btn btn-primary btn-large">
+                    <span>Book your free consultation call</span>
+                </a>
             </div>
         </div>
     </section>
 
+
+    <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="container">
+
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Bloom On Consulting</h3>
                     <p>Human-centered operations for service-based businesses.</p>
                 </div>
+
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
@@ -162,9 +116,11 @@
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2025 Bloom On Consulting. All rights reserved.</p>
             </div>
+
         </div>
     </footer>
 
