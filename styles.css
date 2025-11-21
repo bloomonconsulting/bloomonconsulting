@@ -9,9 +9,9 @@
    ROOT VARIABLES
 ============================== */
 :root {
-    --primary-color: #006D77;
+    --primary-color: #006D77;   /* teal */
     --primary-light: #83C5BE;
-    --secondary-color: #FFB703;
+    --secondary-color: #FFB703; /* mustard */
 
     --text-dark: #073B4C;
     --text-light: #3A3A3A;
@@ -105,6 +105,19 @@ ul {
     padding-bottom: 2px;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 22px;
+    height: 2px;
+    background: white;
+}
+
 
 /* ==============================
    HERO (FULL VIDEO)
@@ -133,9 +146,8 @@ ul {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transform: scale(1.05);   /* slight zoom to push edges offscreen */
+    display: block;
 }
-
 
 /* Readability overlay */
 .hero::after {
@@ -161,16 +173,19 @@ ul {
     font-size: 0.95rem;
 }
 
+/* HERO TITLE – mustard */
 .hero-title {
-    font-size: 3.2rem;
-    margin-bottom: 1.6rem;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.8rem;
     line-height: 1.15;
+    color: var(--secondary-color);
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 
 /* ==============================
-   BLOOM SECTION (Option B)
-   Custom SVG flower bullets
+   BLOOM SECTION (with daisy bullets)
 ============================== */
 .bloom-gradient {
     padding: 6rem 0;
@@ -194,7 +209,7 @@ ul {
     max-width: 700px;
 }
 
-/* Custom mustard line-art daisy bullet (18–20px) */
+/* Custom mustard line-art daisy bullet */
 .bloom-list li {
     display: flex;
     align-items: flex-start;
@@ -216,14 +231,13 @@ ul {
 
 
 /* ==============================
-   ABOUT HEADER (slim, image)
+   ABOUT HEADER (image)
 ============================== */
-.about-header,
-.values-header {
+.about-header {
     width: 100%;
-    min-height: 280px;
-    padding: 5rem 1.5rem 4rem;
-    margin-top: 0;
+    min-height: 230px;
+    padding: 4.5rem 1.5rem 3.5rem;
+    margin-top: 80px;
     background-image: url("about-header-bg.png");
     background-size: cover;
     background-position: center;
@@ -235,14 +249,6 @@ ul {
     text-align: center;
 }
 
-.about-header h1,
-.values-header h2 {
-    font-size: 3rem;
-    color: white;
-    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
-}
-
-
 .about-header h1 {
     color: #ffffff;
     font-size: 2.6rem;
@@ -253,16 +259,11 @@ ul {
 
 
 /* ==============================
-   ABOUT CONTENT
+   ABOUT BODY (mustard band + white card)
 ============================== */
 .about-body {
-    background: linear-gradient(
-        180deg,
-        #D4EEEA 0%,
-        #F7FAF9 40%,
-        #FDE9C3 100%
-    );
-    padding: 3.5rem 0 5rem;
+    background: var(--secondary-color); /* solid mustard */
+    padding: 4rem 0 5rem;
 }
 
 .about-body .container {
@@ -270,20 +271,12 @@ ul {
 }
 
 .about-panel {
-    background: rgba(255, 255, 255, 0.97);
+    background: #ffffff;
     border-radius: 24px;
     padding: 2.75rem 3rem;
     box-shadow: var(--shadow-lg);
-    border-left: 6px solid var(--secondary-color);
-    margin-top: 2rem;  /* pulls it visually closer to the header */
-}
-
-.about-kicker {
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-size: 0.9rem;
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
+    border-left: 6px solid var(--primary-color);
+    margin-top: 1.5rem;
 }
 
 .about-heading {
@@ -303,20 +296,16 @@ ul {
 }
 
 
-
 /* ==============================
-   VALUES SECTION (cascading teal pills)
-============================== */
-/* ==============================
-   VALUES SECTION (cascading teal pills)
+   VALUES SECTION – cascading teal pills on mustard
 ============================== */
 .values-organic-section {
-    background: #FDE9C3; /* warm band behind values */
+    background: var(--secondary-color); /* same mustard as About band */
     padding: 5rem 0 6rem;
 }
 
 .values-organic-container {
-    max-width: 960px;       /* wider overall */
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -325,6 +314,7 @@ ul {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
+    color: #ffffff;
 }
 
 /* stack of cascading pills */
@@ -338,8 +328,8 @@ ul {
 .value-pill {
     position: relative;
     border: none;
-    background: var(--primary-color);         /* teal */
-    color: var(--secondary-color);            /* mustard text */
+    background: var(--primary-color);         /* teal pill */
+    color: #ffffff;                            /* white text */
     font-family: inherit;
     text-align: left;
     padding: 1rem 1.8rem;
@@ -361,15 +351,15 @@ ul {
 
 .pill-label {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 
 /* definition hidden by default */
 .pill-definition {
     display: block;
     margin-top: 0.45rem;
-    font-size: 0.98rem;
-    color: #FFFAF1;
+    font-size: 1.02rem;
+    color: #fef9e7;        /* warm soft white */
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -410,7 +400,7 @@ ul {
 .services-header {
     width: 100%;
     min-height: 230px;
-    padding: 4rem 1.5rem 3rem;
+    padding: 4.5rem 1.5rem 3.5rem;
     margin-top: 80px;
     background-image: url("services-header-bg.png");
     background-size: cover;
@@ -431,7 +421,7 @@ ul {
 
 
 /* ==============================
-   SERVICES GRID + CARDS
+   SERVICES CARDS
 ============================== */
 .services-section {
     padding: 5rem 0 6rem;
@@ -451,22 +441,34 @@ ul {
 .service-card {
     background: white;
     border-radius: 18px;
-    padding: 2rem;
+    padding: 2.25rem;
     box-shadow: var(--shadow-md);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: left;
 }
 
 .service-card h3 {
     font-size: 1.6rem;
-    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+    margin-bottom: .5rem;
+}
+
+.service-price {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .service-card p {
-    font-size: 1.05rem;
-    margin-bottom: 1.25rem;
+    font-size: 1.02rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.service-card .btn-primary {
+    margin-top: 1.25rem;
 }
 
 
@@ -487,6 +489,10 @@ ul {
 .btn-primary:hover {
     background: var(--secondary-color);
     color: var(--text-dark);
+}
+
+.btn-large {
+    padding: 1rem 2.4rem;
 }
 
 
@@ -599,6 +605,28 @@ ul {
     }
 }
 
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 64px;
+        right: 1.5rem;
+        background: var(--primary-color);
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        box-shadow: var(--shadow-md);
+        display: none;
+    }
+
+    .nav-menu.is-open {
+        display: flex;
+    }
+}
+
 @media (max-width: 480px) {
 
     .hero-video {
@@ -613,5 +641,9 @@ ul {
 
     .hero-title {
         font-size: 2rem;
+    }
+
+    .about-panel {
+        padding: 2rem 1.6rem;
     }
 }
