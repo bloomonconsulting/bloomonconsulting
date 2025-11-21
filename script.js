@@ -522,3 +522,53 @@ const debouncedScroll = debounce(() => {
 
 window.addEventListener('scroll', debouncedScroll);
 
+// ===== Values Flower Interaction (About Page) =====
+document.addEventListener('DOMContentLoaded', () => {
+    const detailTitle = document.getElementById('values-detail-title');
+    const detailText = document.getElementById('values-detail-text');
+    const valueButtons = document.querySelectorAll('.values-flower [data-value]');
+
+    if (!detailTitle || !detailText || !valueButtons.length) return;
+
+    const valuesMap = {
+        kindness: {
+            title: 'Kindness',
+            text: 'The foundation of everything I do. Treating people with care and support.'
+        },
+        equity: {
+            title: 'Equity',
+            text: 'Providing what you need. Growth starts wherever you are planted.'
+        },
+        transparency: {
+            title: 'Transparency',
+            text: 'Straightforward and honest at every stage, with the goal of fewer misunderstandings.'
+        },
+        efficiency: {
+            title: 'Efficiency',
+            text: 'If it can be smoother, why shouldn’t it be? I look for ways to reduce friction and overwhelm.'
+        },
+        bloom: {
+            title: 'Bloom',
+            text: 'You and your business are at the center of the work. Together we design processes that reflect your values, support how you work best, and bring structure and calm to your days.'
+        }
+    };
+
+    function setValue(key) {
+        const value = valuesMap[key];
+        if (!value) return;
+        detailTitle.textContent = value.title;
+        detailText.textContent = value.text;
+    }
+
+    valueButtons.forEach(button => {
+        const key = button.dataset.value;
+
+        button.addEventListener('mouseenter', () => setValue(key));
+        button.addEventListener('focus', () => setValue(key));
+    });
+
+    // Set initial state
+    setValue('kindness');
+});
+
+
