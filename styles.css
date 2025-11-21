@@ -62,10 +62,13 @@ ul {
    NAVIGATION
 ============================== */
 .navbar {
+    --nav-height: 64px;   /* adjust if your nav is taller, 64–80px is typical */
+
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: var(--nav-height);
     padding: 1rem 0;
     background: var(--primary-color);
     z-index: 999;
@@ -117,11 +120,6 @@ ul {
     height: 2px;
     background: white;
 }
-/* Ensures all page headers start exactly below the fixed navbar */
-.page-header {
-    margin-top: 0;        /* no accidental margin */
-    padding-top: 80px;    /* equal to navbar height */
-}
 
 
 /* ==============================
@@ -130,7 +128,6 @@ ul {
 .hero {
     height: 100vh;
     width: 100vw;
-    padding-top: 80px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -242,7 +239,6 @@ ul {
     width: 100%;
     min-height: 230px;
     padding: 4.5rem 1.5rem 3.5rem;
-    margin-top: 80px;
     background-image: url("about-header-bg.png");
     background-size: cover;
     background-position: center;
@@ -260,6 +256,13 @@ ul {
     font-weight: 700;
     text-shadow: 0 2px 8px rgba(0,0,0,0.35);
     letter-spacing: 0.03em;
+}
+/* Make all top-of-page sections sit exactly under the fixed nav */
+.hero,
+.about-header,
+.services-header {
+    margin-top: 0;
+    padding-top: var(--nav-height);
 }
 
 
@@ -300,33 +303,54 @@ ul {
     color: var(--primary-color);
 }
 
+.about-body {
+    background: var(--secondary-color);
+    padding: 3.5rem 0 4rem;  /* slightly less top/bottom padding */
+}
+
+
 
 /* ==============================
    VALUES SECTION – cascading teal pills on mustard
 ============================== */
+/* Values section immediately after About */
 .values-organic-section {
-    background: var(--secondary-color); /* same mustard as About band */
-    padding: 5rem 0 6rem;
+    background: var(--secondary-color);
+    padding: 3rem 0 6rem;    /* starts a bit sooner so the flow feels continuous */
 }
 
 .values-organic-container {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 2rem;
+    text-align: center; /* center the badge heading */
 }
 
+
 .values-organic-container h2 {
+    display: inline-block;
     text-align: center;
-    font-size: 2.6rem;
-    margin-bottom: 3rem;
-    color: #ffffff;
+    font-size: 2.4rem;
+    margin-bottom: 2.5rem;
+
+    padding: 0.45rem 1.9rem;
+    background: #ffffff;
+    color: var(--primary-color);
+    border-radius: 999px;
+    box-shadow: var(--shadow-md);
 }
+
 
 /* stack of cascading pills */
 .values-cascade {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
+}
+.values-cascade {
+    max-width: 780px;  /* wider overall */
+    margin: 0 auto;
+    text-align: left;
 }
 
 /* base pill style */
