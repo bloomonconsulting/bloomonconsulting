@@ -1,7 +1,8 @@
 /* ==============================
-   Google Fonts
+   Google Font for Headings
+   (Body font Inter comes from fonts.css)
 ============================== */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Nunito:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
 
 
 /* ==============================
@@ -15,15 +16,17 @@
     --text-dark: #073B4C;
     --text-light: #3A3A3A;
 
+    --bg-light: #FAFAFA;
     --cream: #FDFBF5;
 
-    --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
-    --shadow-md: 0 4px 18px rgba(0,0,0,0.12);
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 
 /* ==============================
-   GLOBAL RESET + BASE
+   Reset & Base
 ============================== */
 * {
     margin: 0;
@@ -32,15 +35,15 @@
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
-    font-size: 17px;
-    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
     background: white;
-    line-height: 1.75;
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 17px;
 }
 
-h1, h2, h3 {
-    font-family: 'Fraunces', serif;
+h1, h2, h3, h4 {
+    font-family: 'Lora', 'Inter', serif;
     color: var(--text-dark);
 }
 
@@ -50,22 +53,29 @@ h1, h2, h3 {
     padding: 0 1.5rem;
 }
 
+ul {
+    padding-left: 1.2rem;
+}
+
 
 /* ==============================
-   NAVIGATION
+   Navbar
 ============================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 999;
     padding: 1rem 0;
     background: var(--primary-color);
-    z-index: 1000;
     box-shadow: var(--shadow-sm);
 }
 
 .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,36 +102,49 @@ h1, h2, h3 {
 
 .nav-link.active {
     border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 2px;
+}
+
+.hamburger {
+    display: none;
 }
 
 
 /* ==============================
-   HERO SECTION
+   HERO (Full-Screen Video Hero)
 ============================== */
 .hero {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    overflow: hidden;
-    padding-top: 80px;
+    height: 100vh;       /* full screen hero */
+    width: 100vw;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
     text-align: center;
+    padding-top: 80px;   /* space for fixed nav */
+    color: white;
+    background: black;
 }
 
 .hero-video-wrapper {
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .hero-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
-/* Soft readability overlay */
+/* dark overlay for readability */
 .hero::after {
     content: "";
     position: absolute;
@@ -130,217 +153,319 @@ h1, h2, h3 {
         rgba(0,0,0,0.35),
         rgba(0,0,0,0.45)
     );
+    z-index: -1;
 }
 
+/* HERO content */
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 700px;
-}
-
-.hero-title {
-    font-size: 3rem;
-    margin-bottom: 2rem;
-    color: white;
-    line-height: 1.2;
+    max-width: 800px;
+    padding: 1.5rem;
 }
 
 .hero-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.25);
-    backdrop-filter: blur(8px);
-    padding: 0.6rem 1.2rem;
-    border-radius: 40px;
-    color: white;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
     font-size: 0.95rem;
+    margin-bottom: 1.5rem;
 }
 
-
-/* ==============================
-   ABOUT SECTION
-============================== */
-.about-body {
-    padding: 8rem 0 4rem;
-    background: #F7FAF9;
-}
-
-.section-heading {
-    font-size: 2.4rem;
+.hero-title {
+    font-size: 3.2rem;
     font-weight: 700;
     margin-bottom: 2rem;
+    line-height: 1.15;
 }
 
-.about-content p {
-    margin-bottom: 1.5rem;
-    max-width: 720px;
-}
 
 /* ==============================
-   ABOUT PAGE HEADER IMAGE
+   Bloom / "Is Your Business Ready to Bloom" Section
+============================== */
+.section {
+    padding: 4rem 0;
+}
+
+.bloom-gradient {
+    background: white; /* you disliked previous gradients here */
+}
+
+.bloom-gradient .section-title {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.bloom-gradient .section-subtitle {
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+}
+
+.bloom-list {
+    list-style: disc;
+    margin: 1.5rem 0 0;
+    padding-left: 1.5rem;
+}
+
+.bloom-list li {
+    margin-bottom: 0.75rem;
+}
+
+
+/* ==============================
+   ABOUT PAGE HEADER (slim banner)
 ============================== */
 .about-header {
     width: 100%;
-    height: 320px;
+    min-height: 230px;
+    padding: 4rem 1.5rem 3rem;
+    margin-top: 80px; /* under navbar */
     background-image: url("about-header-bg.png"); /* update path if needed */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
 
-/* optional soft overlay to improve text readability */
-.about-header-overlay {
-    background: rgba(0, 0, 0, 0.15);
-    backdrop-filter: blur(2px);
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .about-header h1 {
-    color: white;
-    font-size: 3rem;
+    color: #ffffff;
+    font-size: 2.6rem;
     font-weight: 700;
-    z-index: 2;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
+
 /* ==============================
-   VALUES SECTION
+   ABOUT CONTENT
 ============================== */
+.about-body {
+    background: #F7FAF9;
+    padding: 4rem 0 4rem;
+}
+
+.about-body .container {
+    max-width: 800px;
+}
+
+.about-body p {
+    margin-bottom: 1.5rem;
+    font-size: 1.02rem;
+}
+
+
+/* ==============================
+   VALUES SECTION — Organic, Updated
+============================== */
+
 .values-organic-section {
     background: var(--cream);
-    padding: 6rem 0 7rem;
+    padding: 6rem 0 6rem;
 }
 
 .values-organic-container {
     max-width: 720px;
     margin: 0 auto;
+    padding: 0 1.5rem;
     text-align: center;
 }
 
-.values-heading {
-    font-size: 2.4rem;
-    margin-bottom: 3rem;
+/* Make "Values" clearly larger than the individual values */
+.values-organic-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
 }
 
+/* Individual value blocks */
 .value-block {
     margin-bottom: 4.5rem;
 }
 
 .value-title {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
+    font-weight: 700;
     margin-bottom: 0.8rem;
 }
 
 .value-text {
-    max-width: 600px;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    max-width: 620px;
     margin: 0 auto;
+    color: var(--text-light);
 }
 
-/* Mustard hand-drawn accents */
+/* Bold, more whimsical mustard curves */
 .value-accent {
-    height: 6px;
-    width: 120px;
-    margin: 0 auto 1.8rem;
+    height: 10px;
+    width: 190px;
+    margin: 0 auto 2rem;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.accent-1, .accent-3 {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="10"><path d="M5 5 Q 40 0 80 5 T 115 5" stroke="%23FFB703" stroke-width="4" fill="none" stroke-linecap="round"/></svg>');
+/* Each accent has a slightly different curve + horizontal offset
+   so they don't look copy-pasted and feel a bit whimsical. */
+.accent-1 {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="190" height="18"><path d="M5 12 Q 50 2 90 10 T 185 8" stroke="%23FFB703" stroke-width="6" fill="none" stroke-linecap="round"/></svg>');
+    transform: translateX(-30px);
 }
 
-.accent-2, .accent-4 {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="10"><path d="M5 5 Q 50 10 80 4 T 115 4" stroke="%23FFB703" stroke-width="4" fill="none" stroke-linecap="round"/></svg>');
+.accent-2 {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="190" height="18"><path d="M5 8 Q 40 16 90 6 T 185 11" stroke="%23FFB703" stroke-width="6" fill="none" stroke-linecap="round"/></svg>');
+    transform: translateX(25px) rotate(-1.5deg);
+}
+
+.accent-3 {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="190" height="18"><path d="M5 9 Q 55 3 95 13 T 185 7" stroke="%23FFB703" stroke-width="6" fill="none" stroke-linecap="round"/></svg>');
+    transform: translateX(-15px) rotate(1deg);
+}
+
+.accent-4 {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="190" height="18"><path d="M5 11 Q 45 18 95 5 T 185 10" stroke="%23FFB703" stroke-width="6" fill="none" stroke-linecap="round"/></svg>');
+    transform: translateX(35px);
 }
 
 
 /* ==============================
-   SERVICES PAGE — 3 COLUMN GRID
+   SERVICES PAGE GRID + CARDS
 ============================== */
+
+.services-header {
+    width: 100%;
+    min-height: 230px;
+    padding: 4rem 1.5rem 3rem;
+    margin-top: 80px;
+    background-image: url("services-header-bg.png"); /* update path if needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.services-header h1 {
+    color: #ffffff;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
 .services-section {
+    padding: 4.5rem 0 6rem;
     background: #F7FAF9;
-    padding: 7rem 0;
 }
 
 .services-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
 .service-card {
-    background: white;
-    border-radius: 16px;
+    background: #ffffff;
+    border-radius: 18px;
     padding: 2rem;
     box-shadow: var(--shadow-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .service-card h3 {
-    font-family: 'Fraunces', serif;
     font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: var(--text-dark);
+    margin-bottom: 0.75rem;
 }
 
 .service-card p {
+    font-size: 1.02rem;
     margin-bottom: 1.25rem;
 }
 
 .service-card .btn-primary {
     margin-top: auto;
+    width: fit-content;
 }
 
 
 /* ==============================
-   BUTTONS
+   Buttons
 ============================== */
 .btn-primary {
     background: var(--primary-color);
-    color: white !important;
+    color: white;
     padding: 0.85rem 2rem;
     border-radius: 50px;
     text-decoration: none;
+    display: inline-block;
     font-weight: 600;
-    transition: 0.2s ease;
+    transition: 0.3s ease;
 }
 
 .btn-primary:hover {
     background: var(--secondary-color);
+    color: #073B4C;
 }
 
 
 /* ==============================
-   CTA
+   CTA Section
 ============================== */
-.cta-section {
+.section.cta-section {
     padding: 6rem 0;
     text-align: center;
     background: var(--primary-light);
 }
 
 .cta-content h2 {
-    color: var(--text-dark);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.cta-content p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
 }
 
 
 /* ==============================
-   FOOTER
+   Footer
 ============================== */
 .footer {
-    background: var(--primary-color);
     padding: 4rem 0;
+    background: var(--primary-color);
     color: white;
+}
+
+.footer .container {
+    max-width: 1000px;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 0.75rem;
 }
 
 .footer-section ul {
@@ -348,32 +473,94 @@ h1, h2, h3 {
     padding: 0;
 }
 
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
 .footer-section a {
     color: white;
     text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 
 
 /* ==============================
-   MOBILE RESPONSIVE
+   Animations
 ============================== */
-@media (max-width: 900px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.9s ease forwards;
+}
 
-    .hero-title {
-        font-size: 2.2rem;
+.fade-in-delay {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.9s ease forwards 0.3s;
+}
+
+.fade-up-delay {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.9s ease forwards 0.5s;
+}
+
+.fade-in.delay-1 { animation-delay: 0.2s; }
+.fade-in.delay-2 { animation-delay: 0.35s; }
+.fade-in.delay-3 { animation-delay: 0.5s; }
+.fade-in.delay-4 { animation-delay: 0.65s; }
+.fade-in.delay-5 { animation-delay: 0.8s; }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media (max-width: 600px) {
-    .value-title {
-        font-size: 1.5rem;
+
+/* ==============================
+   Responsive
+============================== */
+@media (max-width: 900px) {
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Hide hero video on tiny screens and use gradient instead */
+    .hero-video {
+        display: none;
+    }
+
+    .hero-video-wrapper {
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    }
+
+    .hero {
+        height: 80vh;
+        padding-top: 60px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
     }
 }
