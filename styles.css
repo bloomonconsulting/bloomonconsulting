@@ -530,6 +530,7 @@ img, video, iframe {
 }
 
 /* ===== Bloom Gradient Section ===== */
+/* ===== Bloom Gradient Section ===== */
 
 .bloom-gradient {
     position: relative;
@@ -564,13 +565,25 @@ img, video, iframe {
     border-bottom: none;
 }
 
+/* more clearly flower-shaped bullet */
 .bloom-list li::before {
     content: "✿";
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 1;
-    color: var(--secondary-color); /* your golden accent */
-    margin-top: 0.15rem;
+    color: var(--secondary-color); /* your golden-yellow */
+    margin-top: 0.1rem;
 }
+
+/* responsive tweaks */
+@media (max-width: 480px) {
+    .bloom-list {
+        margin-top: 1.5rem;
+    }
+
+    .bloom-list li {
+        font-size: 1rem;
+    }
+
 
 /* responsive tweaks */
 @media (max-width: 768px) {
