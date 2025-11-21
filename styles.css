@@ -212,6 +212,151 @@ body {
 .about-content p + p {
     margin-top: 1.4rem;
 }
+/* ==============================
+   VALUES FLOWER SECTION (ABOUT)
+============================== */
+
+.values-section {
+    background: #F2FAF8; /* light teal wash */
+    padding: 5rem 0;
+}
+
+.values-section .section-title {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.values-section .section-subtitle {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    color: var(--text-light);
+}
+
+.values-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Flower diagram */
+.values-flower {
+    position: relative;
+    width: 260px;
+    height: 260px;
+    margin-bottom: 1rem;
+}
+
+.flower-petal,
+.flower-center {
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-dark);
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+/* Petal shapes/positions */
+.flower-petal {
+    position: absolute;
+    width: 120px;
+    height: 52px;
+    border-radius: 999px;
+}
+
+.petal-top {
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.petal-right {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.petal-bottom {
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.petal-left {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%) rotate(90deg);
+}
+
+/* Center bloom */
+.flower-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border: 2px solid var(--primary-light);
+}
+
+/* Hover / focus states */
+.flower-petal:hover,
+.flower-petal:focus-visible,
+.flower-center:hover,
+.flower-center:focus-visible {
+    outline: none;
+    background: #FFF9EB;
+    transform: scale(1.05) translateZ(0);
+    box-shadow: var(--shadow-md);
+}
+
+/* Detail panel */
+.values-detail {
+    max-width: 420px;
+    text-align: left;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.values-detail-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.values-detail-text {
+    font-size: 0.98rem;
+    color: var(--text-light);
+}
+
+/* Extra body text under the diagram */
+.values-body-text {
+    max-width: 780px;
+    margin: 3rem auto 0;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--text-light);
+}
+
+.values-body-text p + p {
+    margin-top: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .values-detail {
+        max-width: 100%;
+    }
 
 /* ==============================
    Bloom Section (Option B Rich Teal)
