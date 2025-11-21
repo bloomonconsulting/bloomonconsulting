@@ -1,156 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Services - Bloom On Consulting</title>
-    <meta name="description" content="Explore human-centered operations services designed to support remote service providers through sustainable, streamlined processes.">
-    <meta name="author" content="Bloom On Consulting">
-    <meta name="robots" content="index, follow">
+  <title>Services - Bloom On Consulting</title>
+  <meta name="description" content="Explore human-centered operations services designed to support remote service providers through sustainable, streamlined processes.">
+  <meta name="author" content="Bloom On Consulting">
+  <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="styles.css?v=new" />
-    <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="styles.css?v=new" />
+  <link rel="stylesheet" href="fonts.css" />
 </head>
 
 <body>
 
-    <!-- ================= NAVIGATION ================= -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="index.html" aria-label="Bloom On Consulting Home">
-                    <span class="logo-text">Bloom On Consulting</span>
-                </a>
-            </div>
+  <!-- ================= NAVIGATION ================= -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html" aria-label="Bloom On Consulting Home">
+          <span class="logo-text">Bloom On Consulting</span>
+        </a>
+      </div>
 
-            <ul class="nav-menu" id="nav-menu" role="menubar">
-                <li role="none"><a href="index.html" class="nav-link">Home</a></li>
-                <li role="none"><a href="about.html" class="nav-link">About</a></li>
-                <li role="none"><a href="services.html" class="nav-link active">Services</a></li>
-            </ul>
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="index.html" class="nav-link">Home</a></li>
+        <li role="none"><a href="about.html" class="nav-link">About</a></li>
+        <li role="none"><a href="services.html" class="nav-link active">Services</a></li>
+      </ul>
 
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- ================= SERVICES HEADER ================= -->
+  <section class="services-header">
+    <h1>Services</h1>
+  </section>
+
+
+  <!-- ================= SERVICES CARDS ================= -->
+  <section class="services-section">
+    <div class="services-grid">
+
+      <div class="service-card">
+        <h3>The Full System Build</h3>
+        <p class="service-price">Starting at $3,000</p>
+        <p>
+          Complete package to either revamp or build your operations from scratch.
+          We go from assessment to a fully automated business. This includes building your
+          single hub, automating your admin, and training you and your team.
+        </p>
+        <a href="#book-call" class="btn btn-primary">
+          Book your free consultation call
+        </a>
+      </div>
+
+      <div class="service-card">
+        <h3>Ongoing Operations Support</h3>
+        <p class="service-price">$150/month + $40/hr</p>
+        <p>
+          For the business that needs a long-term partner. The monthly fee gives you priority
+          access and a strategy call.
+        </p>
+        <a href="#book-call" class="btn btn-primary">
+          Book your free consultation call
+        </a>
+      </div>
+
+      <div class="service-card">
+        <h3>Hourly Consulting</h3>
+        <p class="service-price">$80/hr</p>
+        <p>
+          For the business that isn't ready for a full retainer but needs a one-off strategy
+          session, a system audit, or help with a small, defined project.
+        </p>
+        <a href="#book-call" class="btn btn-primary">
+          Book your free consultation call
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================= CTA SECTION (GOOGLE BUTTON) ================= -->
+  <section class="section cta-section" id="book-call">
+    <div class="container">
+      <div class="cta-content fade-in">
+        <h2>Ready to book your consultation?</h2>
+
+        <!-- Google Calendar Appointment Scheduling begin -->
+        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+        <script>
+          (function() {
+            var target = document.currentScript;
+            window.addEventListener('load', function() {
+              calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
+                color: '#039BE5',
+                label: 'Book an appointment',
+                target,
+              });
+            });
+          })();
+        </script>
+        <!-- end Google Calendar Appointment Scheduling -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Bloom On Consulting</h3>
+          <p>Human-centered operations for service-based businesses.</p>
         </div>
-    </nav>
 
-
-    <!-- ================= SERVICES HEADER ================= -->
-    <section class="services-header">
-        <h1>Services</h1>
-    </section>
-
-
-    <!-- ================= SERVICES CARDS ================= -->
-    <section class="services-section">
-        <div class="services-grid">
-
-            <div class="service-card">
-                <h3>The Full System Build</h3>
-                <p class="service-price">Starting at $3,000</p>
-                <p>
-                    Complete package to either revamp or build your operations from scratch.
-                    We go from assessment to a fully automated business. This includes building your
-                    single hub, automating your admin, and training you and your team.
-                </p>
-                <a href="#" class="btn btn-primary consult-btn">
-                    Book your free consultation call
-                </a>
-            </div>
-
-            <div class="service-card">
-                <h3>Ongoing Operations Support</h3>
-                <p class="service-price">$150/month + $40/hr</p>
-                <p>
-                    For the business that needs a long-term partner. The monthly fee gives you priority
-                    access and a strategy call.
-                </p>
-                <a href="#" class="btn btn-primary consult-btn">
-                    Book your free consultation call
-                </a>
-            </div>
-
-            <div class="service-card">
-                <h3>Hourly Consulting</h3>
-                <p class="service-price">$80/hr</p>
-                <p>
-                    For the business that isn't ready for a full retainer but needs a one-off strategy
-                    session, a system audit, or help with a small, defined project.
-                </p>
-                <a href="#" class="btn btn-primary consult-btn">
-                    Book your free consultation call
-                </a>
-            </div>
-
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+          </ul>
         </div>
-    </section>
+      </div>
 
+      <div class="footer-bottom">
+        <p>&copy; 2025 Bloom On Consulting. All rights reserved.</p>
+      </div>
 
-    <!-- ================= CTA SECTION ================= -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content fade-in">
-                <h2>Ready for a More Sustainable Business?</h2>
-                <p>Let’s go from too much to do to everything in flow.</p>
-                <a href="#" class="btn btn-primary btn-large consult-btn">
-                    Book your free consultation call
-                </a>
-            </div>
-        </div>
-    </section>
+    </div>
+  </footer>
 
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <div class="container">
-
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Bloom On Consulting</h3>
-                    <p>Human-centered operations for service-based businesses.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Bloom On Consulting. All rights reserved.</p>
-            </div>
-
-        </div>
-    </footer>
-
-
-    <!-- ================= GOOGLE CALENDAR (SHARED) ================= -->
-    <button id="google-booking-trigger" style="opacity:0; pointer-events:none; position:absolute;"></button>
-
-    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet" />
-    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-    <script>
-      window.addEventListener('load', function () {
-        var target = document.getElementById('google-booking-trigger');
-        if (target && window.calendar && calendar.schedulingButton) {
-          calendar.schedulingButton.load({
-            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
-            color: '#039BE5',
-            label: 'Book your free consultation call',
-            target: target
-          });
-        }
-      });
-    </script>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
