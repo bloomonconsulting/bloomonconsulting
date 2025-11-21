@@ -524,19 +524,23 @@ window.addEventListener('scroll', debouncedScroll);
 
 document.addEventListener('DOMContentLoaded', () => {
   const CONSULT_LABEL = 'Book your free consultation call';
+  const CONSULT_URL =
+    'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true';
+
+  // 1. Make every consult button consistent and functional
   document.querySelectorAll('.consult-btn').forEach((btn) => {
     btn.textContent = CONSULT_LABEL;
+    btn.href = CONSULT_URL;
+    btn.target = '_blank';
+    btn.rel = 'noopener noreferrer';
   });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-  // existing consult button code...
-
-  // make value pills clickable to toggle definition (for touch devices)
+  // 2. Values pills: toggle definitions on click (keep this for your values section)
   document.querySelectorAll('.value-pill').forEach((pill) => {
     pill.addEventListener('click', () => {
       pill.classList.toggle('is-open');
     });
   });
-});
 
+  // 3. (Optional) hamburger menu logic, if you had it before, can stay here too
+});
