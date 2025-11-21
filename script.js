@@ -522,48 +522,14 @@ const debouncedScroll = debounce(() => {
 
 window.addEventListener('scroll', debouncedScroll);
 
-// ===== Values Flower Interaction =====
-document.addEventListener("DOMContentLoaded", () => {
-    const detailTitle = document.getElementById("values-detail-title");
-    const detailText = document.getElementById("values-detail-text");
-    const petals = document.querySelectorAll(".values-flower [data-value]");
+document.addEventListener('DOMContentLoaded', () => {
+  // existing consult button code...
 
-    const valuesMap = {
-        you: {
-            title: "You",
-            text: "You are at the heart of the work. Together we design processes that reflect your values, support how you work best, and bring structure and calm to your business."
-        },
-        kindness: {
-            title: "Kindness",
-            text: "The foundation of everything I do. Treating people with care and support."
-        },
-        equity: {
-            title: "Equity",
-            text: "Providing what you need. Growth starts wherever you are planted."
-        },
-        transparency: {
-            title: "Transparency",
-            text: "Straightforward and honest at every stage, with the goal of fewer misunderstandings."
-        },
-        efficiency: {
-            title: "Efficiency",
-            text: "If it can be smoother, why shouldn’t it be? I look for ways to reduce friction and overwhelm."
-        }
-    };
-
-    function updateValue(key) {
-        detailTitle.textContent = valuesMap[key].title;
-        detailText.textContent = valuesMap[key].text;
-    }
-
-    petals.forEach((petal) => {
-        const key = petal.dataset.value;
-        petal.addEventListener("mouseenter", () => updateValue(key));
-        petal.addEventListener("focus", () => updateValue(key));
+  // make value pills clickable to toggle definition (for touch devices)
+  document.querySelectorAll('.value-pill').forEach((pill) => {
+    pill.addEventListener('click', () => {
+      pill.classList.toggle('is-open');
     });
-
-    // Default view
-    updateValue("you");
+  });
 });
-
 
