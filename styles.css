@@ -30,39 +30,10 @@ body {
     line-height: 1.6;
 }
 
-/* ==============================
-   Containers
-============================== */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
-}
-
-/* ==============================
-   Global Sections & Typography
-============================== */
-.section {
-    padding: 5rem 0;
-}
-
-.section + .section {
-    border-top: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.section-title {
-    font-size: 2.1rem;
-    color: var(--text-dark);
-    margin-bottom: 0.75rem;
-    text-align: center;
-}
-
-.section-subtitle {
-    max-width: 700px;
-    margin: 0.5rem auto 0;
-    color: var(--text-light);
-    font-size: 1.05rem;
-    text-align: center;
 }
 
 /* ==============================
@@ -80,18 +51,28 @@ body {
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 .logo-text {
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--secondary-color);
+}
+
+.logo a,
+.logo-text,
+.logo a:visited,
+.logo a:focus,
+.logo a:hover {
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
 }
 
 .nav-menu {
@@ -101,7 +82,7 @@ body {
 }
 
 .nav-link {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
 }
@@ -111,7 +92,6 @@ body {
     padding-bottom: 2px;
 }
 
-/* Mobile nav toggle */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -123,25 +103,32 @@ body {
     width: 22px;
     height: 2px;
     background: #ffffff;
-    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 /* ==============================
-   HERO — ORIGINAL (C1)
+   HERO (C1 Original + Overlay A)
 ============================== */
 .hero {
-    min-height: 80vh;           /* original height */
+    min-height: 80vh;
     width: 100vw;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
     overflow: hidden;
-    padding-top: 80px;          /* fixed navbar offset */
+    padding-top: 80px;
     color: white;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+}
+
+/* Soft dark overlay */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: 1;
 }
 
 .hero-video-wrapper {
@@ -149,23 +136,20 @@ body {
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
     overflow: hidden;
+    z-index: 0;
 }
 
 .hero-video {
     width: 100%;
     height: 100%;
-    object-fit: cover;          /* original behavior */
+    object-fit: cover;
     object-position: center;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-}
-
-.hero-content {
     max-width: 680px;
     padding: 1.5rem;
 }
@@ -186,71 +170,75 @@ body {
 }
 
 /* ==============================
-   PAGE HEADERS (About & Services)
+   ABOUT PAGE
 ============================== */
-.page-header {
-    padding: 7rem 0 4rem;
-    background: var(--primary-color);
+.about-header {
+    margin-top: 80px;
+    padding: 6rem 0 5rem;
+    background: linear-gradient(
+        135deg,
+        #006D77 0%,
+        #83C5BE 60%,
+        #EAF4F3 100%
+    );
     color: white;
     text-align: center;
-    margin-top: 64px; /* make room for fixed nav */
 }
 
-.page-title {
+.about-header h1 {
     font-size: 2.4rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
-.page-subtitle {
-    font-size: 1.1rem;
+.about-header p {
+    max-width: 700px;
+    margin: 0.5rem auto 0;
+    font-size: 1.15rem;
     opacity: 0.9;
 }
 
-/* About header overrides with image */
-.about-page-header {
-    background: url("about-header.png") no-repeat center/cover;
-    padding: 8rem 0 6rem;
-    color: white;
-    text-align: center;
-    margin-top: 64px; /* ensure not under nav */
+.about-body {
+    background: #F7FAF9;
+    padding: 5rem 0;
 }
 
-/* About page content */
 .about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    max-width: 800px;
-    margin: 3rem auto 0;
-    padding: 0 1.5rem;
+    max-width: 780px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.75;
 }
 
-.about-text p + p {
-    margin-top: 1rem;
+.about-content p + p {
+    margin-top: 1.4rem;
 }
 
 /* ==============================
-   Bloom Gradient Section
+   Bloom Section (Option B Rich Teal)
 ============================== */
 .bloom-gradient {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #d7f4ef 0%, #fef3d4 50%, #ffe0a3 100%);
+    background: linear-gradient(
+        135deg,
+        rgba(0, 109, 119, 0.12) 0%,
+        rgba(131, 197, 190, 0.22) 50%,
+        rgba(255, 183, 3, 0.10) 100%
+    );
     text-align: center;
 }
 
 .bloom-list {
     list-style: none;
     margin: 2.5rem auto 0;
-    padding: 0;
     max-width: 720px;
+    padding: 0;
 }
 
 .bloom-list li {
     display: flex;
     gap: 1rem;
-    align-items: flex-start;
-    font-size: 1.1rem;
     padding: 1.2rem 0;
+    font-size: 1.1rem;
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
@@ -262,35 +250,6 @@ body {
     content: "✿";
     font-size: 1.7rem;
     color: var(--secondary-color);
-    line-height: 1;
-}
-
-/* ==============================
-   Services Page Grid
-============================== */
-.what-we-do-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.what-we-do-item {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow-sm);
-}
-
-.what-we-do-item h3 {
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-}
-
-.service-price {
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
 }
 
 /* ==============================
@@ -298,45 +257,84 @@ body {
 ============================== */
 .cta-section {
     padding: 6rem 0;
-    text-align: center;
     background: var(--primary-light);
+    text-align: center;
 }
 
-.cta-content h2 {
+.cta-section h2 {
     color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: 2rem;
 }
 
-.cta-content p {
+.cta-section p {
     margin-bottom: 2rem;
     font-size: 1.1rem;
 }
 
 /* ==============================
-   Footer
+   Footer (Gradient + White Links)
 ============================== */
+.footer {
+    padding: 4rem 0 2.5rem;
+    background: linear-gradient(
+        135deg,
+        #006D77 0%,
+        #83C5BE 45%,
+        #FFB703 100%
+    );
+    color: white;
+}
+
 .footer .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
 
-.footer {
-    padding: 4rem 0;
-    background: var(--primary-color);
-    color: white;
-}
-
 .footer-content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.footer-section p {
+    max-width: 350px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* FORCE ALL FOOTER LINKS WHITE */
+.footer-section ul li a,
+.footer-section ul li a:visited,
+.footer-section ul li a:active,
+.footer-section ul li a:hover,
+.footer-section ul li a:focus {
+    color: #ffffff !important;
+    text-decoration: none !important;
 }
 
 .footer-bottom {
     text-align: center;
-    margin-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 
 /* ==============================
@@ -347,9 +345,8 @@ body {
     color: white;
     padding: 0.85rem 2rem;
     border-radius: 50px;
-    text-decoration: none;
-    display: inline-block;
     font-weight: 600;
+    text-decoration: none;
     transition: 0.3s ease;
 }
 
@@ -386,10 +383,7 @@ body {
 .fade-in.delay-5 { animation-delay: 0.8s; }
 
 @keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==============================
@@ -408,11 +402,10 @@ body {
         right: 0;
         background: var(--primary-color);
         flex-direction: column;
-        align-items: flex-start;
         padding: 1rem 1.5rem;
+        display: none;
         gap: 1rem;
         box-shadow: var(--shadow-md);
-        display: none;
     }
 
     .nav-menu.active {
@@ -428,12 +421,7 @@ body {
     }
 }
 
-/* ==============================
-   Mobile Adjustments
-============================== */
 @media (max-width: 480px) {
-
-    /* hide hero video on tiny phones, use gradient fallback */
     .hero-video {
         display: none;
     }
