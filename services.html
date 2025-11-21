@@ -9,8 +9,8 @@
     <meta name="author" content="Bloom On Consulting">
     <meta name="robots" content="index, follow">
 
-    <link rel="stylesheet" href="styles.css?v=new">
-    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="styles.css?v=new" />
+    <link rel="stylesheet" href="fonts.css" />
 </head>
 
 <body>
@@ -45,56 +45,49 @@
     </section>
 
 
-    <!-- ================= SERVICES GRID ================= -->
-   <section class="services-section">
-    <div class="services-grid">
+    <!-- ================= SERVICES CARDS ================= -->
+    <section class="services-section">
+        <div class="services-grid">
 
-        <!-- CARD 1 -->
-        <div class="service-card">
-            <h3>The Full System Build</h3>
-            <p class="service-price">Starting at $3,000</p>
-            <p>
-                Complete package to either revamp or build your operations from scratch.
-                We go from assessment to a fully automated business. This includes building
-                your single hub, automating your admin, and training you and your team.
-            </p>
-            <a href="services.html" class="btn btn-primary consult-btn">
-    Book your free consultation call
-</a>
-            </a>
-        </div>
+            <div class="service-card">
+                <h3>The Full System Build</h3>
+                <p class="service-price">Starting at $3,000</p>
+                <p>
+                    Complete package to either revamp or build your operations from scratch.
+                    We go from assessment to a fully automated business. This includes building your
+                    single hub, automating your admin, and training you and your team.
+                </p>
+                <a href="#" class="btn btn-primary consult-btn">
+                    Book your free consultation call
+                </a>
+            </div>
 
-        <!-- CARD 2 -->
-        <div class="service-card">
-            <h3>Ongoing Operations Support</h3>
-            <p class="service-price">$150/month + $40/hr</p>
-            <p>
-                For the business that needs a long-term partner. The monthly fee gives you
-                priority access and a strategy call.
-            </p>
-           <a href="services.html" class="btn btn-primary consult-btn">
-    Book your free consultation call
-</a>
+            <div class="service-card">
+                <h3>Ongoing Operations Support</h3>
+                <p class="service-price">$150/month + $40/hr</p>
+                <p>
+                    For the business that needs a long-term partner. The monthly fee gives you priority
+                    access and a strategy call.
+                </p>
+                <a href="#" class="btn btn-primary consult-btn">
+                    Book your free consultation call
+                </a>
+            </div>
 
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="service-card">
-            <h3>Hourly Consulting</h3>
-            <p class="service-price">$80/hr</p>
-            <p>
-                For the business that isn't ready for a full retainer but needs a
-                one-off strategy session, a system audit, or help with a small,
-                defined project.
-            </p>
-            <a href="services.html" class="btn btn-primary consult-btn">
-    Book your free consultation call
-</a>
+            <div class="service-card">
+                <h3>Hourly Consulting</h3>
+                <p class="service-price">$80/hr</p>
+                <p>
+                    For the business that isn't ready for a full retainer but needs a one-off strategy
+                    session, a system audit, or help with a small, defined project.
+                </p>
+                <a href="#" class="btn btn-primary consult-btn">
+                    Book your free consultation call
+                </a>
+            </div>
 
         </div>
-
-    </div>
-</section>
+    </section>
 
 
     <!-- ================= CTA SECTION ================= -->
@@ -103,8 +96,8 @@
             <div class="cta-content fade-in">
                 <h2>Ready for a More Sustainable Business?</h2>
                 <p>Let’s go from too much to do to everything in flow.</p>
-                <a href="services.html" class="btn btn-primary btn-large">
-                    <span>Book your free consultation call</span>
+                <a href="#" class="btn btn-primary btn-large consult-btn">
+                    Book your free consultation call
                 </a>
             </div>
         </div>
@@ -137,6 +130,26 @@
 
         </div>
     </footer>
+
+
+    <!-- ================= GOOGLE CALENDAR (SHARED) ================= -->
+    <button id="google-booking-trigger" style="opacity:0; pointer-events:none; position:absolute;"></button>
+
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet" />
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <script>
+      window.addEventListener('load', function () {
+        var target = document.getElementById('google-booking-trigger');
+        if (target && window.calendar && calendar.schedulingButton) {
+          calendar.schedulingButton.load({
+            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
+            color: '#039BE5',
+            label: 'Book your free consultation call',
+            target: target
+          });
+        }
+      });
+    </script>
 
     <script src="script.js"></script>
 </body>
