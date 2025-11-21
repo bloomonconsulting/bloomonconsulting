@@ -167,6 +167,7 @@ img, video, iframe {
 }
 
 /* ===== Hero Section ===== */
+
 /* ===== Hero Section ===== */
 .hero {
     min-height: 100vh;
@@ -218,6 +219,26 @@ img, video, iframe {
 }
 
 /* Button styles were unchanged */
+
+/* Responsive hero sizing */
+@media (max-width: 480px) {
+    .hero {
+        min-height: 80vh;
+        padding-top: 60px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-video {
+        display: none;
+    }
+
+    .hero-video-wrapper {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    }
+}
 
 /* Responsive hero sizing */
 @media (max-width: 480px) {
