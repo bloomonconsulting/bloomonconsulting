@@ -218,11 +218,12 @@ ul {
 /* ==============================
    ABOUT HEADER (slim, image)
 ============================== */
-.about-header {
+.about-header,
+.values-header {
     width: 100%;
-    min-height: 230px;
-    padding: 4rem 1.5rem 3rem;
-    margin-top: 80px;
+    min-height: 280px;
+    padding: 5rem 1.5rem 4rem;
+    margin-top: 0;
     background-image: url("about-header-bg.png");
     background-size: cover;
     background-position: center;
@@ -233,6 +234,14 @@ ul {
     justify-content: center;
     text-align: center;
 }
+
+.about-header h1,
+.values-header h2 {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
 
 .about-header h1 {
     color: #ffffff;
@@ -247,7 +256,11 @@ ul {
    ABOUT CONTENT
 ============================== */
 .about-body {
-    background: #F7FAF9;
+    background: linear-gradient(
+        180deg,
+        #D4EEEA 0%,   /* soft teal */
+        #F7FAF9 55%   /* fades into light */
+    );
     padding: 4rem 0 4rem;
 }
 
@@ -265,7 +278,11 @@ ul {
    VALUES SECTION (big whimsical curves)
 ============================== */
 .values-organic-section {
-    background: var(--cream);
+    background: linear-gradient(
+        180deg,
+        #FDE9C3 0%,   /* warm, soft mustard-cream */
+        #FDFBF5 100%
+    );
     padding: 6rem 0 6rem;
 }
 
