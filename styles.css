@@ -172,149 +172,102 @@ body {
 /* ==============================
    ABOUT PAGE
 ============================== */
-.about-header {
-    margin-top: 80px;
-    padding: 6rem 0 5rem;
-    background: linear-gradient(
-        135deg,
-        #006D77 0%,
-        #83C5BE 60%,
-        #EAF4F3 100%
-    );
-    color: white;
-    text-align: center;
-}
-
-.about-header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.about-header p {
-    max-width: 700px;
-    margin: 0.5rem auto 0;
-    font-size: 1.15rem;
-    opacity: 0.9;
-}
-
 .about-body {
     background: #F7FAF9;
-    padding: 5rem 0;
+    padding: 6rem 0 4rem;
+    margin-top: 80px; /* space for fixed navbar */
 }
 
-.about-content {
+.about-body .about-content {
     max-width: 780px;
     margin: 0 auto;
     font-size: 1.05rem;
     line-height: 1.75;
+    color: var(--text-light);
 }
 
-.about-content p + p {
+.about-body .about-content p + p {
     margin-top: 1.4rem;
 }
 /* ==============================
-   VALUES FLOWER SECTION
+   SECTION HEADER CHIP
+   (used for About + Values)
+============================== */
+.section-chip {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 2.5rem;
+}
+
+.section-chip h1,
+.section-chip h2 {
+    margin: 0;
+    padding: 0.75rem 2.5rem;
+    border-radius: 999px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        #006D77 0%,
+        #83C5BE 45%,
+        #FFB703 100%
+    );
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.02em;
+}
+/* ==============================
+   ORGANIC VALUES SECTION
 ============================== */
 
-.values-section {
-    background: #F2FAF8;
-    padding: 6rem 0;
+.values-organic-section {
+    background: #FDFBF5; /* warm cream */
+    padding: 6rem 0 6rem;
 }
 
-.values-layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5rem;
+.values-organic-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    text-align: center;
 }
 
-/* ---- Flower Container ---- */
-.values-flower {
-    position: relative;
-    width: 260px;
-    height: 260px;
+.value-block {
+    margin-bottom: 4.5rem;
 }
 
-/* ---- Base Petal Styling ---- */
-.flower-petal {
-    position: absolute;
-    width: 110px;
-    height: 50px;
-    border-radius: 999px;
-    border: none;
-    cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    background: #ffffff;
-    box-shadow: var(--shadow-sm);
-    transition: 0.25s ease;
+.value-title {
+    font-size: 1.8rem; /* smaller than your mockup */
+    font-weight: 700;
+    color: #073B4C;
+    margin-bottom: 1rem;
+    font-family: 'Georgia', serif; /* or your serif of choice */
 }
 
-/* Hover Effect */
-.flower-petal:hover,
-.flower-petal:focus-visible {
-    background: #FFF4D5;
-    transform: scale(1.08);
-    box-shadow: var(--shadow-md);
-    outline: none;
+.value-text {
+    font-size: 1.18rem;
+    line-height: 1.6;
+    color: #3A3A3A;
+    max-width: 620px;
+    margin: 0 auto;
 }
 
-/* ---- 5-Petal Geometry (YOU at top) ---- */
-
-/* Petal 1 (YOU — top) */
-.petal-1 {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+/* Mustard accent curves */
+.value-accent {
+    height: 6px;
+    width: 160px;
+    margin: 0 auto 1.8rem;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
-/* Petal 2 (Kindness — upper right) */
-.petal-2 {
-    top: 28%;
-    right: 5%;
-    transform: rotate(20deg);
+.accent-1,
+.accent-3 {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="12"><path d="M5 7 Q 40 2 80 7 T 155 7" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
 }
-
-/* Petal 3 (Equity — lower right) */
-.petal-3 {
-    bottom: 0;
-    right: 20%;
-    transform: rotate(40deg);
-}
-
-/* Petal 4 (Transparency — lower left) */
-.petal-4 {
-    bottom: 0;
-    left: 20%;
-    transform: rotate(-40deg);
-}
-
-/* Petal 5 (Efficiency — upper left) */
-.petal-5 {
-    top: 28%;
-    left: 5%;
-    transform: rotate(-20deg);
-}
-
-/* ---- Description Box ---- */
-.values-detail {
-    background: #ffffff;
-    padding: 1.75rem 2rem;
-    border-radius: 16px;
-    box-shadow: var(--shadow-sm);
-    max-width: 420px;
-    text-align: left;
-}
-
-.values-detail-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.values-detail-text {
-    font-size: 1rem;
-    color: var(--text-light);
+.accent-2,
+.accent-4 {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="12"><path d="M5 5 Q 50 12 80 6 T 155 6" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
 }
 
 /* ==============================
