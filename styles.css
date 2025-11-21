@@ -168,7 +168,7 @@ img, video, iframe {
 
 /* ===== Hero Section ===== */
 .hero {
-    min-height: 80vh; /* REDUCED from 100vh */
+    min-height: 60vh; /* shorter hero */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -179,7 +179,9 @@ img, video, iframe {
     position: relative;
     overflow: hidden;
     padding-top: 80px;
+    padding-bottom: 40px;
 }
+
 
 .hero-video-wrapper {
     position: absolute;
@@ -194,9 +196,11 @@ img, video, iframe {
 .hero-video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;        /* show the entire video */
     object-position: center;
+    background-color: var(--primary-color); /* fills any letterboxing */
 }
+
 
 @media (max-width: 480px) {
     .hero-video {
@@ -570,6 +574,59 @@ img, video, iframe {
     margin-bottom: 1rem;
 }
 
+/* ===== Bloom Gradient Section ===== */
+
+.bloom-gradient {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #d7f4ef 0%, #fef3d4 50%, #ffe0a3 100%);
+}
+
+.bloom-gradient .section-title,
+.bloom-gradient .section-subtitle {
+    text-align: center;
+}
+
+/* flower bullet list */
+.bloom-list {
+    list-style: none;
+    padding-left: 0;
+    max-width: 720px;
+    margin: 2rem auto 0;
+}
+
+.bloom-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.9rem 0 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 1.05rem;
+    color: var(--text-light);
+}
+
+.bloom-list li:last-child {
+    border-bottom: none;
+}
+
+.bloom-list li::before {
+    content: "✿";
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--secondary-color); /* your golden accent */
+    margin-top: 0.15rem;
+}
+
+/* responsive tweaks */
+@media (max-width: 768px) {
+    .bloom-list {
+        margin-top: 1.5rem;
+    }
+
+    .bloom-list li {
+        font-size: 1rem;
+    }
+}
 
 /* ===== Contact Page ===== */
 .contact-wrapper {
