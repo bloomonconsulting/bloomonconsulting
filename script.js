@@ -522,53 +522,48 @@ const debouncedScroll = debounce(() => {
 
 window.addEventListener('scroll', debouncedScroll);
 
-// ===== Values Flower Interaction (About Page) =====
-document.addEventListener('DOMContentLoaded', () => {
-    const detailTitle = document.getElementById('values-detail-title');
-    const detailText = document.getElementById('values-detail-text');
-    const valueButtons = document.querySelectorAll('.values-flower [data-value]');
-
-    if (!detailTitle || !detailText || !valueButtons.length) return;
+// ===== Values Flower Interaction =====
+document.addEventListener("DOMContentLoaded", () => {
+    const detailTitle = document.getElementById("values-detail-title");
+    const detailText = document.getElementById("values-detail-text");
+    const petals = document.querySelectorAll(".values-flower [data-value]");
 
     const valuesMap = {
+        you: {
+            title: "You",
+            text: "You are at the heart of the work. Together we design processes that reflect your values, support how you work best, and bring structure and calm to your business."
+        },
         kindness: {
-            title: 'Kindness',
-            text: 'The foundation of everything I do. Treating people with care and support.'
+            title: "Kindness",
+            text: "The foundation of everything I do. Treating people with care and support."
         },
         equity: {
-            title: 'Equity',
-            text: 'Providing what you need. Growth starts wherever you are planted.'
+            title: "Equity",
+            text: "Providing what you need. Growth starts wherever you are planted."
         },
         transparency: {
-            title: 'Transparency',
-            text: 'Straightforward and honest at every stage, with the goal of fewer misunderstandings.'
+            title: "Transparency",
+            text: "Straightforward and honest at every stage, with the goal of fewer misunderstandings."
         },
         efficiency: {
-            title: 'Efficiency',
-            text: 'If it can be smoother, why shouldn’t it be? I look for ways to reduce friction and overwhelm.'
-        },
-        bloom: {
-            title: 'Bloom',
-            text: 'You and your business are at the center of the work. Together we design processes that reflect your values, support how you work best, and bring structure and calm to your days.'
+            title: "Efficiency",
+            text: "If it can be smoother, why shouldn’t it be? I look for ways to reduce friction and overwhelm."
         }
     };
 
-    function setValue(key) {
-        const value = valuesMap[key];
-        if (!value) return;
-        detailTitle.textContent = value.title;
-        detailText.textContent = value.text;
+    function updateValue(key) {
+        detailTitle.textContent = valuesMap[key].title;
+        detailText.textContent = valuesMap[key].text;
     }
 
-    valueButtons.forEach(button => {
-        const key = button.dataset.value;
-
-        button.addEventListener('mouseenter', () => setValue(key));
-        button.addEventListener('focus', () => setValue(key));
+    petals.forEach((petal) => {
+        const key = petal.dataset.value;
+        petal.addEventListener("mouseenter", () => updateValue(key));
+        petal.addEventListener("focus", () => updateValue(key));
     });
 
-    // Set initial state
-    setValue('kindness');
+    // Default view
+    updateValue("you");
 });
 
 
