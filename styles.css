@@ -307,63 +307,68 @@ ul {
 /* ==============================
    VALUES SECTION (cascading teal pills)
 ============================== */
+/* ==============================
+   VALUES SECTION (cascading teal pills)
+============================== */
 .values-organic-section {
-    background: #FDFBF5;
+    background: #FDE9C3; /* warm band behind values */
     padding: 5rem 0 6rem;
 }
 
 .values-organic-container {
-    max-width: 720px;
+    max-width: 960px;       /* wider overall */
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
 }
 
 .values-organic-container h2 {
     text-align: center;
-    font-size: 2.3rem;
-    margin-bottom: 2.5rem;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
 }
 
+/* stack of cascading pills */
 .values-cascade {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1.4rem;
 }
 
 /* base pill style */
 .value-pill {
     position: relative;
     border: none;
-    background: var(--primary-color);
-    color: var(--secondary-color);
+    background: var(--primary-color);         /* teal */
+    color: var(--secondary-color);            /* mustard text */
     font-family: inherit;
     text-align: left;
-    padding: 0.9rem 1.4rem;
-    border-radius: 999px 0 0 999px;
+    padding: 1rem 1.8rem;
+    border-radius: 999px 0 0 999px;           /* rounded left, squared right */
     cursor: pointer;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
     outline: none;
     width: 100%;
-    max-width: 540px;
 }
 
-/* cascade offsets + different lengths */
-.pill-1 { margin-left: 0;           max-width: 540px; }
-.pill-2 { margin-left: 1.5rem;      max-width: 520px; }
-.pill-3 { margin-left: 3rem;        max-width: 500px; }
-.pill-4 { margin-left: 4.5rem;      max-width: 480px; }
+/* cascade offsets */
+.pill-1 { margin-left: 0; }
+.pill-2 { margin-left: 1.75rem; }
+.pill-3 { margin-left: 3.5rem; }
+.pill-4 { margin-left: 5.25rem; }
 
 .pill-label {
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
-/* definition is hidden by default */
+/* definition hidden by default */
 .pill-definition {
     display: block;
-    margin-top: 0.4rem;
-    font-size: 0.96rem;
+    margin-top: 0.45rem;
+    font-size: 0.98rem;
     color: #FFFAF1;
     max-height: 0;
     opacity: 0;
@@ -371,13 +376,13 @@ ul {
     transition: max-height 0.22s ease, opacity 0.22s ease;
 }
 
-/* hover/focus/active state */
+/* hover/focus/click open state */
 .value-pill:hover,
 .value-pill:focus-visible,
 .value-pill.is-open {
     background: #055b63;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(0,0,0,0.22);
 }
 
 .value-pill:hover .pill-definition,
@@ -386,6 +391,18 @@ ul {
     max-height: 200px;
     opacity: 1;
 }
+
+/* small-screen tweak: reduce offset so pills don't disappear off edge */
+@media (max-width: 700px) {
+    .values-organic-container {
+        padding: 0 1.2rem;
+    }
+    .pill-1 { margin-left: 0; }
+    .pill-2 { margin-left: 0.75rem; }
+    .pill-3 { margin-left: 1.5rem; }
+    .pill-4 { margin-left: 2.25rem; }
+}
+
 
 /* ==============================
    SERVICES HEADER (image)
