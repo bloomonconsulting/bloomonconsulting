@@ -102,202 +102,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== EmailJS Configuration =====
-// IMPORTANT: Replace these with your own EmailJS credentials
-// Get them from https://www.emailjs.com/ after signing up
-const EMAILJS_CONFIG = {
-    PUBLIC_KEY: 'YOUR_PUBLIC_KEY',      // Your EmailJS Public Key
-    SERVICE_ID: 'YOUR_SERVICE_ID',      // Your EmailJS Service ID
-    TEMPLATE_ID: 'YOUR_TEMPLATE_ID'     // Your EmailJS Template ID
-};
 
-// ===== Contact Form Handling =====
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', handleFormSubmit);
-}
-
-function handleFormSubmit(e) {
-    e.preventDefault();
-    
-    // Get form elements
-    const form = e.target;
-    const submitBtn = document.getElementById('submit-btn');
-    const formMessage = document.getElementById('form-message');
-    const btnText = submitBtn.querySelector('.btn-text');
-    const btnLoading = submitBtn.querySelector('.btn-loading');
-    
-    // Clear previous messages
-    clearErrors();
-    formMessage.className = 'form-message';
-    formMessage.textContent = '';
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        phone: document.getElementById('phone').value.trim() || 'Not provided',
-        business: document.getElementById('business').value.trim() || 'Not provided',
-        industry: document.getElementById('industry').value || 'Not specified',
-        service: document.getElementById('service').value || 'Not specified',
-        message: document.getElementById('message').value.trim()
-    };
-    
-    // Validate form
-    if (!validateForm(formData)) {
-        return;
-    }
-    
-    // Check if EmailJS is configured
-    if (EMAILJS_CONFIG.PUBLIC_KEY === 'YOUR_PUBLIC_KEY' || 
-        EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID' || 
-        EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID') {
-        formMessage.className = 'form-message error';
-        formMessage.textContent = 'Email service is not configured. Please contact the website administrator.';
-        return;
-    }
-    
-    // Show loading state
-    submitBtn.disabled = true;
-    btnText.style.display = 'none';
-    btnLoading.style.display = 'inline';
-    
-    // Prepare email template parameters
-    const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        business: formData.business,
-        industry: formData.industry,
-        service: formData.service,
-        message: formData.message,
-        to_name: 'Bloom On Consulting Team'
-    };
-    
-    // Send email using EmailJS
-    emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams
-    )
-    .then(() => {
-        // Success
-        submitBtn.disabled = false;
-        btnText.style.display = 'inline';
-        btnLoading.style.display = 'none';
-        
-        formMessage.className = 'form-message success';
-        formMessage.textContent = 'Thank you! Your message has been sent successfully. We will get back to you within 24-48 hours.';
-        
-        // Reset form
-        form.reset();
-        
-        // Scroll to message
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        
-        // Hide message after 5 seconds
-        setTimeout(() => {
-            formMessage.style.opacity = '0';
-            setTimeout(() => {
-                formMessage.className = 'form-message';
-                formMessage.textContent = '';
-                formMessage.style.opacity = '1';
-            }, 300);
-        }, 5000);
-    })
-    .catch((error) => {
-        // Error handling
-        submitBtn.disabled = false;
-        btnText.style.display = 'inline';
-        btnLoading.style.display = 'none';
-        
-        formMessage.className = 'form-message error';
-        formMessage.textContent = 'Sorry, there was an error sending your message. Please try again later or contact us directly at info@bloomonconsulting.com';
-        
-        console.error('EmailJS Error:', error);
-        
-        // Scroll to message
-        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-}
-
-function validateForm(data) {
-    let isValid = true;
-    
-    // Validate name
-    if (!data.name || data.name.length < 2) {
-        showError('name', 'Please enter your full name (at least 2 characters)');
-        isValid = false;
-    }
-    
-    // Validate email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!data.email || !emailRegex.test(data.email)) {
-        showError('email', 'Please enter a valid email address');
-        isValid = false;
-    }
-    
-    // Validate phone (optional but if provided, should be valid)
-    if (data.phone) {
-        const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-        if (!phoneRegex.test(data.phone) || data.phone.length < 10) {
-            showError('phone', 'Please enter a valid phone number');
-            isValid = false;
-        }
-    }
-    
-    // Validate message
-    if (!data.message || data.message.length < 10) {
-        showError('message', 'Please enter a detailed message (at least 10 characters)');
-        isValid = false;
-    }
-    
-    return isValid;
-}
-
-function showError(fieldName, message) {
-    const field = document.getElementById(fieldName);
-    const errorElement = document.getElementById(`${fieldName}-error`);
-    
-    if (field && errorElement) {
-        field.style.borderColor = '#ef4444';
-        errorElement.textContent = message;
-    }
-}
-
-function clearErrors() {
-    const errorMessages = document.querySelectorAll('.error-message');
-    const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea, .contact-form select');
-    
-    errorMessages.forEach(el => {
-        el.textContent = '';
-    });
-    
-    formInputs.forEach(input => {
-        input.style.borderColor = '';
-    });
-}
-
-// ===== FAQ Accordion =====
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-    const question = item.querySelector('.faq-question');
-    if (question) {
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Close all FAQ items
-            faqItems.forEach(faqItem => {
-                faqItem.classList.remove('active');
-            });
-            
-            // Open clicked item if it wasn't active
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        });
-    }
-});
 
 // ===== Number Counter Animation (for stats) =====
 function animateValue(element, start, end, duration) {
@@ -388,57 +193,7 @@ function createScrollToTopButton() {
 // Initialize scroll to top button
 createScrollToTopButton();
 
-// ===== Form Input Real-time Validation =====
-const formInputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
-formInputs.forEach(input => {
-    input.addEventListener('blur', () => {
-        validateField(input);
-    });
-    
-    input.addEventListener('input', () => {
-        // Clear error on input
-        const errorElement = document.getElementById(`${input.id}-error`);
-        if (errorElement) {
-            errorElement.textContent = '';
-            input.style.borderColor = '';
-        }
-    });
-});
 
-function validateField(field) {
-    const fieldName = field.id;
-    const value = field.value.trim();
-    const errorElement = document.getElementById(`${fieldName}-error`);
-    
-    if (!errorElement) return;
-    
-    switch (fieldName) {
-        case 'name':
-            if (!value || value.length < 2) {
-                showError('name', 'Please enter your full name (at least 2 characters)');
-            }
-            break;
-        case 'email':
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!value || !emailRegex.test(value)) {
-                showError('email', 'Please enter a valid email address');
-            }
-            break;
-        case 'phone':
-            if (value) {
-                const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-                if (!phoneRegex.test(value) || value.length < 10) {
-                    showError('phone', 'Please enter a valid phone number');
-                }
-            }
-            break;
-        case 'message':
-            if (!value || value.length < 10) {
-                showError('message', 'Please enter a detailed message (at least 10 characters)');
-            }
-            break;
-    }
-}
 
 // ===== Video Background Error Handling =====
 const heroVideo = document.querySelector('.hero-video');
@@ -521,26 +276,21 @@ const debouncedScroll = debounce(() => {
 }, 10);
 
 window.addEventListener('scroll', debouncedScroll);
-
 document.addEventListener('DOMContentLoaded', () => {
-  const CONSULT_LABEL = 'Book your free consultation call';
-  const CONSULT_URL =
-    'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true';
+  // Mobile nav toggle
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
 
-  // 1. Make every consult button consistent and functional
-  document.querySelectorAll('.consult-btn').forEach((btn) => {
-    btn.textContent = CONSULT_LABEL;
-    btn.href = CONSULT_URL;
-    btn.target = '_blank';
-    btn.rel = 'noopener noreferrer';
-  });
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('is-open');
+    });
+  }
 
-  // 2. Values pills: toggle definitions on click (keep this for your values section)
+  // Values pills: toggle definition open/closed on click
   document.querySelectorAll('.value-pill').forEach((pill) => {
     pill.addEventListener('click', () => {
       pill.classList.toggle('is-open');
     });
   });
-
-  // 3. (Optional) hamburger menu logic, if you had it before, can stay here too
 });
