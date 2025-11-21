@@ -1,12 +1,12 @@
 /* ==============================
-   Google Font for Headings
-   (Body font Inter comes from fonts.css)
+   GOOGLE FONT FOR HEADINGS
+   (Inter is loaded separately via fonts.css)
 ============================== */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap');
 
 
 /* ==============================
-   Root Variables
+   ROOT VARIABLES
 ============================== */
 :root {
     --primary-color: #006D77;
@@ -26,7 +26,7 @@
 
 
 /* ==============================
-   Reset & Base
+   RESET & BASE STYLES
 ============================== */
 * {
     margin: 0;
@@ -36,14 +36,14 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: white;
+    background: #ffffff;
     color: var(--text-light);
-    line-height: 1.6;
+    line-height: 1.7;
     font-size: 17px;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lora', 'Inter', serif;
+    font-family: 'Lora', serif;
     color: var(--text-dark);
 }
 
@@ -59,16 +59,16 @@ ul {
 
 
 /* ==============================
-   Navbar
+   NAVIGATION
 ============================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999;
     padding: 1rem 0;
     background: var(--primary-color);
+    z-index: 999;
     box-shadow: var(--shadow-sm);
 }
 
@@ -105,36 +105,27 @@ ul {
     padding-bottom: 2px;
 }
 
-.hamburger {
-    display: none;
-}
-
 
 /* ==============================
-   HERO (Full-Screen Video Hero)
+   HERO (FULL VIDEO)
 ============================== */
 .hero {
-    height: 100vh;       /* full screen hero */
+    height: 100vh;
     width: 100vw;
+    padding-top: 80px;
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden;
     text-align: center;
-    padding-top: 80px;   /* space for fixed nav */
     color: white;
-    background: black;
+    overflow: hidden;
 }
 
 .hero-video-wrapper {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
+    z-index: -2;
 }
 
 .hero-video {
@@ -142,87 +133,96 @@ ul {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
 }
 
-/* dark overlay for readability */
+/* Readability overlay */
 .hero::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        rgba(0,0,0,0.35),
-        rgba(0,0,0,0.45)
-    );
+    background: rgba(0,0,0,0.45);
     z-index: -1;
 }
 
-/* HERO content */
 .hero-content {
-    position: relative;
+    max-width: 700px;
+    padding: 1rem;
     z-index: 2;
-    max-width: 800px;
-    padding: 1.5rem;
 }
 
 .hero-badge {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255,255,255,0.25);
     backdrop-filter: blur(6px);
     padding: 0.5rem 1rem;
     border-radius: 50px;
+    margin-bottom: 1.4rem;
     font-size: 0.95rem;
-    margin-bottom: 1.5rem;
 }
 
 .hero-title {
     font-size: 3.2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1.6rem;
     line-height: 1.15;
 }
 
 
 /* ==============================
-   Bloom / "Is Your Business Ready to Bloom" Section
+   BLOOM SECTION (Option B)
+   Custom SVG flower bullets
 ============================== */
-.section {
-    padding: 4rem 0;
-}
-
 .bloom-gradient {
-    background: white; /* you disliked previous gradients here */
+    padding: 6rem 0;
+    background: white;
 }
 
 .bloom-gradient .section-title {
-    text-align: left;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
 }
 
 .bloom-gradient .section-subtitle {
-    max-width: 900px;
-    margin-bottom: 1.5rem;
+    font-size: 1.08rem;
+    max-width: 800px;
+    margin-bottom: 2rem;
 }
 
 .bloom-list {
-    list-style: disc;
-    margin: 1.5rem 0 0;
-    padding-left: 1.5rem;
+    list-style: none;
+    padding-left: 0;
+    max-width: 700px;
 }
 
+/* Custom mustard line-art daisy bullet (18–20px) */
 .bloom-list li {
-    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1.08rem;
+    margin-bottom: 1.2rem;
+}
+
+.bloom-list li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g stroke="%23FFB703" stroke-width="2" fill="none" stroke-linecap="round"><circle cx="10" cy="10" r="2"/><path d="M10 2 L10 6"/><path d="M10 14 L10 18"/><path d="M2 10 L6 10"/><path d="M14 10 L18 10"/><path d="M4 4 L7 7"/><path d="M13 13 L16 16"/><path d="M4 16 L7 13"/><path d="M13 7 L16 4"/></g></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 
 /* ==============================
-   ABOUT PAGE HEADER (slim banner)
+   ABOUT HEADER (slim, image)
 ============================== */
 .about-header {
     width: 100%;
     min-height: 230px;
     padding: 4rem 1.5rem 3rem;
-    margin-top: 80px; /* under navbar */
-    background-image: url("about-header-bg.png"); /* update path if needed */
+    margin-top: 80px;
+    background-image: url("about-header-bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -237,8 +237,8 @@ ul {
     color: #ffffff;
     font-size: 2.6rem;
     font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
     letter-spacing: 0.03em;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -255,15 +255,14 @@ ul {
 }
 
 .about-body p {
-    margin-bottom: 1.5rem;
-    font-size: 1.02rem;
+    margin-bottom: 1.4rem;
+    font-size: 1.06rem;
 }
 
 
 /* ==============================
-   VALUES SECTION — Organic, Updated
+   VALUES SECTION (big whimsical curves)
 ============================== */
-
 .values-organic-section {
     background: var(--cream);
     padding: 6rem 0 6rem;
@@ -271,82 +270,73 @@ ul {
 
 .values-organic-container {
     max-width: 720px;
+    text-align: center;
     margin: 0 auto;
     padding: 0 1.5rem;
-    text-align: center;
 }
 
-/* Make "Values" clearly larger than the individual values */
 .values-organic-container h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.6rem;
     margin-bottom: 3.2rem;
 }
 
-/* Individual value blocks */
 .value-block {
-    margin-bottom: 4.5rem;
+    margin-bottom: 4.8rem;
 }
 
 .value-title {
-    font-size: 1.9rem;
-    font-weight: 700;
+    font-size: 1.85rem;
     margin-bottom: 0.8rem;
 }
 
 .value-text {
-    font-size: 1.08rem;
-    line-height: 1.7;
+    font-size: 1.1rem;
     max-width: 620px;
-    margin: 0 auto;
-    color: var(--text-light);
+    margin: 0.5rem auto 0;
+    line-height: 1.7;
 }
 
-/* Bold, more whimsical mustard curves */
+/* Large whimsical mustard swoops */
 .value-accent {
-    height: 10px;
-    width: 190px;
+    width: 260px;
+    height: 24px;
     margin: 0 auto 2rem;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-/* Each accent has a slightly different curve + horizontal offset
-   so they don't look copy-pasted and feel a bit whimsical. */
 .accent-1 {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="190" height="18"><path d="M5 12 Q 50 2 90 10 T 185 8" stroke="%23FFB703" stroke-width="6" fill="none" stroke-linecap="round"/></svg>');
-    transform: translateX(-30px);
+    background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="24"><path d="M5 16 Q80 4 140 14 T255 10" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
 }
 
 .accent-2 {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="190" height="18"><path d="M5 8 Q 40 16 90 6 T 185 11" stroke="%23FFB703" stroke-width="6" fill="none" stroke-linecap="round"/></svg>');
-    transform: translateX(25px) rotate(-1.5deg);
+    background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="24"><path d="M5 12 Q100 26 145 8 T255 15" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
 }
 
 .accent-3 {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="190" height="18"><path d="M5 9 Q 55 3 95 13 T 185 7" stroke="%23FFB703" stroke-width="6" fill="none" stroke-linecap="round"/></svg>');
-    transform: translateX(-15px) rotate(1deg);
+    background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="24"><path d="M5 14 Q65 2 125 18 T255 12" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
 }
 
 .accent-4 {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="190" height="18"><path d="M5 11 Q 45 18 95 5 T 185 10" stroke="%23FFB703" stroke-width="6" fill="none" stroke-linecap="round"/></svg>');
-    transform: translateX(35px);
+    background-image: url('data:image/svg+xml;utf8,\
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="24"><path d="M5 18 Q90 28 140 6 T255 16" stroke="%23FFB703" stroke-width="5" fill="none" stroke-linecap="round"/></svg>');
 }
 
 
 /* ==============================
-   SERVICES PAGE GRID + CARDS
+   SERVICES HEADER (image)
 ============================== */
-
 .services-header {
     width: 100%;
     min-height: 230px;
     padding: 4rem 1.5rem 3rem;
     margin-top: 80px;
-    background-image: url("services-header-bg.png"); /* update path if needed */
+    background-image: url("services-header-bg.png");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 
     display: flex;
     align-items: center;
@@ -358,12 +348,15 @@ ul {
     color: #ffffff;
     font-size: 2.6rem;
     font-weight: 700;
-    letter-spacing: 0.03em;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
 
+
+/* ==============================
+   SERVICES GRID + CARDS
+============================== */
 .services-section {
-    padding: 4.5rem 0 6rem;
+    padding: 5rem 0 6rem;
     background: #F7FAF9;
 }
 
@@ -378,7 +371,7 @@ ul {
 }
 
 .service-card {
-    background: #ffffff;
+    background: white;
     border-radius: 18px;
     padding: 2rem;
     box-shadow: var(--shadow-md);
@@ -393,18 +386,14 @@ ul {
 }
 
 .service-card p {
-    font-size: 1.02rem;
+    font-size: 1.05rem;
     margin-bottom: 1.25rem;
-}
-
-.service-card .btn-primary {
-    margin-top: auto;
-    width: fit-content;
+    line-height: 1.6;
 }
 
 
 /* ==============================
-   Buttons
+   BUTTONS
 ============================== */
 .btn-primary {
     background: var(--primary-color);
@@ -419,12 +408,12 @@ ul {
 
 .btn-primary:hover {
     background: var(--secondary-color);
-    color: #073B4C;
+    color: var(--text-dark);
 }
 
 
 /* ==============================
-   CTA Section
+   CTA SECTION
 ============================== */
 .section.cta-section {
     padding: 6rem 0;
@@ -445,7 +434,7 @@ ul {
 
 
 /* ==============================
-   Footer
+   FOOTER
 ============================== */
 .footer {
     padding: 4rem 0;
@@ -496,7 +485,7 @@ ul {
 
 
 /* ==============================
-   Animations
+   ANIMATIONS
 ============================== */
 .fade-in {
     opacity: 0;
@@ -504,23 +493,11 @@ ul {
     animation: fadeIn 0.9s ease forwards;
 }
 
-.fade-in-delay {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.9s ease forwards 0.3s;
-}
-
 .fade-up-delay {
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeIn 0.9s ease forwards 0.5s;
+    animation: fadeIn 0.9s ease forwards 0.4s;
 }
-
-.fade-in.delay-1 { animation-delay: 0.2s; }
-.fade-in.delay-2 { animation-delay: 0.35s; }
-.fade-in.delay-3 { animation-delay: 0.5s; }
-.fade-in.delay-4 { animation-delay: 0.65s; }
-.fade-in.delay-5 { animation-delay: 0.8s; }
 
 @keyframes fadeIn {
     to {
@@ -531,7 +508,7 @@ ul {
 
 
 /* ==============================
-   Responsive
+   RESPONSIVE
 ============================== */
 @media (max-width: 900px) {
     .hero-title {
@@ -540,24 +517,20 @@ ul {
 
     .services-grid {
         grid-template-columns: 1fr;
-        max-width: 540px;
+        max-width: 550px;
     }
 }
 
 @media (max-width: 480px) {
 
-    /* Hide hero video on tiny screens and use gradient instead */
     .hero-video {
         display: none;
-    }
-
-    .hero-video-wrapper {
-        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
     }
 
     .hero {
         height: 80vh;
         padding-top: 60px;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
     }
 
     .hero-title {
