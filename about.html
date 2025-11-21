@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>About - Bloom On Consulting</title>
-    <meta name="description" content="Learn more about Bloom On Consulting and the human-centered philosophy that guides my work with remote service providers.">
+    <title>Services - Bloom On Consulting</title>
+    <meta name="description" content="Explore human-centered operations services designed to support remote service providers through sustainable, streamlined processes.">
     <meta name="author" content="Bloom On Consulting">
     <meta name="robots" content="index, follow">
 
     <link rel="stylesheet" href="styles.css?v=new" />
-    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="fonts.css" />
 </head>
 
 <body>
@@ -26,8 +26,8 @@
 
             <ul class="nav-menu" id="nav-menu" role="menubar">
                 <li role="none"><a href="index.html" class="nav-link">Home</a></li>
-                <li role="none"><a href="about.html" class="nav-link active">About</a></li>
-                <li role="none"><a href="services.html" class="nav-link">Services</a></li>
+                <li role="none"><a href="about.html" class="nav-link">About</a></li>
+                <li role="none"><a href="services.html" class="nav-link active">Services</a></li>
             </ul>
 
             <div class="hamburger" id="hamburger">
@@ -39,82 +39,55 @@
     </nav>
 
 
-    <!-- ================= ABOUT HEADER ================= -->
-    <section class="about-header">
-        <h1>About</h1>
+    <!-- ================= SERVICES HEADER ================= -->
+    <section class="services-header">
+        <h1>Services</h1>
     </section>
 
 
-    <!-- ================= ABOUT BODY ================= -->
-   <section class="about-body">
-  <div class="container">
-    <div class="about-panel">
-      <p class="about-kicker">Human-centered operations, rooted in care.</p>
+    <!-- ================= SERVICES CARDS ================= -->
+    <section class="services-section">
+        <div class="services-grid">
 
-      <h2 class="about-heading">
-        Operations that feel like support, not another job on your list.
-      </h2>
+            <div class="service-card">
+                <h3>The Full System Build</h3>
+                <p class="service-price">Starting at $3,000</p>
+                <p>
+                    Complete package to either revamp or build your operations from scratch.
+                    We go from assessment to a fully automated business. This includes building your
+                    single hub, automating your admin, and training you and your team.
+                </p>
+                <a href="#" class="btn btn-primary consult-btn">
+                    Book your free consultation call
+                </a>
+            </div>
 
-      <p>
-        I believe the right processes can create ease and clarity. My work is rooted in
-        care for <span class="about-highlight">you</span>, your time, and your way of working.
-      </p>
+            <div class="service-card">
+                <h3>Ongoing Operations Support</h3>
+                <p class="service-price">$150/month + $40/hr</p>
+                <p>
+                    For the business that needs a long-term partner. The monthly fee gives you priority
+                    access and a strategy call.
+                </p>
+                <a href="#" class="btn btn-primary consult-btn">
+                    Book your free consultation call
+                </a>
+            </div>
 
-      <p>
-        With a background in social work, I bring empathy and intention into every part
-        of operations. I pay close attention to the details that make a process not only
-        function smoothly but also <span class="about-highlight">look and feel cohesive</span>.
-      </p>
+            <div class="service-card">
+                <h3>Hourly Consulting</h3>
+                <p class="service-price">$80/hr</p>
+                <p>
+                    For the business that isn't ready for a full retainer but needs a one-off strategy
+                    session, a system audit, or help with a small, defined project.
+                </p>
+                <a href="#" class="btn btn-primary consult-btn">
+                    Book your free consultation call
+                </a>
+            </div>
 
-      <p>
-        Whether you’re on your own or leading a small team, I’ll meet you where you are.
-        Together, we’ll design processes that reflect your values, support how you work
-        best, and bring both structure and calm to your business.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
-    <!-- ================= VALUES SECTION ================= -->
-  <section class="values-organic-section">
-  <div class="values-organic-container">
-    <h2>Values</h2>
-
-    <div class="values-cascade">
-      <button class="value-pill pill-1" type="button">
-        <span class="pill-label">Kindness</span>
-        <span class="pill-definition">
-          The foundation of everything I do. Treating people with care and support.
-        </span>
-      </button>
-
-      <button class="value-pill pill-2" type="button">
-        <span class="pill-label">Equity</span>
-        <span class="pill-definition">
-          Providing what you need. Growth starts wherever you are planted.
-        </span>
-      </button>
-
-      <button class="value-pill pill-3" type="button">
-        <span class="pill-label">Transparency</span>
-        <span class="pill-definition">
-          Straightforward and honest at every stage. Overcommunicating with the goal of
-          fewer misunderstandings.
-        </span>
-      </button>
-
-      <button class="value-pill pill-4" type="button">
-        <span class="pill-label">Efficiency</span>
-        <span class="pill-definition">
-          If it can be smoother, why shouldn’t it be?
-        </span>
-      </button>
-    </div>
-  </div>
-</section>
-
+        </div>
+    </section>
 
 
     <!-- ================= CTA SECTION ================= -->
@@ -123,8 +96,8 @@
             <div class="cta-content fade-in">
                 <h2>Ready for a More Sustainable Business?</h2>
                 <p>Let’s go from too much to do to everything in flow.</p>
-                <a href="services.html" class="btn btn-primary btn-large">
-                    <span>Book your free consultation call</span>
+                <a href="#" class="btn btn-primary btn-large consult-btn">
+                    Book your free consultation call
                 </a>
             </div>
         </div>
@@ -157,6 +130,26 @@
 
         </div>
     </footer>
+
+
+    <!-- ================= GOOGLE CALENDAR (SHARED) ================= -->
+    <button id="google-booking-trigger" style="opacity:0; pointer-events:none; position:absolute;"></button>
+
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet" />
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <script>
+      window.addEventListener('load', function () {
+        var target = document.getElementById('google-booking-trigger');
+        if (target && window.calendar && calendar.schedulingButton) {
+          calendar.schedulingButton.load({
+            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
+            color: '#039BE5',
+            label: 'Book your free consultation call',
+            target: target
+          });
+        }
+      });
+    </script>
 
     <script src="script.js"></script>
 </body>
