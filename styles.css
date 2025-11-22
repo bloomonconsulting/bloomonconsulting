@@ -1,19 +1,6 @@
 /* =========================================================
    BASE + PALETTE
-========================================================= */
-/* --- Whitespace Fixes --- */
-
-/* Remove default body margin/padding to prevent extra space at top/bottom */
-body {
-    margin: 0;
-    padding: 0;
-}
-
-/* Remove default margins on headings (H1, H2, etc.) */
-h1, h2, h3, h4, h5, h6, p {
-    margin-top: 0;
-    margin-bottom: 0;
-   
+========================================================= */   
 :root {
   --teal: #0B5B65;
   --teal-light: #9ACCC2;
