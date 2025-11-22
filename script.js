@@ -286,6 +286,13 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.toggle('is-open');
     });
   }
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.value-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('active');
+    });
+  });
+});
 
   // Values pills: toggle definition open/closed on click
   document.querySelectorAll('.value-pill').forEach((pill) => {
