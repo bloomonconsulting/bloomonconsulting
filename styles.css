@@ -3,15 +3,15 @@
 ============================== */
 
 :root {
-    /* Softer, editorial versions of your palette */
-    --teal: #0B5B65;          /* primary teal (nav, buttons, pills) */
-    --teal-light: #17808C;    /* hover/accents teal */
-    --yellow: #F4C979;        /* base mustard */
-    --yellow-deep: #F2C06C;   /* deeper mustard (about section) */
-    --yellow-light: #F8DCA3;  /* lighter mustard (values section) */
-    --dark: #072C33;          /* main text */
+    /* ORIGINAL PALETTE A – back in place */
+    --teal: #0B5B65;          /* primary teal */
+    --teal-light: #9ACCC2;    /* light teal accent */
+    --yellow: #E8A735;        /* core mustard */
+    --yellow-deep: #E8A735;   /* use same mustard for deep sections */
+    --yellow-light: #F3D48A;  /* a lighter tint for contrast bands */
+    --dark: #072C33;          /* main text color */
     --white: #FFFFFF;
-    --offwhite: #FBF5EC;
+    --offwhite: #FDFBF7;      /* page background */
 
     --nav-height: 64px;
     --radius-pill: 40px;
