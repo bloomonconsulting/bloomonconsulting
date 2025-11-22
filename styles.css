@@ -103,7 +103,9 @@ body {
   min-height: 540px;
   overflow: hidden;
   color: #fff;
+  background: var(--teal); /* ← new fallback color */
 }
+
 
 .hero-video {
   position: absolute;
