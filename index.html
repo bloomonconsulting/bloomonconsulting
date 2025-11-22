@@ -3,142 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom On Consulting – Human-Centered Operations</title>
+  <meta name="description" content="Simple, sustainable processes for remote service providers. Human-centered operations that support your work and your clients." />
 
-  <title>Bloom On Consulting - Human-Centered Operations for Remote Service Providers</title>
-  <meta name="description" content="I help remote service providers create simple, sustainable processes that save time and bring clarity. With a background in social work, I bring empathy, structure, and care to every detail.">
-  <meta name="keywords" content="operations consulting, business systems, workflow optimization, remote service providers, small business consulting, human-centered design, process improvement, sustainable systems, business efficiency">
-  <meta name="author" content="Bloom On Consulting">
-  <meta name="robots" content="index, follow">
-
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=new" />
-  <link rel="stylesheet" href="fonts.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-  <!-- ================= NAVIGATION ================= -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <a href="index.html" aria-label="Bloom On Consulting Home">
-          <span class="logo-text">Bloom On Consulting</span>
-        </a>
-      </div>
-
-      <ul class="nav-menu" id="nav-menu" role="menubar">
-        <li role="none"><a href="index.html" class="nav-link active">Home</a></li>
-        <li role="none"><a href="about.html" class="nav-link">About</a></li>
-        <li role="none"><a href="services.html" class="nav-link">Services</a></li>
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo-text">Bloom On Consulting</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
       </ul>
-
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </div>
-  </nav>
+  </header>
+  <div class="nav-spacer"></div>
 
-
-  <!-- ================= HERO SECTION ================= -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-video-wrapper">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="hero-background.mp4" type="video/mp4" />
-      </video>
-    </div>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="hero-background.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <div class="hero-badge fade-in">Human-Centered Operations for Remote Service Providers</div>
-      <h1 class="hero-title fade-in-delay">Simple, Sustainable Processes for Your Business</h1>
-      <a href="services.html" class="btn btn-primary btn-large fade-up-delay">
-        Learn more about working together
-      </a>
+      <div class="hero-badge">Human-Centered Operations for Remote Service Providers</div>
+      <h1 class="hero-title">
+        Simple, Sustainable <span>Processes</span> for Your Business
+      </h1>
+      <a href="services.html" class="hero-cta">Learn more about working together</a>
     </div>
   </section>
 
-
-  <!-- ================= BLOOM SECTION ================= -->
-  <section class="bloom-gradient" id="learn-more">
+  <!-- BLOOM SECTION -->
+  <section class="section bloom-section" id="learn-more">
     <div class="container">
-      <h2 class="section-title fade-in">Is Your Business Ready to Bloom?</h2>
-
-      <p class="section-subtitle fade-in delay-1">
-        Let me help you create clear, efficient processes that support your work
-        and give you more time for what matters most.
+      <h2 class="section-title">Is Your Business Ready to Bloom?</h2>
+      <p class="section-subtitle">
+        Let me help you create clear, efficient processes that support your work and give you more time for what matters most.
       </p>
-
       <ul class="bloom-list">
-        <li class="fade-in delay-2">
-          Clear, calm systems that support your work every day.
-        </li>
-        <li class="fade-in delay-3">
-          Scheduling and client touchpoints that feel effortless instead of draining.
-        </li>
-        <li class="fade-in delay-4">
-          Tools that work together so you’re not managing ten different logins.
-        </li>
-        <li class="fade-in delay-5">
-          Foundations that can handle your next season of growth.
-        </li>
+        <li>Clear, calm systems that support your work every day.</li>
+        <li>Scheduling and client touchpoints that feel effortless instead of draining.</li>
+        <li>Tools that work together so you’re not managing ten different logins.</li>
+        <li>Foundations that can handle your next season of growth.</li>
       </ul>
     </div>
   </section>
 
-
-  <!-- ================= CTA SECTION (GOOGLE BUTTON) ================= -->
-  <section class="section cta-section">
+  <!-- CTA BAND -->
+  <section class="cta-band">
     <div class="container">
-      <div class="cta-content fade-in">
-        <h2>Ready for a More Sustainable Business?</h2>
-
-        <!-- Google Calendar Appointment Scheduling begin -->
-        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-        <script>
-          (function() {
-            var target = document.currentScript;
-            window.addEventListener('load', function() {
-              calendar.schedulingButton.load({
-                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
-                color: '#039BE5',
-                label: 'Book an appointment',
-                target,
-              });
-            });
-          })();
-        </script>
-        <!-- end Google Calendar Appointment Scheduling -->
-      </div>
+      <h2>Ready for a More Sustainable Business?</h2>
+      <p>Let’s go from “too much to do” to everything in flow.</p>
+      <a href="services.html" class="btn-primary">See services</a>
     </div>
   </section>
 
-
-  <!-- ================= FOOTER ================= -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container">
-
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Bloom On Consulting</h3>
-          <p>Human-centered operations for service-based businesses.</p>
-        </div>
-
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-          </ul>
-        </div>
+    <div class="footer-inner">
+      <p>Bloom On Consulting – Human-centered operations for service-based businesses.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a> ·
+        <a href="about.html">About</a> ·
+        <a href="services.html">Services</a>
       </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2025 Bloom On Consulting. All rights reserved.</p>
-      </div>
-
+      <p>&copy; 2025 Bloom On Consulting. All rights reserved.</p>
     </div>
   </footer>
 
