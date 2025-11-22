@@ -113,7 +113,7 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  z-index: -2;
+  z-index: 1;
 }
 
 .hero-overlay {
@@ -124,7 +124,7 @@ body {
     rgba(0, 0, 0, 0.45),
     rgba(0, 0, 0, 0.65)
   );
-  z-index: -1;
+  z-index: 2;
 }
 
 .hero-content {
