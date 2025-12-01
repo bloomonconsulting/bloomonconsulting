@@ -207,9 +207,10 @@ body {
    HOME – BLOOM SECTION (flower bullets)
 ========================================================= */
 
-.bloom-section {
-  background: var(--offwhite);
+.section.bloom-section {
+  padding: 70px 0
 }
+
 
 .bloom-list {
   max-width: 950px;
@@ -239,10 +240,9 @@ body {
 ========================================================= */
 
 .cta-band {
-  background: var(--teal-light);
-  text-align: center;
-  padding: 70px 24px;
+  padding: 60px 24px;
 }
+
 
 .cta-band h2 {
   font-family: 'Josefin Sans';
@@ -392,9 +392,9 @@ body {
 ========================================================= */
 
 .services-section {
-  padding: 90px 0 90px;
-  background: var(--offwhite);
+  padding: 60px 0 80px;
 }
+
 
 .services-grid {
   display: flex;
