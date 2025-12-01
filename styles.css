@@ -238,42 +238,52 @@ body {
 /* =========================================================
    CTA BAND (HOME + ABOUT)
 ========================================================= */
-
+/* ===== CTA BAND (FULL WIDTH) ===== */
 .cta-band {
-  text-align: center;            /* Centers all inline content such as your button + text */
-  padding: 60px 20px;            /* More balanced spacing */
+  width: 100%;
+  background-color: #A7CDC4;  /* your light-blue color restored */
+  padding: 80px 20px;
+  text-align: center;
+
   display: flex;
-  flex-direction: column;
-  align-items: center;           /* Centers children horizontally */
   justify-content: center;
-  gap: 24px;                     /* Space between heading, text, and button */
+  align-items: center;
 }
 
+.cta-band-inner {
+  max-width: 900px;   /* keeps content centered & readable */
+  width: 100%;
+}
 
 .cta-band h2 {
-  font-family: 'Josefin Sans';
+  font-family: "Lora", serif;
   font-size: 2rem;
-  margin-bottom: 12px;
-  color: var(--ink);
+  margin-bottom: 24px;
+  color: #0F3A43;   /* deep teal text */
 }
 
 .cta-band p {
-  margin-bottom: 24px;
-  font-size: 1.05rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 32px;
+  color: #0F3A43;
 }
 
-/* Reuse hero button style */
-.cta-band .btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 24px;
-  border-radius: 999px;
-  background: var(--teal);
+.cta-band .cta-button {
+  background-color: #0F3A43;
   color: #fff;
-  font-family: 'Josefin Sans';
-  font-weight: 600;
-  text-decoration: none;
+  padding: 16px 36px;
+  border-radius: 40px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.cta-band .cta-button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 .btn-primary {
   display: inline-block;
