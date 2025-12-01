@@ -161,24 +161,23 @@ body {
 }
 
 .hero-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 26px;
-  border-radius: 999px;
-  background: var(--mustard);
-  color: var(--ink);
-  font-family: 'Josefin Sans', sans-serif;
+  background-color: #E8A735; /* mustard */
+  color: #072C33;            /* deep ink teal */
+  padding: 14px 32px;
+  border-radius: 40px;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 600;
-  font-size: 1rem;
   text-decoration: none;
-  margin-top: 10px;
-  box-shadow: var(--shadow-md);
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .hero-cta:hover {
-  filter: brightness(1.05);
+  opacity: 0.9;
+  transform: translateY(-2px);
 }
+
 
 /* =========================================================
    GENERIC SECTION
@@ -269,35 +268,39 @@ body {
   color: #0F3A43;
 }
 
-.cta-band .cta-button {
-  background-color: #0F3A43;
-  color: #fff;
+.cta-button {
+  background-color: #0F3A43; /* deep teal */
+  color: #ffffff;
   padding: 16px 36px;
   border-radius: 40px;
   font-family: "Josefin Sans", sans-serif;
   font-size: 1.1rem;
-  border: none;
-  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
   transition: opacity 0.3s ease, transform 0.2s ease;
 }
-
-.cta-band .cta-button:hover {
-  opacity: 0.85;
+.cta-button:hover {
+  opacity: 0.9;
   transform: translateY(-2px);
+}
+
 }
 .btn-primary {
   display: inline-block;
-  background: var(--primary-color);
-  color: white;
+  background-color: #0F3A43; /* deep teal */
+  color: #ffffff;
   padding: 14px 32px;
-  border-radius: 999px;
-  font-weight: 600;
+  border-radius: 40px;
+  font-family: "Josefin Sans", sans-serif;
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-primary:hover {
-  background: var(--primary-dark, #014a52);
+  background-color: #0d5b64; /* slightly lighter teal */
   transform: translateY(-2px);
 }
 
