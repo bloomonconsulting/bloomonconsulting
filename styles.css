@@ -427,8 +427,8 @@ body {
 
 .services-section {
   padding: 60px 0 80px;
+  background-color: #A7CDC4; /* your light blue/teal */
 }
-
 
 .services-grid {
   display: flex;
@@ -469,6 +469,10 @@ body {
 
 .service-card .gc-booking-target {
   margin-top: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* =========================================================
