@@ -25,9 +25,10 @@
     <div class="nav-inner">
       <a href="index.html" class="logo-text">Bloom On Consulting</a>
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+<ul class="nav-links">
+  <li><a href="index.html" class="active">Home</a></li>
+  <li><a href="about.html">About</a></li>
+</ul>
       </ul>
     </div>
   </header>
@@ -67,6 +68,56 @@
       </ul>
     </div>
   </section>
+  <!-- SERVICES SECTION (moved from services.html) -->
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">Services</h2>
+
+    <div class="services-grid">
+
+      <!-- Full System Build -->
+      <article class="service-card">
+        <h3>The Full System Build</h3>
+        <p class="price">Starting at $3,000</p>
+        <p>Complete package to either revamp or build your operations from scratch. We go from assessment to a fully automated business.</p>
+        <ul>
+          <li>Building your single hub</li>
+          <li>Automating your admin</li>
+          <li>Training you and your team</li>
+        </ul>
+        <div class="gc-booking-target"></div>
+      </article>
+
+      <!-- Ongoing Support -->
+      <article class="service-card">
+        <h3>Ongoing Operations Support</h3>
+        <p class="price">$150/month + $40/hr</p>
+        <p>For the business that needs a long-term partner. The monthly fee gives you priority access and a strategy call.</p>
+        <ul>
+          <li>Priority access for questions</li>
+          <li>Monthly strategy session</li>
+          <li>Implementation support as needed</li>
+        </ul>
+        <div class="gc-booking-target"></div>
+      </article>
+
+      <!-- Hourly -->
+      <article class="service-card">
+        <h3>Hourly Consulting</h3>
+        <p class="price">$80/hr</p>
+        <p>For the business that isn’t ready for a full retainer but needs a one-off strategy session, audit, or help with a small, defined project.</p>
+        <ul>
+          <li>One-time or short series of calls</li>
+          <li>System or workflow audit</li>
+          <li>Implementation roadmap</li>
+        </ul>
+        <div class="gc-booking-target"></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
   <!-- CTA BAND -->
   <section class="cta-band">
@@ -83,7 +134,6 @@
       <div class="footer-links">
         <a href="index.html">Home</a> ·
         <a href="about.html">About</a> ·
-        <a href="services.html">Services</a>
       </div>
       <p>&copy; 2025 Bloom On Consulting. All rights reserved.</p>
     </div>
@@ -91,4 +141,21 @@
 
   <script src="script.js"></script>
 </body>
+  <!-- Google Calendar booking script -->
+<script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+<script>
+  window.addEventListener('load', function () {
+    if (!window.calendar || !calendar.schedulingButton) return;
+
+    document.querySelectorAll('.gc-booking-target').forEach(function (target) {
+      calendar.schedulingButton.load({
+        url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
+        color: '#039BE5',
+        label: 'Book your free consultation call',
+        target: target
+      });
+    });
+  });
+</script>
+
 </html>
