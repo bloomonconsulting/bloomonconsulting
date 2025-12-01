@@ -241,6 +241,8 @@ body {
 
 .cta-band {
   padding: 60px 24px;
+  align-items: center;
+  justify-content: center;
 }
 
 
