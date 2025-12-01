@@ -98,8 +98,8 @@ body {
 
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 540px;
+  height: 65vh;        /* or 55vh, depending on how compact you want */
+  min-height: 450px;   /* ensures it doesn't get too short on mobile */
   overflow: hidden;
   color: #fff;
   background: var(--teal); /* ← new fallback color */
