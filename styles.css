@@ -62,8 +62,8 @@ body {
 
 .logo {
   display: block;
-  width: 260px; /* adjust as needed */
-  height: 100px;
+  width: 300px; /* adjust as needed */
+  height: 200px;
   background-image: url('logo.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -92,10 +92,6 @@ body {
   border-bottom: 2px solid var(--mustard);
 }
 
-/* Spacer so content doesn’t hide behind fixed nav */
-.nav-spacer {
-  height: 56px;
-}
 
 /* =========================================================
    HERO
