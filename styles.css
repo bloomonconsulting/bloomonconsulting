@@ -62,8 +62,8 @@ body {
 
 .logo {
   display: block;
-  width: 250px; /* adjust as needed */
-  height: 80px;
+  width: 210px; /* adjust as needed */
+  height: 50px;
   background-image: url('logo.png');
   background-size: contain;
   background-repeat: no-repeat;
