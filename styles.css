@@ -73,15 +73,6 @@ body {
   display: none;
 }
 
-
-/* --- NAVBAR HEIGHT ADJUSTMENT (optional) --- */
-nav {
-  height: 110px;            /* Gives breathing room for larger logo */
-  display: flex;
-  align-items: center;
-}
-
-
 .nav-links {
   display: flex;
   gap: 28px;
