@@ -60,28 +60,19 @@ body {
   align-items: center;
 }
 
-/* --- NAV LOGO --- */
 .logo {
   display: block;
-  width: 250px;             /* Adjust size here */
-  height: 90px;             /* Adjust height */
-  background-image: url('Bloom On Logo.png');
+  width: 220px; /* adjust as needed */
+  height: 80px;
+  background-image: url('logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;
-  text-indent: -9999px;     /* hide text fallback */
-  overflow: hidden;
+}
+.logo-text {
+  display: none;
 }
 
-/* Ensure link has no default styling */
-.logo:link,
-.logo:visited,
-.logo:hover,
-.logo:active {
-  text-decoration: none !important;
-  background: transparent !important;
-  color: transparent !important;
-}
 
 /* --- NAVBAR HEIGHT ADJUSTMENT (optional) --- */
 nav {
