@@ -292,7 +292,7 @@ body {
   background-image: url("about-header-bg.png");
   background-size: cover;
   background-position: center;
-  padding: 100px 20px 90px;
+  padding: 100px 0px 70px;
   text-align: center;
   color: #fff;
 }
