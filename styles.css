@@ -344,6 +344,7 @@ body {
   display: flex;
   gap: 2.5rem;
   align-items: flex-start;
+
 }
 
 .about-text {
@@ -354,12 +355,19 @@ body {
   flex: 0.6;
 }
 
-.about-photo img {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
+.photo-frame {
+  width: 220px;
+  height: 260px;
+  overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 /* Mobile */
@@ -369,8 +377,9 @@ body {
     gap: 1.5rem;
   }
 
-  .about-photo img {
-    max-width: 180px;
+  .photo-frame {
+    width: 180px;
+    height: 220px;
   }
 }
 
