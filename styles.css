@@ -332,17 +332,7 @@ body {
 }
 .about-layout {
   display: flex;
-  gap: 3rem;
-  align-items: flex-start;
-}
-
-.about-text {
-  flex: 1.4;
-}
-
-.about-layout {
-  display: flex;
-  gap: 1.75rem;
+  gap: 2.5rem;
   align-items: flex-start;
 }
 
@@ -351,10 +341,10 @@ body {
 }
 
 .photo-frame {
-  width: 240px;
-  height: 300px;
+  width: 320px;
+  height: 420px;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
 .photo-frame img {
@@ -362,6 +352,11 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center top;
+}
+
+.about-body {
+  flex: 1;
+  min-width: 0;
 }
 
 /* Mobile */
