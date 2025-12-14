@@ -342,25 +342,19 @@ body {
 
 .about-layout {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.75rem;
   align-items: flex-start;
-
-}
-
-.about-text {
-  flex: 1.6;
 }
 
 .about-photo {
-  flex: 0.6;
+  flex: 0 0 auto;
 }
 
 .photo-frame {
-  width: 220px;
-  height: 260px;
+  width: 140px;
+  height: 170px;
   overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
 }
 
 .photo-frame img {
@@ -374,12 +368,12 @@ body {
 @media (max-width: 768px) {
   .about-layout {
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: flex-start;
   }
 
   .photo-frame {
-    width: 180px;
-    height: 220px;
+    width: 120px;
+    height: 150px;
   }
 }
 
