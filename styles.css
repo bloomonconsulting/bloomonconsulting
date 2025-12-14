@@ -351,10 +351,10 @@ body {
 }
 
 .photo-frame {
-  width: 140px;
-  height: 170px;
+  width: 240px;
+  height: 300px;
   overflow: hidden;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 .photo-frame img {
