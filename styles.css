@@ -94,7 +94,7 @@ body {
 
 
 /* =========================================================
-   HERO
+   HERO (UPDATED)
 ========================================================= */
 
 .hero {
@@ -103,26 +103,8 @@ body {
   min-height: 450px;   /* ensures it doesn't get too short on mobile */
   overflow: hidden;
   color: #fff;
-  background: var(--teal); /* ← new fallback color */
+  background: var(--teal);
 }
-/* --- FIX 1: HERO SECTION (Text & Button) --- */
-
-  /* Fixes the "Scrunched" Paragraph Text */
-  .hero-content p {
-    max-width: 1400px !important;    /* Widen the text container */
-    margin: 0 auto 2.5rem auto !important; 
-    font-size: 1.25rem !important;  
-    line-height: 1.7 !important;    
-    color: #ffffff;
-  }
-
-  /* Fixes the Stretched Button */
-  .hero-cta {
-    display: inline-block !important; /* Stops it from being full width */
-    width: auto !important;           /* Shrinks to fit text */
-    margin-top: 20px;
-    padding: 15px 40px !important;
-  }
 
 .hero-overlay {
   position: absolute;
@@ -133,6 +115,9 @@ body {
     rgba(0, 0, 0, 0.65)
   );
   z-index: 2;
+}
+
+/* UPDATED: Centers content correctly */
 .hero-content {
   position: relative;
   height: 100%;
@@ -142,13 +127,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center; /* Centers items horizontally */
+  text-align: center;  /* Centers the text inside */
   z-index: 3;
-  
-  /* --- ALIGNMENT FIXES --- */
-  align-items: center; /* This centers the Button and the text blocks horizontally */
-  text-align: center;  /* This centers the actual words inside the Title and Paragraph */
 }
-
 
 .hero-title {
   font-family: 'Josefin Sans', sans-serif;
@@ -161,6 +143,16 @@ body {
   color: var(--mustard);
 }
 
+/* NEW: Controls the hero paragraph width */
+.hero-content p {
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* UPDATED: Button sizing */
 .hero-cta {
   background-color: #E8A735; /* mustard */
   color: #072C33;            /* deep ink teal */
@@ -170,7 +162,8 @@ body {
   font-weight: 600;
   text-decoration: none;
   font-size: 1.1rem;
-  display: inline-block;
+  display: inline-block; /* Keeps button size correct */
+  width: auto;           /* Prevents stretching */
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -204,40 +197,12 @@ body {
 }
 
 /* =========================================================
-   HOME – BLOOM SECTION (flower bullets)
+   CAPABILITIES / EXPERTISE CARDS (NEW)
 ========================================================= */
 
 .section.bloom-section {
-  padding: 70px 0
+  padding: 70px 0;
 }
-
-
-.bloom-list {
-  max-width: 950px;
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
-  font-size: 1.08rem;
-}
-
-.bloom-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-
-.bloom-list li::before {
-  content: "✿";
-  font-size: 1.5rem;
-  line-height: 1;
-  color: var(--mustard);
-  margin-top: 2px;
-}
-
-/* =========================================================
-   CAPABILITIES / EXPERTISE CARDS
-========================================================= */
 
 /* Creates the 2-column layout */
 .capabilities-wrapper {
@@ -259,7 +224,7 @@ body {
 /* Card Titles (Operations / Business Dev) */
 .card-header {
   font-size: 1.5rem;
-  color: var(--primary-color, #039BE5); /* Fallback to teal if var missing */
+  color: var(--teal);
   margin-bottom: 30px;
   font-family: 'Lora', serif;
   border-bottom: 2px solid #f5f5f5;
@@ -287,7 +252,7 @@ body {
 /* The Flower Icon */
 .cap-label::before {
   content: '✿'; 
-  color: #eaac48; /* Your mustard color */
+  color: var(--mustard); 
   margin-right: 12px;
   font-size: 1.2rem;
 }
@@ -300,33 +265,22 @@ body {
   padding-left: 28px;
 }
 
-/* Mobile: Stack them vertically */
-@media (max-width: 900px) {
-  .capabilities-wrapper {
-    grid-template-columns: 1fr; 
-    gap: 30px;
-  }
-  .bloom-card {
-    padding: 25px;
-  }
-}
+
 /* =========================================================
    CTA BAND (HOME + ABOUT)
 ========================================================= */
-/* ===== CTA BAND (FULL WIDTH) ===== */
 .cta-band {
   width: 100%;
-  background-color: #A7CDC4;  /* your light-blue color restored */
+  background-color: #A7CDC4;  /* light-blue */
   padding: 80px 20px;
   text-align: center;
-
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .cta-band-inner {
-  max-width: 900px;   /* keeps content centered & readable */
+  max-width: 900px;
   width: 100%;
 }
 
@@ -334,14 +288,7 @@ body {
   font-family: "Lora", serif;
   font-size: 2rem;
   margin-bottom: 24px;
-  color: #0F3A43;   /* deep teal text */
-}
-
-.cta-band p {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 32px;
-  color: #0F3A43;
+  color: #0F3A43;    /* deep teal text */
 }
 
 .cta-button {
@@ -361,31 +308,13 @@ body {
   transform: translateY(-2px);
 }
 
-}
-.btn-primary {
-  display: inline-block;
-  background-color: #0F3A43; /* deep teal */
-  color: #ffffff;
-  padding: 14px 32px;
-  border-radius: 40px;
-  font-family: "Josefin Sans", sans-serif;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: #0d5b64; /* slightly lighter teal */
-  transform: translateY(-2px);
-}
-
 /* =========================================================
    ABOUT – HEADER BANNER
 ========================================================= */
 
 .about-header {
-  background-image: url("about-header-bg.png");
+  background-image: url("about-header-bg.png"); /* ensure this image exists or add fallback color */
+  background-color: var(--teal); /* fallback */
   background-size: cover;
   background-position: center;
   padding: 100px 0px 70px;
@@ -414,6 +343,8 @@ body {
   background: #fff;
   border-radius: 18px;
   box-shadow: var(--shadow-md);
+  flex: 1;
+  min-width: 0;
 }
 
 .about-body h2 {
@@ -426,6 +357,7 @@ body {
   margin-bottom: 12px;
   line-height: 1.65;
 }
+
 .about-layout {
   display: flex;
   gap: 2.5rem;
@@ -448,24 +380,6 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: center top;
-}
-
-.about-body {
-  flex: 1;
-  min-width: 0;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .about-layout {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .photo-frame {
-    width: 120px;
-    height: 150px;
-  }
 }
 
 /* =========================================================
@@ -537,6 +451,7 @@ body {
 .value-card:nth-child(2) { width: 88%; margin-left: 5%; }
 .value-card:nth-child(3) { width: 92%; margin-left: 2%; }
 .value-card:nth-child(4) { width: 84%; margin-left: 8%; }
+.value-card:nth-child(5) { width: 90%; margin-left: 4%; } /* Added for 'Connection' */
 
 /* =========================================================
    SERVICES
@@ -544,7 +459,7 @@ body {
 
 .services-section {
   padding: 60px 0 80px;
-  background-color: #A7CDC4; /* your light blue/teal */
+  background-color: #A7CDC4; /* light blue/teal */
 }
 
 .services-grid {
@@ -630,12 +545,31 @@ html {
     font-size: 2.4rem;
   }
 
-  .value-card:nth-child(1),
-  .value-card:nth-child(2),
-  .value-card:nth-child(3),
-  .value-card:nth-child(4) {
+  /* Capabilities Cards Stack */
+  .capabilities-wrapper {
+    grid-template-columns: 1fr; 
+    gap: 30px;
+  }
+  .bloom-card {
+    padding: 25px;
+  }
+
+  /* Reset Value Cards width */
+  .value-card:nth-child(n) {
     width: 100%;
     margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .photo-frame {
+    width: 120px;
+    height: 150px;
   }
 }
 
