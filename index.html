@@ -21,27 +21,7 @@
     padding: 15px 40px !important;
   }
 
-/* --- FIX 2: THE CAPABILITIES LIST (Keep this!) --- */
-  .bloom-section .container {
-    max-width: 1200px !important;
-  }
 
-  .bloom-list li {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 30px;
-    margin-bottom: 30px !important;
-    line-height: 1.6 !important;
-    align-items: baseline;
-  }
-</style>
-
-  /* Mobile adjustment */
-  @media (max-width: 768px) {
-    .bloom-list li {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>
   <head>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK0PJZ48W1"></script>
@@ -97,82 +77,7 @@
       I provide comprehensive support for business operations and community development. 
       Whether you need to implement new infrastructure or drive growth through relationships, I handle the execution.
     </p>
-    
-    <style>
-      .bloom-section .container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      
-      /* 1. The Layout: Two columns side-by-side */
-      .capabilities-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Split into two equal columns */
-        gap: 40px;                      /* Space between the two cards */
-        margin-top: 40px;
-      }
-
-      /* 2. The Card Design: Adds the "Container" look */
-      .bloom-card {
-        background-color: #ffffff;      /* White background to stand out */
-        padding: 40px;                  /* Breathing room inside the card */
-        border-radius: 16px;            /* Modern rounded corners */
-        box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* Soft shadow for depth */
-        border: 1px solid rgba(0,0,0,0.03); /* Subtle border definition */
-      }
-
-      .card-header {
-        font-size: 1.5rem;
-        color: var(--primary-color, #039BE5);
-        margin-bottom: 30px;
-        font-family: 'Lora', serif;
-        border-bottom: 2px solid #f5f5f5;
-        padding-bottom: 15px;
-      }
-
-      /* 3. The List Items inside the cards */
-      .cap-item {
-        margin-bottom: 25px;
-      }
-      .cap-item:last-child {
-        margin-bottom: 0;
-      }
-
-      .cap-label {
-        font-weight: 700;
-        color: #2c3e50;
-        margin-bottom: 6px;
-        font-size: 1.1rem;
-        display: flex;
-        align-items: center;
-      }
-      
-      .cap-label::before {
-        content: '✿'; 
-        color: #eaac48; 
-        margin-right: 12px;
-        font-size: 1.2rem;
-      }
-
-      .cap-desc {
-        color: #666;
-        line-height: 1.6;
-        font-size: 0.95rem;
-        padding-left: 28px; /* Indents text to align nicely under the label text */
-      }
-
-      /* Mobile: Stack the cards vertically on phone */
-      @media (max-width: 900px) {
-        .capabilities-wrapper {
-          grid-template-columns: 1fr; 
-          gap: 30px;
-        }
-        .bloom-card {
-          padding: 25px;
-        }
-      }
-    </style>
-
+  
     <div class="capabilities-wrapper">
       
       <div class="bloom-card">
