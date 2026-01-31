@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-  /* This fixes the spacing directly in the HTML */
+  /* 1. Force the container to be WIDE */
+  .bloom-section .container {
+    max-width: 1200px !important; 
+    padding-left: 5%; /* Adds a little breathing room on the edges */
+    padding-right: 5%;
+  }
+
+  /* 2. Create a specific column layout for the list items */
   .bloom-list li {
-    margin-bottom: 25px !important; /* Pushes the items apart */
-    line-height: 1.8 !important;    /* Gives the text breathing room */
-    padding-left: 10px;             /* Adds a tiny gap between the icon and text */
+    display: grid;                    /* Turns the list item into a grid */
+    grid-template-columns: 240px 1fr; /* Column 1 (Title) is 240px fixed. Column 2 (Text) fills the rest */
+    gap: 20px;                        /* Space between the bold title and the text */
+    margin-bottom: 30px !important;   /* Space between rows */
+    line-height: 1.6 !important;      /* Text breathing room */
+    align-items: baseline;            /* Aligns the text to the top so it doesn't look weird */
+  }
+
+  /* Mobile: Stack them nicely on phones so it doesn't break */
+  @media (max-width: 768px) {
+    .bloom-list li {
+      grid-template-columns: 1fr; /* 1 column on mobile */
+      margin-bottom: 20px !important;
+    }
+    /* Adds a little space below the bold title on mobile */
+    .bloom-list li strong {
+      display: block;
+      margin-bottom: 5px;
+    }
   }
 </style>
   <head>
@@ -59,8 +82,7 @@
         From untangling backend chaos to planning your next local event, I handle the execution.
       </p>
       
-      <div style="text-align: left; max-width: 800px; margin: 0 auto;">
-        
+<div style="text-align: left; width: 100%; margin: 0 auto;">        
         <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--primary-color);">Operations Management</h3>
         <ul class="bloom-list" style="margin-bottom: 2rem;">
          <li><strong>Project & Task Management:</strong> Implementation of platforms such as Asana, ClickUp, or Monday.com to track deliverables and deadlines.</li>
