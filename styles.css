@@ -218,6 +218,81 @@ body {
 }
 
 /* =========================================================
+   CAPABILITIES / EXPERTISE CARDS
+========================================================= */
+
+/* Creates the 2-column layout */
+.capabilities-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* Designs the White Card */
+.bloom-card {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* Soft shadow */
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+/* Card Titles (Operations / Business Dev) */
+.card-header {
+  font-size: 1.5rem;
+  color: var(--primary-color, #039BE5); /* Fallback to teal if var missing */
+  margin-bottom: 30px;
+  font-family: 'Lora', serif;
+  border-bottom: 2px solid #f5f5f5;
+  padding-bottom: 15px;
+}
+
+/* List Items inside the card */
+.cap-item {
+  margin-bottom: 25px;
+}
+.cap-item:last-child {
+  margin-bottom: 0;
+}
+
+/* The Bold Label */
+.cap-label {
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* The Flower Icon */
+.cap-label::before {
+  content: '✿'; 
+  color: #eaac48; /* Your mustard color */
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+/* The Description Text */
+.cap-desc {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  padding-left: 28px;
+}
+
+/* Mobile: Stack them vertically */
+@media (max-width: 900px) {
+  .capabilities-wrapper {
+    grid-template-columns: 1fr; 
+    gap: 30px;
+  }
+  .bloom-card {
+    padding: 25px;
+  }
+}
+/* =========================================================
    CTA BAND (HOME + ABOUT)
 ========================================================= */
 /* ===== CTA BAND (FULL WIDTH) ===== */
