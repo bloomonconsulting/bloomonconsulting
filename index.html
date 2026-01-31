@@ -99,103 +99,143 @@
       Whether you need to implement new infrastructure or drive growth through relationships, I handle the execution.
     </p>
     
+<section class="section bloom-section" id="learn-more">
+  <div class="container">
+    <h2 class="section-title">Capabilities & Expertise</h2>
+    <p class="section-subtitle">
+      I provide comprehensive support for business operations and community development. 
+      Whether you need to implement new infrastructure or drive growth through relationships, I handle the execution.
+    </p>
+    
+<section class="section bloom-section" id="learn-more">
+  <div class="container">
+    <h2 class="section-title">Capabilities & Expertise</h2>
+    <p class="section-subtitle">
+      I provide comprehensive support for business operations and community development. 
+      Whether you need to implement new infrastructure or drive growth through relationships, I handle the execution.
+    </p>
+    
     <style>
       .bloom-section .container {
-        max-width: 1100px; /* Wider container */
+        max-width: 1200px;
+        margin: 0 auto;
       }
-      .capability-group {
-        margin-bottom: 40px;
-        text-align: left;
-      }
-      .group-title {
-        color: var(--primary-color, #039BE5); /* Uses your site color */
-        margin-bottom: 20px;
-        font-size: 1.2rem;
-        border-bottom: 1px solid #eee;
-        padding-bottom: 10px;
-      }
-      .cap-row {
-        display: flex;
-        align-items: baseline;
-        margin-bottom: 18px;
-        line-height: 1.6;
-      }
-      .cap-label {
-        flex: 0 0 260px; /* FIXED WIDTH: This ensures the description column always lines up */
-        font-weight: 600;
-        padding-right: 20px;
-        color: #333;
-        position: relative;
-      }
-      /* Adds the flower icon manually to ensure it doesn't break alignment */
-      .cap-label::before {
-        content: '✿'; 
-        color: #eaac48; /* Adjust this hex code to match your yellow/orange brand color */
-        margin-right: 8px;
-      }
-      .cap-desc {
-        flex: 1; /* Takes up the rest of the space */
-        color: #555;
+      
+      /* 1. The Layout: Two columns side-by-side */
+      .capabilities-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Split into two equal columns */
+        gap: 40px;                      /* Space between the two cards */
+        margin-top: 40px;
       }
 
-      /* Mobile: Stack them vertically so text isn't squished */
-      @media (max-width: 768px) {
-        .cap-row {
-          flex-direction: column;
-          margin-bottom: 25px;
+      /* 2. The Card Design: Adds the "Container" look */
+      .bloom-card {
+        background-color: #ffffff;      /* White background to stand out */
+        padding: 40px;                  /* Breathing room inside the card */
+        border-radius: 16px;            /* Modern rounded corners */
+        box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* Soft shadow for depth */
+        border: 1px solid rgba(0,0,0,0.03); /* Subtle border definition */
+      }
+
+      .card-header {
+        font-size: 1.5rem;
+        color: var(--primary-color, #039BE5);
+        margin-bottom: 30px;
+        font-family: 'Lora', serif;
+        border-bottom: 2px solid #f5f5f5;
+        padding-bottom: 15px;
+      }
+
+      /* 3. The List Items inside the cards */
+      .cap-item {
+        margin-bottom: 25px;
+      }
+      .cap-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .cap-label {
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 6px;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+      }
+      
+      .cap-label::before {
+        content: '✿'; 
+        color: #eaac48; 
+        margin-right: 12px;
+        font-size: 1.2rem;
+      }
+
+      .cap-desc {
+        color: #666;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        padding-left: 28px; /* Indents text to align nicely under the label text */
+      }
+
+      /* Mobile: Stack the cards vertically on phone */
+      @media (max-width: 900px) {
+        .capabilities-wrapper {
+          grid-template-columns: 1fr; 
+          gap: 30px;
         }
-        .cap-label {
-          flex: auto;
-          margin-bottom: 5px;
+        .bloom-card {
+          padding: 25px;
         }
       }
     </style>
 
-    <div style="max-width: 100%; margin: 0 auto;">
+    <div class="capabilities-wrapper">
       
-      <div class="capability-group">
-        <h3 class="group-title">Operations Management</h3>
+      <div class="bloom-card">
+        <h3 class="card-header">Operations Management</h3>
         
-        <div class="cap-row">
+        <div class="cap-item">
           <div class="cap-label">Project & Task Management</div>
           <div class="cap-desc">Implementation of platforms such as Asana, ClickUp, or Monday.com to track deliverables and deadlines.</div>
         </div>
 
-        <div class="cap-row">
+        <div class="cap-item">
           <div class="cap-label">Financial Systems</div>
           <div class="cap-desc">Setup of invoicing, billing, and accounting tools like HoneyBook or QuickBooks to ensure timely payment.</div>
         </div>
 
-        <div class="cap-row">
+        <div class="cap-item">
           <div class="cap-label">Scheduling Logistics</div>
           <div class="cap-desc">Configuration of automated calendar systems to manage appointments, time zones, and client intake.</div>
         </div>
 
-        <div class="cap-row">
+        <div class="cap-item">
           <div class="cap-label">Communication Systems</div>
           <div class="cap-desc">Organization of professional email workspaces, inbox management, and creation of client communication templates.</div>
         </div>
       </div>
 
-      <div class="capability-group">
-        <h3 class="group-title">Business Development</h3>
+      <div class="bloom-card">
+        <h3 class="card-header">Business Development</h3>
         
-        <div class="cap-row">
+        <div class="cap-item">
           <div class="cap-label">Local Partnerships</div>
           <div class="cap-desc">Identification and vetting of aligned businesses for cross-promotion and referral networks.</div>
         </div>
 
-        <div class="cap-row">
+        <div class="cap-item">
           <div class="cap-label">Event Coordination</div>
-          <div class="cap-desc">Planning and logistical management for workshops, meetups, and community events.</div>
+          <div class="cap-desc">Planning and logistical management for workshops, meetups, and in-person community events.</div>
         </div>
 
-        <div class="cap-row">
+        <div class="cap-item">
           <div class="cap-label">Organic Outreach</div>
           <div class="cap-desc">Design and execution of relationship-based marketing strategies that do not rely on social media algorithms.</div>
         </div>
       </div>
 
+    </div>
   </div>
 </section>
 
