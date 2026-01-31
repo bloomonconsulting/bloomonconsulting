@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <style>
-  /* 1. Force the container to be WIDE */
+  /* --- FIX 1: THE HERO BUTTON --- */
+  .hero-cta {
+    display: inline-block !important; /* Forces button to shrink to text size */
+    width: auto !important;           /* Prevents it from being full width */
+    margin-top: 20px;                 /* Adds space above it */
+    padding: 15px 30px;               /* Nice padding inside the button */
+  }
+
+  /* --- FIX 2: THE CAPABILITIES LIST --- */
   .bloom-section .container {
-    max-width: 1200px !important; 
-    padding-left: 5%; /* Adds a little breathing room on the edges */
-    padding-right: 5%;
+    max-width: 1200px !important;
   }
-
-  /* 2. Create a specific column layout for the list items */
+  
   .bloom-list li {
-    display: grid;                    /* Turns the list item into a grid */
-    grid-template-columns: 240px 1fr; /* Column 1 (Title) is 240px fixed. Column 2 (Text) fills the rest */
-    gap: 20px;                        /* Space between the bold title and the text */
-    margin-bottom: 30px !important;   /* Space between rows */
-    line-height: 1.6 !important;      /* Text breathing room */
-    align-items: baseline;            /* Aligns the text to the top so it doesn't look weird */
+    display: grid;
+    /* Changed 240px to 200px to bring the text closer to the label */
+    grid-template-columns: 200px 1fr; 
+    gap: 30px; 
+    margin-bottom: 30px !important;
+    line-height: 1.6 !important;
+    align-items: baseline;
   }
 
-  /* Mobile: Stack them nicely on phones so it doesn't break */
+  /* Mobile adjustment */
   @media (max-width: 768px) {
     .bloom-list li {
-      grid-template-columns: 1fr; /* 1 column on mobile */
-      margin-bottom: 20px !important;
-    }
-    /* Adds a little space below the bold title on mobile */
-    .bloom-list li strong {
-      display: block;
-      margin-bottom: 5px;
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -74,33 +74,113 @@
     </div>
   </section>
   
-  <section class="section bloom-section" id="learn-more">
-    <div class="container">
-      <h2 class="section-title">Capabilities & Expertise</h2>
-      <p class="section-subtitle">
-        I provide comprehensive support for business operations and community development. 
-        From untangling backend chaos to planning your next local event, I handle the execution.
-      </p>
+<section class="section bloom-section" id="learn-more">
+  <div class="container">
+    <h2 class="section-title">Capabilities & Expertise</h2>
+    <p class="section-subtitle">
+      I provide comprehensive support for business operations and community development. 
+      Whether you need to implement new infrastructure or drive growth through relationships, I handle the execution.
+    </p>
+    
+    <style>
+      .bloom-section .container {
+        max-width: 1100px; /* Wider container */
+      }
+      .capability-group {
+        margin-bottom: 40px;
+        text-align: left;
+      }
+      .group-title {
+        color: var(--primary-color, #039BE5); /* Uses your site color */
+        margin-bottom: 20px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      .cap-row {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 18px;
+        line-height: 1.6;
+      }
+      .cap-label {
+        flex: 0 0 260px; /* FIXED WIDTH: This ensures the description column always lines up */
+        font-weight: 600;
+        padding-right: 20px;
+        color: #333;
+        position: relative;
+      }
+      /* Adds the flower icon manually to ensure it doesn't break alignment */
+      .cap-label::before {
+        content: '✿'; 
+        color: #eaac48; /* Adjust this hex code to match your yellow/orange brand color */
+        margin-right: 8px;
+      }
+      .cap-desc {
+        flex: 1; /* Takes up the rest of the space */
+        color: #555;
+      }
+
+      /* Mobile: Stack them vertically so text isn't squished */
+      @media (max-width: 768px) {
+        .cap-row {
+          flex-direction: column;
+          margin-bottom: 25px;
+        }
+        .cap-label {
+          flex: auto;
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+
+    <div style="max-width: 100%; margin: 0 auto;">
       
-<div style="text-align: left; width: 100%; margin: 0 auto;">        
-        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--primary-color);">Operations Management</h3>
-        <ul class="bloom-list" style="margin-bottom: 2rem;">
-         <li><strong>Project & Task Management:</strong> Implementation of platforms such as Asana, ClickUp, or Monday.com to track deliverables and deadlines.</li>
-         <li><strong>Financial Systems:</strong> Setup of invoicing, billing, and accounting tools like HoneyBook or QuickBooks.</li>
-         <li><strong>Scheduling Logistics:</strong> Configuration of automated calendar systems to manage appointments, shift scheduling, and client intake.</li>
-         <li><strong>Communication Systems:</strong> Organization of professional email workspaces, inbox management, and creation of client communication templates.</li>
-        </ul>
+      <div class="capability-group">
+        <h3 class="group-title">Operations Management</h3>
+        
+        <div class="cap-row">
+          <div class="cap-label">Project & Task Management</div>
+          <div class="cap-desc">Implementation of platforms such as Asana, ClickUp, or Monday.com to track deliverables and deadlines.</div>
+        </div>
 
-        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--primary-color);">Business Development</h3>
-        <ul class="bloom-list">
-         <li><strong>Local Partnerships:</strong> Identification and vetting of aligned businesses for cross-promotion and referral networks.</li>
-         <li><strong>Event Coordination:</strong> Planning and logistical management for workshops, meetups, and in-person community events.</li>
-         <li><strong>Organic Outreach:</strong> Design and execution of relationship-based marketing strategies that do not rely on social media algorithms.</li>
-        </ul>
+        <div class="cap-row">
+          <div class="cap-label">Financial Systems</div>
+          <div class="cap-desc">Setup of invoicing, billing, and accounting tools like HoneyBook or QuickBooks to ensure timely payment.</div>
+        </div>
 
+        <div class="cap-row">
+          <div class="cap-label">Scheduling Logistics</div>
+          <div class="cap-desc">Configuration of automated calendar systems to manage appointments, time zones, and client intake.</div>
+        </div>
+
+        <div class="cap-row">
+          <div class="cap-label">Communication Systems</div>
+          <div class="cap-desc">Organization of professional email workspaces, inbox management, and creation of client communication templates.</div>
+        </div>
       </div>
-    </div>
-  </section>
+
+      <div class="capability-group">
+        <h3 class="group-title">Business Development</h3>
+        
+        <div class="cap-row">
+          <div class="cap-label">Local Partnerships</div>
+          <div class="cap-desc">Identification and vetting of aligned businesses for cross-promotion and referral networks.</div>
+        </div>
+
+        <div class="cap-row">
+          <div class="cap-label">Event Coordination</div>
+          <div class="cap-desc">Planning and logistical management for workshops, meetups, and community events.</div>
+        </div>
+
+        <div class="cap-row">
+          <div class="cap-label">Organic Outreach</div>
+          <div class="cap-desc">Design and execution of relationship-based marketing strategies that do not rely on social media algorithms.</div>
+        </div>
+      </div>
+
+  </div>
+</section>
 
   <section class="services-section" id="services">
     <div class="container">
