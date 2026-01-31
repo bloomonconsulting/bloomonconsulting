@@ -115,8 +115,6 @@ body {
     rgba(0, 0, 0, 0.65)
   );
   z-index: 2;
-}
-
 .hero-content {
   position: relative;
   height: 100%;
@@ -126,8 +124,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 3; /* <--- ADD THIS LINE */
+  z-index: 3;
+  
+  /* --- ALIGNMENT FIXES --- */
+  align-items: center; /* This centers the Button and the text blocks horizontally */
+  text-align: center;  /* This centers the actual words inside the Title and Paragraph */
 }
+
 
 .hero-title {
   font-family: 'Josefin Sans', sans-serif;
