@@ -1,58 +1,61 @@
 /* =========================================================
-   BASE + PALETTE
-========================================================= */   
+   1. VARIABLES & RESET
+   (Change colors here to update the whole site)
+========================================================= */
 :root {
+  /* Palette */
   --teal: #0B5B65;
-  --teal-light: #9ACCC2;
+  --teal-light: #A7CDC4;
   --mustard: #E8A735;
   --mustard-soft: #F3C66A;
-  --offwhite: #FDFBF7;
   --ink: #072C33;
+  --offwhite: #FDFBF7;
+  --white: #ffffff;
 
+  /* Spacing & Layout */
+  --radius: 16px;
   --radius-pill: 40px;
-  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.16);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --width-max: 1120px;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-html,
-body {
+html, body {
   width: 100%;
-  height: 100%;
   font-family: 'Lora', serif;
   background: var(--offwhite);
   color: var(--ink);
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Simple container */
+/* Headings */
+h1, h2, h3 { font-family: 'Josefin Sans', sans-serif; line-height: 1.2; }
+a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
+a:hover { opacity: 0.8; }
+
+/* Global Container */
 .container {
   width: 100%;
-  max-width: 1120px;
+  max-width: var(--width-max);
   margin: 0 auto;
   padding: 0 24px;
 }
 
 /* =========================================================
-   NAV
+   2. NAVIGATION
 ========================================================= */
-
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 0; left: 0; width: 100%;
   background: var(--teal);
-  color: #fff;
+  color: var(--white);
   z-index: 1000;
 }
 
 .nav-inner {
-  max-width: 1120px;
+  max-width: var(--width-max);
   margin: 0 auto;
   padding: 14px 24px;
   display: flex;
@@ -61,577 +64,127 @@ body {
 }
 
 .logo {
-  display: block;
-  width: 210px; /* adjust as needed */
-  height: 50px;
-  background-image: url('logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center;
-}
-.logo-text {
-  display: none;
+  display: block; width: 210px; height: 50px;
+  background: url('logo.png') no-repeat left center/contain;
 }
 
-.nav-links {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 0.98rem;
-  text-decoration: none;
-  color: #fff;
-  padding-bottom: 2px;
-}
-
-.nav-links a.active,
-.nav-links a:hover {
-  border-bottom: 2px solid var(--mustard);
-}
-
+.nav-links { list-style: none; display: flex; gap: 28px; }
+.nav-links a { font-family: 'Josefin Sans', sans-serif; font-size: 0.95rem; color: var(--white); }
+.nav-links a.active { border-bottom: 2px solid var(--mustard); }
 
 /* =========================================================
-   HERO (UPDATED)
+   3. SHARED COMPONENTS (Buttons, Cards, Sections)
 ========================================================= */
+/* Standard Button */
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: var(--radius-pill);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, opacity 0.2s;
+}
+.btn:hover { transform: translateY(-2px); }
 
+/* Button Variants */
+.btn-gold { background: var(--mustard); color: var(--ink); }
+.btn-dark { background: #0F3A43; color: var(--white); }
+
+/* Section Styling */
+.section { padding: 80px 0; }
+.section-title { font-size: 2.4rem; text-align: center; margin-bottom: 1rem; color: var(--ink); }
+.section-subtitle { max-width: 760px; margin: 0 auto 40px; text-align: center; font-size: 1.1rem; }
+
+/* Cards (Used in Capabilities & Services) */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+/* =========================================================
+   4. HOME PAGE SPECIFIC
+========================================================= */
 .hero {
   position: relative;
-  height: 65vh;        /* or 55vh, depending on how compact you want */
-  min-height: 450px;   /* ensures it doesn't get too short on mobile */
-  overflow: hidden;
-  color: #fff;
-  background: var(--teal);
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.45),
-    rgba(0, 0, 0, 0.65)
-  );
-  z-index: 2;
-}
-
-/* UPDATED: Centers content correctly */
-.hero-content {
-  position: relative;
-  height: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 70px 24px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* Centers items horizontally */
-  text-align: center;  /* Centers the text inside */
-  z-index: 3;
-}
-
-.hero-title {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 3rem;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-
-.hero-title span {
-  color: var(--mustard);
-}
-
-/* NEW: Controls the hero paragraph width */
-.hero-content p {
-  max-width: 800px;
-  margin: 0 auto 2.5rem auto;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: #fff;
-}
-
-/* UPDATED: Button sizing */
-.hero-cta {
-  background-color: #E8A735; /* mustard */
-  color: #072C33;            /* deep ink teal */
-  padding: 14px 32px;
-  border-radius: 40px;
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1.1rem;
-  display: inline-block; /* Keeps button size correct */
-  width: auto;           /* Prevents stretching */
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.hero-cta:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   GENERIC SECTION
-========================================================= */
-
-.section {
-  padding: 80px 0;
-}
-
-.section-title {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 2.4rem;
-  text-align: center;
-  margin-bottom: 18px;
-  color: var(--ink);
-}
-
-.section-subtitle {
-  max-width: 760px;
-  margin: 0 auto 30px;
-  text-align: center;
-  font-size: 1.05rem;
-}
-
-/* =========================================================
-   CAPABILITIES / EXPERTISE CARDS (NEW)
-========================================================= */
-
-.section.bloom-section {
-  padding: 70px 0;
-}
-
-/* Creates the 2-column layout */
-.capabilities-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  gap: 40px;
-  margin-top: 40px;
-}
-
-/* Designs the White Card */
-.bloom-card {
-  background-color: #ffffff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.05); /* Soft shadow */
-  border: 1px solid rgba(0,0,0,0.03);
-}
-
-/* Card Titles (Operations / Business Dev) */
-.card-header {
-  font-size: 1.5rem;
-  color: var(--teal);
-  margin-bottom: 30px;
-  font-family: 'Lora', serif;
-  border-bottom: 2px solid #f5f5f5;
-  padding-bottom: 15px;
-}
-
-/* List Items inside the card */
-.cap-item {
-  margin-bottom: 25px;
-}
-.cap-item:last-child {
-  margin-bottom: 0;
-}
-
-/* The Bold Label */
-.cap-label {
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 6px;
-  font-size: 1.1rem;
+  min-height: 65vh; /* Desktop height */
   display: flex;
   align-items: center;
-}
-
-/* The Flower Icon */
-.cap-label::before {
-  content: '✿'; 
-  color: var(--mustard); 
-  margin-right: 12px;
-  font-size: 1.2rem;
-}
-
-/* The Description Text */
-.cap-desc {
-  color: #666;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  padding-left: 28px;
-}
-
-
-/* =========================================================
-   CTA BAND (HOME + ABOUT)
-========================================================= */
-.cta-band {
-  width: 100%;
-  background-color: #A7CDC4;  /* light-blue */
-  padding: 80px 20px;
-  text-align: center;
-  display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.cta-band-inner {
-  max-width: 900px;
-  width: 100%;
-}
-
-.cta-band h2 {
-  font-family: "Lora", serif;
-  font-size: 2rem;
-  margin-bottom: 24px;
-  color: #0F3A43;    /* deep teal text */
-}
-
-.cta-button {
-  background-color: #0F3A43; /* deep teal */
-  color: #ffffff;
-  padding: 16px 36px;
-  border-radius: 40px;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: opacity 0.3s ease, transform 0.2s ease;
-}
-.cta-button:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-/* =========================================================
-   ABOUT – HEADER BANNER
-========================================================= */
-
-.about-header {
-  background-image: url("about-header-bg.png"); /* ensure this image exists or add fallback color */
-  background-color: var(--teal); /* fallback */
-  background-size: cover;
-  background-position: center;
-  padding: 100px 0px 70px;
-  text-align: center;
-  color: #fff;
-}
-
-.about-header h1 {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 2.8rem;
-}
-
-/* =========================================================
-   ABOUT – BODY BLOCK
-========================================================= */
-
-.about-body-wrap {
-  background: var(--mustard);
-  padding: 70px 0 60px;
-}
-
-.about-body {
-  max-width: 820px;
-  margin: 0 auto;
-  padding: 40px 32px 46px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: var(--shadow-md);
-  flex: 1;
-  min-width: 0;
-}
-
-.about-body h2 {
-  font-family: 'Josefin Sans';
-  font-size: 1.75rem;
-  margin-bottom: 16px;
-}
-
-.about-body p {
-  margin-bottom: 12px;
-  line-height: 1.65;
-}
-
-.about-layout {
-  display: flex;
-  gap: 2.5rem;
-  align-items: flex-start;
-}
-
-.about-photo {
-  flex: 0 0 auto;
-}
-
-.photo-frame {
-  width: 320px;
-  height: 420px;
-  overflow: hidden;
-  border-radius: 18px;
-}
-
-.photo-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-}
-
-/* =========================================================
-   ABOUT – VALUES CASCADING CARDS
-========================================================= */
-
-.values-section {
-  background: var(--mustard);
-  padding: 80px 0 100px;
-}
-
-.values-title {
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 2.4rem;
-  text-align: center;
-  margin-bottom: 32px;
-  color: var(--ink);
-}
-
-.values-cards {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.value-card {
   background: var(--teal);
-  color: #fff;
-  padding: 18px 26px 18px;
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-md);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
-}
-
-.value-card h3 {
-  font-family: 'Josefin Sans';
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--mustard);
-  margin-bottom: 4px;
-}
-
-.value-card p {
-  font-size: 1.02rem;
-  line-height: 1.55;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height 0.3s ease, opacity 0.25s ease;
-}
-
-/* expanded */
-.value-card.active p {
-  max-height: 500px;
-  opacity: 1;
-  margin-top: 4px;
-}
-
-.value-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
-}
-
-/* Cascading widths (desktop) */
-.value-card:nth-child(1) { width: 95%; margin-left: 0%; }
-.value-card:nth-child(2) { width: 88%; margin-left: 5%; }
-.value-card:nth-child(3) { width: 92%; margin-left: 2%; }
-.value-card:nth-child(4) { width: 84%; margin-left: 8%; }
-.value-card:nth-child(5) { width: 90%; margin-left: 4%; } /* Added for 'Connection' */
-
-/* =========================================================
-   SERVICES
-========================================================= */
-
-.services-section {
-  padding: 60px 0 80px;
-  background-color: #A7CDC4; /* light blue/teal */
-}
-
-.services-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.service-card {
-  background: #fff;
-  border-radius: 18px;
-  padding: 26px 24px 24px;
-  box-shadow: var(--shadow-md);
-}
-
-.service-card h3 {
-  font-family: 'Josefin Sans';
-  font-size: 1.4rem;
-  margin-bottom: 4px;
-}
-
-.service-card .price {
-  font-family: 'Josefin Sans';
-  font-size: 1.05rem;
-  color: var(--teal);
-  margin-bottom: 10px;
-}
-
-.service-card p {
-  font-size: 0.98rem;
-  margin-bottom: 10px;
-}
-
-.service-card ul {
-  margin-left: 20px;
-  margin-bottom: 16px;
-  font-size: 0.96rem;
-}
-
-.service-card .gc-booking-target {
-  margin-top: 10px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer {
-  background: var(--teal);
-  color: #fff;
-  padding: 50px 24px 30px;
-  font-size: 0.9rem;
-}
-
-.footer-inner {
-  max-width: 1120px;
-  margin: 0 auto;
+  color: var(--white);
   text-align: center;
+  padding-top: 80px; /* Space for fixed nav */
 }
 
-.footer-links {
-  margin-top: 12px;
-  margin-bottom: 16px;
+/* Dark overlay on hero */
+.hero::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
 }
 
-.footer-links a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 8px;
-  font-size: 0.9rem;
-}
+.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 20px; }
+.hero-title { font-size: 3rem; margin-bottom: 24px; }
+.hero-content p { font-size: 1.25rem; margin-bottom: 32px; }
+
+/* Capabilities Grid */
+.capabilities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.cap-header { font-size: 1.5rem; color: var(--teal); border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; margin-bottom: 20px; font-family: 'Lora', serif; }
+.cap-item { margin-bottom: 25px; }
+.cap-label { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; margin-bottom: 5px; }
+.cap-label::before { content: '✿'; color: var(--mustard); margin-right: 10px; }
+.cap-desc { font-size: 0.95rem; color: #555; padding-left: 26px; }
+
+/* Services Grid */
+.bg-teal-light { background: var(--teal-light); }
+.services-grid { display: grid; gap: 24px; max-width: 900px; margin: 0 auto; }
+.service-price { font-family: 'Josefin Sans'; color: var(--teal); font-size: 1.1rem; margin-bottom: 10px; }
+.service-list { margin: 15px 0 15px 20px; font-size: 0.95rem; }
 
 /* =========================================================
-   RESPONSIVE
+   5. ABOUT PAGE SPECIFIC
 ========================================================= */
+.about-header { background: var(--teal); color: var(--white); padding: 120px 0 60px; text-align: center; }
+.about-header h1 { font-size: 2.8rem; }
 
+.about-wrapper { background: var(--mustard); padding: 70px 0; }
+.about-layout { display: flex; gap: 40px; align-items: flex-start; }
+.about-photo img { width: 320px; height: 420px; object-fit: cover; border-radius: var(--radius); }
+.about-text { flex: 1; } /* Takes remaining space */
+
+/* CTA Band */
+.cta-band { background: var(--teal-light); padding: 80px 20px; text-align: center; }
+.cta-band h2 { font-family: 'Lora', serif; font-size: 2rem; margin-bottom: 20px; color: var(--ink); }
+
+/* =========================================================
+   6. FOOTER
+========================================================= */
+.footer { background: var(--teal); color: var(--white); padding: 50px 0 30px; font-size: 0.9rem; text-align: center; }
+.footer-links { margin: 15px 0; }
+.footer-links a { margin: 0 10px; color: var(--white); }
+.footer-email { margin-top: 15px; font-size: 1rem; }
+.footer-email a { text-decoration: underline; }
+.footer-copy { margin-top: 25px; opacity: 0.7; font-size: 0.85rem; }
+
+/* =========================================================
+   7. MOBILE / RESPONSIVE
+========================================================= */
 @media (max-width: 900px) {
-  .hero-title {
-    font-size: 2.4rem;
-  }
-
-  /* Capabilities Cards Stack */
-  .capabilities-wrapper {
-    grid-template-columns: 1fr; 
-    gap: 30px;
-  }
-  .bloom-card {
-    padding: 25px;
-  }
-
-  /* Reset Value Cards width */
-  .value-card:nth-child(n) {
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-layout {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .photo-frame {
-    width: 120px;
-    height: 150px;
-  }
+  .hero-title { font-size: 2.2rem; }
+  .capabilities-grid { grid-template-columns: 1fr; } /* Stack columns */
+  .about-layout { flex-direction: column; align-items: center; } /* Stack photo on text */
+  .about-photo img { width: 280px; height: auto; }
 }
 
 @media (max-width: 640px) {
-  .nav-inner {
-    padding-inline: 16px;
-  }
-
-  .section {
-    padding: 60px 0;
-  }
-
-  .about-body {
-    padding-inline: 20px;
-  }
+  .section { padding: 50px 0; }
+  
+  /* Mobile Hero Fix */
+  .hero { height: auto; min-height: 100vh; padding: 100px 20px 60px; }
+  .hero-content p { font-size: 1.1rem; }
+  
+  /* Nav spacing */
+  .nav-inner { padding: 14px 16px; }
 }
-/* =========================================================
-       RESPONSIVE (UPDATED FIX)
-    ========================================================= */
-    @media (max-width: 900px) {
-      /* 1. Make text smaller so it doesn't take up huge space */
-      .hero-title {
-        font-size: 2.2rem; 
-      }
-      
-      .capabilities-wrapper {
-        grid-template-columns: 1fr; 
-        gap: 30px;
-      }
-      .bloom-card {
-        padding: 25px;
-      }
-    }
-    
-    @media (max-width: 640px) {
-      .nav-inner {
-        padding-inline: 16px;
-      }
-      
-      .section {
-        padding: 60px 0;
-      }
-
-      /* --- MOBILE HERO FIX --- */
-      .hero {
-        height: auto;        /* Stop forcing 65vh height */
-        min-height: 100vh;   /* let it grow as tall as needed */
-        padding-top: 80px;   /* Push content down below the fixed navbar */
-      }
-      
-      .hero-content {
-        justify-content: flex-start; /* Stop trying to center vertically */
-        padding-top: 40px;           /* Add breathing room at the top */
-        padding-bottom: 60px;        /* Add breathing room at the bottom */
-      }
-      
-      .hero-title {
-        font-size: 2rem; /* Shrink title further for phone screens */
-        margin-bottom: 16px;
-      }
-      
-      .hero-content p {
-        font-size: 1.1rem; /* Slightly smaller body text */
-      }
-    }
