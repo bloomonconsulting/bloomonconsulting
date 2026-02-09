@@ -181,6 +181,9 @@ a:hover { opacity: 0.8; }
 /* =========================================================
    6. VALUES SECTION (Expandable Pills)
 ========================================================= */
+/* =========================================================
+   VALUES SECTION (Fixed & Cleaned)
+========================================================= */
 .values-section {
   padding: 60px 0;
   text-align: center;
@@ -196,9 +199,10 @@ a:hover { opacity: 0.8; }
 
 .values-cards {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  flex-wrap: wrap;       /* Allows them to wrap */
+  justify-content: center; /* Centers them */
+  align-items: flex-start; /* CRITICAL FIX: Prevents "Equity" from stretching into a big box */
+  gap: 16px;             /* Consistent spacing */
   max-width: 900px;
   margin: 0 auto;
 }
@@ -206,67 +210,90 @@ a:hover { opacity: 0.8; }
 .value-card {
   background: var(--white);
   border: 1px solid var(--teal-light);
-  border-radius: 50px; /* Pill Shape */
+  border-radius: 50px;   /* Pill Shape */
   padding: 12px 35px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth snap */
   position: relative;
   overflow: hidden;
-  min-width: 160px;
+  
+  /* Size Controls */
+  width: auto;           /* Only take up space needed for text */
+  max-width: 100%;       /* Don't overflow screen */
+  flex: 0 0 auto;        /* Don't grow or shrink unexpectedly */
 }
 
-/* The Title (Always visible) */
+/* The Title */
 .value-card h3 {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.15rem;
   color: var(--teal);
-  pointer-events: none; /* Clicking text hits the card */
-  user-select: none;
+  pointer-events: none;
+  transition: color 0.3s ease;
 }
 
 /* The Description (Hidden by default) */
 .value-card p {
-  display: none; /* HIDDEN */
+  display: none;         /* Hidden initially */
   margin-top: 15px;
   font-size: 0.95rem;
   color: var(--ink);
   line-height: 1.5;
-  text-align: left;
-  animation: fadeIn 0.3s ease forwards;
+  text-align: left; /* Keep text left-aligned for readability */
+  animation: slideDown 0.3s ease forwards;
 }
 
-/* ACTIVE STATE (Triggered by JS) */
+/* ACTIVE STATE (When clicked) */
 .value-card.active {
   background: var(--offwhite);
   border-color: var(--mustard);
-  border-radius: 20px; /* Expands to card shape */
-  padding: 25px;
+  border-radius: 25px;   /* Slightly less round when open to fit text */
+  padding: 25px 35px;
   box-shadow: var(--shadow);
-  width: 100%; 
-  max-width: 600px; /* Control max width when open */
+  
+  /* This prevents it from breaking the whole layout */
+  flex-basis: 100%;      /* Forces it to take a full line if needed... */
+  max-width: 600px;      /* ...but caps the width so it looks like a card */
+  z-index: 10;
+  order: 0;              /* Keeps it in flow */
 }
 
+/* Optional: Make the title bigger when open */
 .value-card.active h3 {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  font-size: 1.3rem;
   color: var(--ink);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
 }
 
 .value-card.active p {
-  display: block; /* Reveal text */
+  display: block;
 }
 
 .value-card:hover {
   border-color: var(--mustard);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(5px); }
+/* Animation for the text appearing */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Tweak */
+@media (max-width: 600px) {
+  .values-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .value-card {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* =========================================================
