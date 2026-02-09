@@ -96,7 +96,7 @@ a:hover { opacity: 0.8; }
 .section-title { font-size: 2.4rem; text-align: center; margin-bottom: 1rem; color: var(--ink); }
 .section-subtitle { max-width: 760px; margin: 0 auto 40px; text-align: center; font-size: 1.1rem; }
 
-/* Cards (Used in Capabilities & Services) */
+/* Cards */
 .card {
   background: var(--white);
   border-radius: var(--radius);
@@ -150,46 +150,76 @@ a:hover { opacity: 0.8; }
 .about-header h1 { font-size: 2.8rem; }
 
 .about-wrapper { background: var(--mustard); padding: 70px 0; }
-.about-layout { display: flex; gap: 40px; align-items: flex-start; }
+.about-layout { display: flex; gap: 40px; align-items: flex-start; margin-bottom: 50px; }
 .about-photo img { width: 320px; height: 420px; object-fit: cover; border-radius: var(--radius); }
-.about-text { flex: 1; } /* Takes remaining space */
-/* Values Section */
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 Columns */
-  gap: 30px;
-  margin-top: 40px;
-}
+.about-text { flex: 1; }
 
-.value-card {
-  background: var(--white);
-  padding: 30px;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-
-.value-card h3 {
-  color: var(--teal);
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.value-card p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* Mobile: Stack them */
-@media (max-width: 900px) {
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
-}
 /* CTA Band */
 .cta-band { background: var(--teal-light); padding: 80px 20px; text-align: center; }
 .cta-band h2 { font-family: 'Lora', serif; font-size: 2rem; margin-bottom: 20px; color: var(--ink); }
+
+/* --- FLOATING VALUES SECTION --- */
+.values-section {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.values-container {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background: var(--offwhite);
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  overflow: hidden; 
+}
+
+.value-pill {
+  position: absolute; /* Allows JS animation */
+  background: var(--teal-light);
+  color: var(--ink);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s, transform 0.2s;
+  z-index: 2;
+}
+
+.value-pill:hover {
+  background: var(--mustard);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.value-pill.active {
+  background: var(--teal);
+  color: var(--white);
+  box-shadow: 0 0 0 4px var(--mustard-soft);
+}
+
+.values-display-box {
+  min-height: 100px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.values-display-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
 
 /* =========================================================
    6. FOOTER
@@ -206,8 +236,8 @@ a:hover { opacity: 0.8; }
 ========================================================= */
 @media (max-width: 900px) {
   .hero-title { font-size: 2.2rem; }
-  .capabilities-grid { grid-template-columns: 1fr; } /* Stack columns */
-  .about-layout { flex-direction: column; align-items: center; } /* Stack photo on text */
+  .capabilities-grid { grid-template-columns: 1fr; } 
+  .about-layout { flex-direction: column; align-items: center; } 
   .about-photo img { width: 280px; height: auto; }
 }
 
@@ -220,4 +250,20 @@ a:hover { opacity: 0.8; }
   
   /* Nav spacing */
   .nav-inner { padding: 14px 16px; }
+
+  /* Mobile Values: Stop animation, stack them */
+  .values-container {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    justify-content: center;
+  }
+  .value-pill {
+    position: relative; 
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
 }
