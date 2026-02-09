@@ -179,10 +179,7 @@ a:hover { opacity: 0.8; }
 .cta-band h2 { font-family: 'Lora', serif; font-size: 2rem; margin-bottom: 20px; color: var(--ink); }
 
 /* =========================================================
-   6. VALUES SECTION (Expandable Pills)
-========================================================= */
-/* =========================================================
-   VALUES SECTION (Fixed & Cleaned)
+   VALUES SECTION (Vertical Stack)
 ========================================================= */
 .values-section {
   padding: 60px 0;
@@ -199,103 +196,80 @@ a:hover { opacity: 0.8; }
 
 .values-cards {
   display: flex;
-  flex-wrap: wrap;       /* Allows them to wrap */
-  justify-content: center; /* Centers them */
-  align-items: flex-start; /* CRITICAL FIX: Prevents "Equity" from stretching into a big box */
-  gap: 16px;             /* Consistent spacing */
-  max-width: 900px;
+  flex-direction: column; /* Stack them vertically */
+  align-items: center;    /* Center them */
+  gap: 20px;              /* Space between each pill */
+  max-width: 600px;       /* Limits how wide the stack gets */
   margin: 0 auto;
 }
 
 .value-card {
   background: var(--white);
   border: 1px solid var(--teal-light);
-  border-radius: 50px;   /* Pill Shape */
-  padding: 12px 35px;
+  border-radius: 50px;    /* Pill Shape */
+  padding: 15px 40px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth snap */
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   
-  /* Size Controls */
-  width: auto;           /* Only take up space needed for text */
-  max-width: 100%;       /* Don't overflow screen */
-  flex: 0 0 auto;        /* Don't grow or shrink unexpectedly */
+  /* Layout Controls */
+  width: 100%;            /* Makes them all the same width */
+  max-width: 400px;       /* ...but not too wide before clicking */
+  text-align: center;     /* keeps the title centered */
 }
 
 /* The Title */
 .value-card h3 {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--teal);
   pointer-events: none;
-  transition: color 0.3s ease;
 }
 
 /* The Description (Hidden by default) */
 .value-card p {
-  display: none;         /* Hidden initially */
+  display: none;          /* HIDDEN */
   margin-top: 15px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--ink);
   line-height: 1.5;
-  text-align: left; /* Keep text left-aligned for readability */
-  animation: slideDown 0.3s ease forwards;
+  text-align: left;       /* Readability for paragraph */
+  animation: fadeIn 0.4s ease forwards;
 }
 
 /* ACTIVE STATE (When clicked) */
 .value-card.active {
   background: var(--offwhite);
   border-color: var(--mustard);
-  border-radius: 25px;   /* Slightly less round when open to fit text */
-  padding: 25px 35px;
+  border-radius: 25px;    /* Expands to card shape */
+  padding: 30px;
   box-shadow: var(--shadow);
-  
-  /* This prevents it from breaking the whole layout */
-  flex-basis: 100%;      /* Forces it to take a full line if needed... */
-  max-width: 600px;      /* ...but caps the width so it looks like a card */
-  z-index: 10;
-  order: 0;              /* Keeps it in flow */
+  max-width: 100%;        /* Allows it to fill the container width */
 }
 
-/* Optional: Make the title bigger when open */
 .value-card.active h3 {
-  color: var(--ink);
   border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding-bottom: 12px;
-  margin-bottom: 12px;
-  font-size: 1.3rem;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  color: var(--ink);
 }
 
 .value-card.active p {
-  display: block;
+  display: block; /* Show text */
 }
 
 .value-card:hover {
   border-color: var(--mustard);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* Animation for the text appearing */
-@keyframes slideDown {
+@keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
 }
-
-/* Mobile Tweak */
-@media (max-width: 600px) {
-  .values-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .value-card {
-    width: 100%;
-    text-align: center;
-  }
-}
-
 /* =========================================================
    7. FOOTER
 ========================================================= */
