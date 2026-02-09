@@ -153,7 +153,40 @@ a:hover { opacity: 0.8; }
 .about-layout { display: flex; gap: 40px; align-items: flex-start; }
 .about-photo img { width: 320px; height: 420px; object-fit: cover; border-radius: var(--radius); }
 .about-text { flex: 1; } /* Takes remaining space */
+/* Values Section */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+  gap: 30px;
+  margin-top: 40px;
+}
 
+.value-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.value-card h3 {
+  color: var(--teal);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.value-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Mobile: Stack them */
+@media (max-width: 900px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* CTA Band */
 .cta-band { background: var(--teal-light); padding: 80px 20px; text-align: center; }
 .cta-band h2 { font-family: 'Lora', serif; font-size: 2rem; margin-bottom: 20px; color: var(--ink); }
