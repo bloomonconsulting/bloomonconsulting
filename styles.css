@@ -1,6 +1,5 @@
 /* =========================================================
    1. VARIABLES & RESET
-   (Change colors here to update the whole site)
 ========================================================= */
 :root {
   /* Palette */
@@ -14,7 +13,7 @@
 
   /* Spacing & Layout */
   --radius: 16px;
-  --radius-pill: 40px;
+  --radius-pill: 50px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   --width-max: 1120px;
 }
@@ -28,9 +27,10 @@ html, body {
   color: var(--ink);
   line-height: 1.6;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* Headings */
+/* Typography */
 h1, h2, h3 { font-family: 'Josefin Sans', sans-serif; line-height: 1.2; }
 a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
 a:hover { opacity: 0.8; }
@@ -52,6 +52,7 @@ a:hover { opacity: 0.8; }
   background: var(--teal);
   color: var(--white);
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-inner {
@@ -65,6 +66,7 @@ a:hover { opacity: 0.8; }
 
 .logo {
   display: block; width: 210px; height: 50px;
+  /* Ensure you have a logo.png, otherwise this is blank space */
   background: url('logo.png') no-repeat left center/contain;
 }
 
@@ -73,9 +75,9 @@ a:hover { opacity: 0.8; }
 .nav-links a.active { border-bottom: 2px solid var(--mustard); }
 
 /* =========================================================
-   3. SHARED COMPONENTS (Buttons, Cards, Sections)
+   3. SHARED COMPONENTS (Buttons, Cards)
 ========================================================= */
-/* Standard Button */
+/* Standard Button (Used on Home) */
 .btn {
   display: inline-block;
   padding: 14px 36px;
@@ -83,20 +85,30 @@ a:hover { opacity: 0.8; }
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: transform 0.2s ease, opacity 0.2s;
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 .btn:hover { transform: translateY(-2px); }
 
-/* Button Variants */
+/* Button Colors */
 .btn-gold { background: var(--mustard); color: var(--ink); }
 .btn-dark { background: #0F3A43; color: var(--white); }
 
-/* Section Styling */
-.section { padding: 80px 0; }
-.section-title { font-size: 2.4rem; text-align: center; margin-bottom: 1rem; color: var(--ink); }
-.section-subtitle { max-width: 760px; margin: 0 auto 40px; text-align: center; font-size: 1.1rem; }
+/* The "CTA Button" class (Used on About Page - aliases to .btn style) */
+.cta-button {
+  display: inline-block;
+  padding: 14px 36px;
+  border-radius: var(--radius-pill);
+  background: #0F3A43; /* Dark Teal */
+  color: var(--white);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+.cta-button:hover { transform: translateY(-2px); }
 
-/* Cards */
+/* Standard Cards (Used on Home Page) */
 .card {
   background: var(--white);
   border-radius: var(--radius);
@@ -104,22 +116,26 @@ a:hover { opacity: 0.8; }
   box-shadow: var(--shadow);
 }
 
+/* Section Styling */
+.section { padding: 80px 0; }
+.section-title { font-size: 2.4rem; text-align: center; margin-bottom: 1rem; color: var(--ink); }
+.section-subtitle { max-width: 760px; margin: 0 auto 40px; text-align: center; font-size: 1.1rem; }
+
 /* =========================================================
    4. HOME PAGE SPECIFIC
 ========================================================= */
 .hero {
   position: relative;
-  min-height: 65vh; /* Desktop height */
+  min-height: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--teal);
   color: var(--white);
   text-align: center;
-  padding-top: 80px; /* Space for fixed nav */
+  padding-top: 80px;
 }
 
-/* Dark overlay on hero */
 .hero::before {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
@@ -149,28 +165,32 @@ a:hover { opacity: 0.8; }
 .about-header { background: var(--teal); color: var(--white); padding: 120px 0 60px; text-align: center; }
 .about-header h1 { font-size: 2.8rem; }
 
-.about-wrapper { background: var(--mustard); padding: 70px 0; }
-.about-layout { display: flex; gap: 40px; align-items: flex-start; margin-bottom: 50px; }
-.about-photo img { width: 320px; height: 420px; object-fit: cover; border-radius: var(--radius); }
-.about-text { flex: 1; }
+.about-body-wrap { background: var(--offwhite); padding: 70px 0; }
+.about-layout { display: flex; gap: 50px; align-items: flex-start; margin-bottom: 50px; }
+
+.about-photo { flex: 0 0 320px; }
+.about-photo img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); }
+.about-body { flex: 1; }
+.about-body h2 { color: var(--teal); font-size: 1.8rem; margin-bottom: 20px; }
+.about-body p { margin-bottom: 20px; font-size: 1.05rem; }
 
 /* CTA Band */
 .cta-band { background: var(--teal-light); padding: 80px 20px; text-align: center; }
 .cta-band h2 { font-family: 'Lora', serif; font-size: 2rem; margin-bottom: 20px; color: var(--ink); }
 
-/* --- FLOATING VALUES SECTION --- */
 /* =========================================================
-   VALUES SECTION (Matched to your original HTML)
+   6. VALUES SECTION (Expandable Pills)
 ========================================================= */
 .values-section {
   padding: 60px 0;
   text-align: center;
+  background: var(--white);
 }
 
 .values-title {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 2.4rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: var(--ink);
 }
 
@@ -187,12 +207,12 @@ a:hover { opacity: 0.8; }
   background: var(--white);
   border: 1px solid var(--teal-light);
   border-radius: 50px; /* Pill Shape */
-  padding: 12px 30px;
+  padding: 12px 35px;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  min-width: 160px; /* Width of the pill */
+  min-width: 160px;
 }
 
 /* The Title (Always visible) */
@@ -201,12 +221,13 @@ a:hover { opacity: 0.8; }
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.15rem;
   color: var(--teal);
-  pointer-events: none;
+  pointer-events: none; /* Clicking text hits the card */
+  user-select: none;
 }
 
 /* The Description (Hidden by default) */
 .value-card p {
-  display: none; /* Hidden */
+  display: none; /* HIDDEN */
   margin-top: 15px;
   font-size: 0.95rem;
   color: var(--ink);
@@ -223,7 +244,7 @@ a:hover { opacity: 0.8; }
   padding: 25px;
   box-shadow: var(--shadow);
   width: 100%; 
-  max-width: 600px;
+  max-width: 600px; /* Control max width when open */
 }
 
 .value-card.active h3 {
@@ -238,7 +259,6 @@ a:hover { opacity: 0.8; }
   display: block; /* Reveal text */
 }
 
-/* Hover Effect */
 .value-card:hover {
   border-color: var(--mustard);
   transform: translateY(-2px);
@@ -250,48 +270,31 @@ a:hover { opacity: 0.8; }
 }
 
 /* =========================================================
-   6. FOOTER
+   7. FOOTER
 ========================================================= */
 .footer { background: var(--teal); color: var(--white); padding: 50px 0 30px; font-size: 0.9rem; text-align: center; }
 .footer-links { margin: 15px 0; }
 .footer-links a { margin: 0 10px; color: var(--white); }
 .footer-email { margin-top: 15px; font-size: 1rem; }
 .footer-email a { text-decoration: underline; }
-.footer-copy { margin-top: 25px; opacity: 0.7; font-size: 0.85rem; }
 
 /* =========================================================
-   7. MOBILE / RESPONSIVE
+   8. MOBILE RESPONSIVE
 ========================================================= */
 @media (max-width: 900px) {
   .hero-title { font-size: 2.2rem; }
   .capabilities-grid { grid-template-columns: 1fr; } 
   .about-layout { flex-direction: column; align-items: center; } 
-  .about-photo img { width: 280px; height: auto; }
+  .about-photo { flex: 0 0 auto; width: 100%; max-width: 400px; }
 }
 
 @media (max-width: 640px) {
   .section { padding: 50px 0; }
-  
-  /* Mobile Hero Fix */
   .hero { height: auto; min-height: 100vh; padding: 100px 20px 60px; }
   .hero-content p { font-size: 1.1rem; }
-  
-  /* Nav spacing */
   .nav-inner { padding: 14px 16px; }
-
-  /* Mobile Values: Stop animation, stack them */
-  .values-container {
-    height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
-    justify-content: center;
-  }
-  .value-pill {
-    position: relative; 
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-  }
+  
+  /* Stack pills vertically on mobile */
+  .values-cards { flex-direction: column; align-items: center; }
+  .value-card { width: 100%; }
 }
