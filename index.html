@@ -11,22 +11,37 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bloom On Consulting – Operations & Business Development</title>
-  <meta name="description" content="Human-centered operations and relationship-based growth strategies." />
+  
+  <link rel="canonical" href="https://bloomonconsulting.com/" />
+  
+  <title>Small Business Operations Consultant | Bloom On Consulting</title>
+  <meta name="description" content="Streamline your small business operations. We help service providers build efficient workflows, organize financial systems, and grow through strategic partnerships." />
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Bloom On Consulting",
+    "image": "https://bloomonconsulting.com/logo.png",
+    "url": "https://bloomonconsulting.com",
+    "priceRange": "$$",
+    "description": "Human-centered operations and business development consulting for small businesses, therapists, and creatives.",
+    "areaServed": "US"
+  }
+  </script>
   
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Josefin+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
 </head>
 <body>
 
   <header class="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="logo" aria-label="Home"></a>
+      <a href="index.html" class="logo" aria-label="Bloom On Consulting Home"></a>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="index.html#services">Services</a></li>
+        <li><a href="services.html">Services</a></li>
       </ul>
     </div>
   </header>
@@ -38,7 +53,7 @@
           Build a business that runs smoothly and connects deeply. 
           Get the operational systems and community strategy you need to grow with clarity and stability.
         </p>
-        <a href="#services" class="btn btn-gold">See How It Works</a>
+        <a href="services.html" class="btn btn-gold">See Ways to Work Together</a>
     </div>
   </section>
   
@@ -94,52 +109,19 @@
     </div>
   </section>
 
-  <section class="section bg-teal-light" id="services">
+  <section class="cta-band">
     <div class="container">
-      <h2 class="section-title">Ways to Work Together</h2>
-
-      <div class="services-grid">
-        <article class="card">
-          <h3>Project-Based Support</h3>
-          <p class="service-price">$80/hr</p>
-          <p>For defined scopes, system builds, and specific events.</p>
-          <ul class="service-list">
-            <li>System implementation and audits</li>
-            <li>Event planning and coordination</li>
-            <li>Specific problem solving</li>
-          </ul>
-          <div class="gc-booking-target"></div>
-        </article>
-
-        <article class="card">
-          <h3>Monthly Partnership</h3>
-          <p class="service-price">$300/month</p>
-          <p>For ongoing management and priority availability. Best for consistent support without the full-time cost.</p>
-          <ul class="service-list">
-            <li>Includes 5 hours of support</li>
-            <li>Additional hours billed at $60/hr (saving $20/hr)</li>
-          </ul>
-          <div class="gc-booking-target"></div>
-        </article>
-
-        <article class="card">
-          <h3>Free Consultation</h3>
-          <p>
-            Let's figure it out together.
-            <a href="mailto:malak&#64;bloomonconsulting&#46;com" style="color: var(--teal); font-weight: 600;">Email me</a> 
-            or book a free call to decide on the best fit for your goals.
-          </p>
-          <div class="gc-booking-target"></div>
-        </article>
-      </div>
+      <h2>Ready to organize and grow?</h2>
+      <p style="margin-bottom: 20px;">View our service options to see how we can help.</p>
+      <a href="services.html" class="cta-button">View Services</a>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>Bloom On Consulting – Operations & Business Development.</p>
+      <p>Bloom On Consulting | Operations & Business Development.</p>
       <div class="footer-links">
-        <a href="index.html">Home</a> · <a href="about.html">About</a>
+        <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="services.html">Services</a>
       </div>
       <p class="footer-email">
         Questions? <a href="mailto:malak&#64;bloomonconsulting&#46;com">malak&#64;bloomonconsulting&#46;com</a>
@@ -148,20 +130,6 @@
     </div>
   </footer>
 
-  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-  <script>
-    window.addEventListener('load', function () {
-      if (!window.calendar || !calendar.schedulingButton) return;
-      document.querySelectorAll('.gc-booking-target').forEach(function (target) {
-        calendar.schedulingButton.load({
-          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ14GMZFijigazEEm9E6vu5sly_lmPi0dmwbjWzjcyPEAa_IUv92zlnG8_JfPj6kvWOkEC_eCeS6?gv=true',
-          color: '#039BE5',
-          label: 'Book your free consultation call',
-          target: target
-        });
-      });
-    });
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
