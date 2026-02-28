@@ -299,3 +299,41 @@ a:hover { opacity: 0.8; }
   .values-cards { flex-direction: column; align-items: center; }
   .value-card { width: 100%; }
 }
+
+/* Homepage refinements */
+
+.hero { min-height: 58vh; }
+
+.hero-content { max-width: 860px; }
+
+.hero-title { font-size: 2.75rem; line-height: 1.15; }
+
+.hero-lead {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  margin: 0 0 14px 0;
+}
+
+.hero-tagline {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 18px 0 32px 0;
+  opacity: 0.95;
+}
+
+.pain-list {
+  max-width: 880px;
+  margin: 18px auto 0;
+  padding-left: 20px;
+  text-align: left;
+  line-height: 1.9;
+  color: #555;
+}
+
+.pain-list li { margin-bottom: 6px; }
+
+.card-body {
+  line-height: 1.85;
+  color: #555;
+  font-size: 1.05rem;
+}
