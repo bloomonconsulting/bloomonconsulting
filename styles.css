@@ -337,3 +337,8 @@ a:hover { opacity: 0.8; }
   color: #555;
   font-size: 1.05rem;
 }
+
+/* Homepage: calmer card layout */
+.capabilities-grid { align-items: start; }
+.card { padding: 28px; }
+.service-list li { margin-bottom: 8px; }
