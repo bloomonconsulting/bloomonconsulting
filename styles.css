@@ -11,11 +11,19 @@
   --offwhite: #FDFBF7;
   --white: #ffffff;
 
-  /* Spacing & Layout */
+  /* Layout */
   --radius: 16px;
   --radius-pill: 50px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   --width-max: 1120px;
+
+  /* Shadows */
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-soft: 0 10px 22px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 18px 45px rgba(0, 0, 0, 0.12);
+
+  /* Borders */
+  --border: 1px solid rgba(7, 44, 51, 0.10);
+  --border-strong: 1px solid rgba(7, 44, 51, 0.16);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,7 +41,7 @@ html, body {
 /* Typography */
 h1, h2, h3 { font-family: 'Josefin Sans', sans-serif; line-height: 1.2; }
 a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
-a:hover { opacity: 0.8; }
+a:hover { opacity: 0.88; }
 
 /* Global Container */
 .container {
@@ -65,8 +73,9 @@ a:hover { opacity: 0.8; }
 }
 
 .logo {
-  display: block; width: 210px; height: 50px;
-  /* Ensure you have a logo.png, otherwise this is blank space */
+  display: block;
+  width: 210px;
+  height: 50px;
   background: url('logo.png') no-repeat left center/contain;
 }
 
@@ -75,9 +84,8 @@ a:hover { opacity: 0.8; }
 .nav-links a.active { border-bottom: 2px solid var(--mustard); }
 
 /* =========================================================
-   3. SHARED COMPONENTS (Buttons, Cards)
+   3. SHARED COMPONENTS
 ========================================================= */
-/* Standard Button (Used on Home) */
 .btn {
   display: inline-block;
   padding: 14px 36px;
@@ -85,48 +93,54 @@ a:hover { opacity: 0.8; }
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
-.btn:hover { transform: translateY(-2px); }
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
 
-/* Button Colors */
 .btn-gold { background: var(--mustard); color: var(--ink); }
 .btn-dark { background: #0F3A43; color: var(--white); }
 
-/* The "CTA Button" class (Used on About Page - aliases to .btn style) */
+/* CTA button is used on the band section */
 .cta-button {
   display: inline-block;
   padding: 14px 36px;
   border-radius: var(--radius-pill);
-  background: #0F3A43; /* Dark Teal */
+  background: #0F3A43;
   color: var(--white);
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.cta-button:hover { transform: translateY(-2px); }
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
 
-/* Standard Cards (Used on Home Page) */
+/* Cards */
 .card {
   background: var(--white);
   border-radius: var(--radius);
   padding: 30px;
+  border: var(--border);
   box-shadow: var(--shadow);
 }
 
-/* Section Styling */
+/* Sections */
 .section { padding: 80px 0; }
 .section-title { font-size: 2.4rem; text-align: center; margin-bottom: 1rem; color: var(--ink); }
 .section-subtitle { max-width: 760px; margin: 0 auto 40px; text-align: center; font-size: 1.1rem; }
 
 /* =========================================================
-   4. HOME PAGE SPECIFIC
+   4. HOME PAGE
 ========================================================= */
 .hero {
   position: relative;
-  min-height: 65vh;
+  min-height: 58vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,32 +151,125 @@ a:hover { opacity: 0.8; }
 }
 
 .hero::before {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
 }
 
-.hero-content { position: relative; z-index: 2; max-width: 800px; padding: 20px; }
-.hero-title { font-size: 3rem; margin-bottom: 24px; }
-.hero-content p { font-size: 1.25rem; margin-bottom: 32px; }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 2.75rem;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  margin: 0 auto 26px;
+  max-width: 640px;
+}
 
 /* Capabilities Grid */
-.capabilities-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.cap-header { font-size: 1.5rem; color: var(--teal); border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; margin-bottom: 20px; font-family: 'Lora', serif; }
-.cap-item { margin-bottom: 25px; }
-.cap-label { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; margin-bottom: 5px; }
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Make capability cards feel like panels, not boxes */
+.capabilities-grid .card {
+  position: relative;
+  padding: 34px;
+  border: var(--border);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+/* subtle accent wash */
+.capabilities-grid .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(11,91,101,0.85), rgba(232,167,53,0.85));
+  opacity: 0.9;
+}
+
+/* a soft background tint so it has depth */
+.capabilities-grid .card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 12% 0%, rgba(167,205,196,0.22), transparent 50%);
+  pointer-events: none;
+}
+
+.capabilities-grid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(11, 91, 101, 0.22);
+}
+
+.cap-header {
+  font-size: 1.45rem;
+  color: var(--teal);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(7, 44, 51, 0.08);
+  font-family: 'Lora', serif;
+  position: relative;
+  z-index: 1;
+}
+
+/* list styling used in pain points */
+.service-list {
+  margin: 15px 0 0 20px;
+  font-size: 0.98rem;
+  line-height: 1.85;
+  color: #1f3b41;
+  position: relative;
+  z-index: 1;
+}
+.service-list li { margin-bottom: 8px; }
+
+/* capability items used on services page */
+.cap-item { margin-bottom: 22px; position: relative; z-index: 1; }
+.cap-label {
+  font-weight: 700;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
 .cap-label::before { content: '✿'; color: var(--mustard); margin-right: 10px; }
 .cap-desc { font-size: 0.95rem; color: #555; padding-left: 26px; }
 
 /* Services Grid */
 .bg-teal-light { background: var(--teal-light); }
 .services-grid { display: grid; gap: 24px; max-width: 900px; margin: 0 auto; }
-.service-price { font-family: 'Josefin Sans'; color: var(--teal); font-size: 1.1rem; margin-bottom: 10px; }
-.service-list { margin: 15px 0 15px 20px; font-size: 0.95rem; }
+.service-price { font-family: 'Josefin Sans', sans-serif; color: var(--teal); font-size: 1.1rem; margin-bottom: 10px; }
 
 /* =========================================================
-   5. ABOUT PAGE SPECIFIC
+   5. ABOUT PAGE
 ========================================================= */
-.about-header { background: var(--teal); color: var(--white); padding: 120px 0 60px; text-align: center; }
+.about-header {
+  background: var(--teal);
+  color: var(--white);
+  padding: 120px 0 60px;
+  text-align: center;
+}
 .about-header h1 { font-size: 2.8rem; }
 
 .about-body-wrap { background: var(--offwhite); padding: 70px 0; }
@@ -179,7 +286,7 @@ a:hover { opacity: 0.8; }
 .cta-band h2 { font-family: 'Lora', serif; font-size: 2rem; margin-bottom: 20px; color: var(--ink); }
 
 /* =========================================================
-   VALUES SECTION (Vertical Stack)
+   6. VALUES SECTION (Vertical Stack)
 ========================================================= */
 .values-section {
   padding: 60px 0;
@@ -196,30 +303,27 @@ a:hover { opacity: 0.8; }
 
 .values-cards {
   display: flex;
-  flex-direction: column; /* Stack them vertically */
-  align-items: center;    /* Center them */
-  gap: 20px;              /* Space between each pill */
-  max-width: 600px;       /* Limits how wide the stack gets */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
 .value-card {
   background: var(--white);
   border: 1px solid var(--teal-light);
-  border-radius: 50px;    /* Pill Shape */
+  border-radius: 50px;
   padding: 15px 40px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   overflow: hidden;
-  
-  /* Layout Controls */
-  width: 100%;            /* Makes them all the same width */
-  max-width: 400px;       /* ...but not too wide before clicking */
-  text-align: center;     /* keeps the title centered */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
 
-/* The Title */
 .value-card h3 {
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
@@ -228,25 +332,23 @@ a:hover { opacity: 0.8; }
   pointer-events: none;
 }
 
-/* The Description (Hidden by default) */
 .value-card p {
-  display: none;          /* HIDDEN */
+  display: none;
   margin-top: 15px;
   font-size: 1rem;
   color: var(--ink);
   line-height: 1.5;
-  text-align: left;       /* Readability for paragraph */
-  animation: fadeIn 0.4s ease forwards;
+  text-align: left;
+  animation: fadeIn 0.35s ease forwards;
 }
 
-/* ACTIVE STATE (When clicked) */
 .value-card.active {
   background: var(--offwhite);
   border-color: var(--mustard);
-  border-radius: 25px;    /* Expands to card shape */
+  border-radius: 25px;
   padding: 30px;
   box-shadow: var(--shadow);
-  max-width: 100%;        /* Allows it to fill the container width */
+  max-width: 100%;
 }
 
 .value-card.active h3 {
@@ -257,23 +359,29 @@ a:hover { opacity: 0.8; }
   color: var(--ink);
 }
 
-.value-card.active p {
-  display: block; /* Show text */
-}
+.value-card.active p { display: block; }
 
 .value-card:hover {
   border-color: var(--mustard);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 /* =========================================================
    7. FOOTER
 ========================================================= */
-.footer { background: var(--teal); color: var(--white); padding: 50px 0 30px; font-size: 0.9rem; text-align: center; }
+.footer {
+  background: var(--teal);
+  color: var(--white);
+  padding: 50px 0 30px;
+  font-size: 0.9rem;
+  text-align: center;
+}
 .footer-links { margin: 15px 0; }
 .footer-links a { margin: 0 10px; color: var(--white); }
 .footer-email { margin-top: 15px; font-size: 1rem; }
@@ -284,68 +392,15 @@ a:hover { opacity: 0.8; }
 ========================================================= */
 @media (max-width: 900px) {
   .hero-title { font-size: 2.2rem; }
-  .capabilities-grid { grid-template-columns: 1fr; } 
-  .about-layout { flex-direction: column; align-items: center; } 
+  .capabilities-grid { grid-template-columns: 1fr; }
+  .about-layout { flex-direction: column; align-items: center; }
   .about-photo { flex: 0 0 auto; width: 100%; max-width: 400px; }
 }
 
 @media (max-width: 640px) {
   .section { padding: 50px 0; }
-  .hero { height: auto; min-height: 100vh; padding: 100px 20px 60px; }
+  .hero { min-height: 100vh; padding: 100px 20px 60px; }
   .hero-content p { font-size: 1.1rem; }
   .nav-inner { padding: 14px 16px; }
-  
-  /* Stack pills vertically on mobile */
-  .values-cards { flex-direction: column; align-items: center; }
   .value-card { width: 100%; }
-}
-
-/* Homepage refinements */
-
-.hero { min-height: 58vh; }
-
-.hero-content { max-width: 860px; }
-
-.hero-title { font-size: 2.75rem; line-height: 1.15; }
-
-.hero-lead {
-  font-size: 1.25rem;
-  line-height: 1.75;
-  margin: 0 0 14px 0;
-}
-
-.hero-tagline {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin: 18px 0 32px 0;
-  opacity: 0.95;
-}
-
-.pain-list {
-  max-width: 880px;
-  margin: 18px auto 0;
-  padding-left: 20px;
-  text-align: left;
-  line-height: 1.9;
-  color: #555;
-}
-
-.pain-list li { margin-bottom: 6px; }
-
-.card-body {
-  line-height: 1.85;
-  color: #555;
-  font-size: 1.05rem;
-}
-
-/* Homepage: calmer card layout */
-.capabilities-grid { align-items: start; }
-.card { padding: 28px; }
-.service-list li { margin-bottom: 8px; }
-
-.hero-lead {
-  max-width: 600px;
-  margin: 20px auto 30px;
-  line-height: 1.6;
-  font-size: 1.2rem;
 }
