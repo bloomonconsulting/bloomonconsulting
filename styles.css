@@ -342,3 +342,10 @@ a:hover { opacity: 0.8; }
 .capabilities-grid { align-items: start; }
 .card { padding: 28px; }
 .service-list li { margin-bottom: 8px; }
+
+.hero-lead {
+  max-width: 600px;
+  margin: 20px auto 30px;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
