@@ -1,4 +1,4 @@
-// Bloom On Consulting — shared behavior
+// Bloom On Consulting - shared behavior
 (function () {
   'use strict';
 

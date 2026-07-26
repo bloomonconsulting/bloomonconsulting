@@ -15,7 +15,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Lora',serif; background:var(--ivory); color:var(--text); line-height:1.8; font-size:1.06rem; -webkit-font-smoothing:antialiased; overflow-x:hidden}
 h1,h2,h3,h4{font-family:'Josefin Sans',sans-serif; color:var(--ink); line-height:1.1; font-weight:600; letter-spacing:-.01em}
 a{text-decoration:none; color:inherit}
-img{display:block; max-width:100%; height:auto; object-fit:cover}
+img{display:block; max-width:100%}
 .wrap{width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:clamp(1.25rem,5vw,3.25rem)}
 .narrow{max-width:760px}
 
@@ -109,10 +109,9 @@ img{display:block; max-width:100%; height:auto; object-fit:cover}
 /* process 01 02 03 */
 .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:2.4rem; counter-reset:step; position:relative}
 .step{text-align:center; position:relative}
-.step .num{font-family:'Lora',serif; font-size:3.1rem; color:var(--gold-deep); line-height:1; display:inline-block; margin-bottom:.7rem; font-weight:500}
+.step .step-mark{color:var(--gold); margin-bottom:1rem; line-height:0}
 .step h3{font-size:1.4rem; margin-bottom:.6rem}
 .step p{color:var(--muted); font-size:1.02rem; max-width:300px; margin-inline:auto}
-.step:not(:last-child)::after{content:""; position:absolute; top:1.4rem; right:-1.2rem; width:2.4rem; height:1px; background:linear-gradient(90deg,var(--hair),transparent)}
 
 /* services pricing */
 .pricing{display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; align-items:stretch}
@@ -202,8 +201,8 @@ img{display:block; max-width:100%; height:auto; object-fit:cover}
 /* footer */
 .footer{background:var(--ink); color:rgba(255,255,255,.82); padding:4rem 0 2rem}
 .footer-grid{display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:2.5rem; margin-bottom:2.5rem}
-.f-chip{background:var(--ivory); display:inline-flex; align-items:center; padding:.55rem .8rem; border-radius:12px}
-.f-chip img{height:40px; width:auto}
+.f-chip{background:var(--ivory); display:inline-block; padding:.55rem .8rem; border-radius:12px}
+.f-chip img{height:40px}
 .footer .f-about p{margin-top:1.1rem; max-width:330px; font-size:.97rem; color:rgba(255,255,255,.72)}
 .f-col h4{font-family:'Josefin Sans'; font-size:.8rem; text-transform:uppercase; letter-spacing:.16em; color:var(--gold-soft); margin-bottom:1.1rem}
 .f-col a,.f-col p{display:block; color:rgba(255,255,255,.8); font-size:.98rem; margin-bottom:.6rem}
@@ -221,7 +220,6 @@ img{display:block; max-width:100%; height:auto; object-fit:cover}
 @media (max-width:940px){
   .duo,.caps,.about-grid{grid-template-columns:1fr}
   .pricing,.steps{grid-template-columns:1fr}
-  .step:not(:last-child)::after{display:none}
   .quotes{grid-template-columns:1fr}
   .quote:not(:last-child){border-right:0; border-bottom:1px solid rgba(255,255,255,.13)}
   .about-photo{max-width:420px; margin-inline:auto}
@@ -283,3 +281,6 @@ img{display:block; max-width:100%; height:auto; object-fit:cover}
 
 /* focus-visible accessibility */
 a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--gold); outline-offset:3px; border-radius:6px}
+
+/* highlighted phrase inside featured testimonial */
+.feature-quote blockquote .hl{color:var(--gold-soft); font-weight:500}
