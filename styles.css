@@ -169,8 +169,8 @@ img{display:block; max-width:100%}
 /* about */
 .about-grid{display:grid; grid-template-columns:.82fr 1.18fr; gap:clamp(2rem,5.5vw,4.5rem); align-items:center}
 .about-photo{position:relative}
-.about-photo img{width:100%; border-radius:var(--radius); box-shadow:var(--sh)}
-.about-photo::after{content:""; position:absolute; inset:16px -16px -16px 16px; border:1px solid var(--gold); border-radius:var(--radius); z-index:-1}
+.about-photo img{position:relative; z-index:2; display:block; width:100%; border-radius:var(--radius); box-shadow:var(--sh)}
+.about-photo::after{content:""; position:absolute; inset:16px -16px -16px 16px; border:1.5px solid var(--gold); border-radius:var(--radius); z-index:1}
 .about-copy h2{font-size:clamp(1.9rem,4vw,2.7rem); margin:1rem 0 1.2rem}
 .about-copy p{margin-bottom:1rem}
 .sig{font-family:'Lora',serif; font-style:italic; font-size:1.3rem; color:var(--teal); margin-top:1.3rem}
@@ -201,8 +201,7 @@ img{display:block; max-width:100%}
 /* footer */
 .footer{background:var(--ink); color:rgba(255,255,255,.82); padding:4rem 0 2rem}
 .footer-grid{display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:2.5rem; margin-bottom:2.5rem}
-.f-chip{background:var(--ivory); display:inline-block; padding:.55rem .8rem; border-radius:12px}
-.f-chip img{height:40px}
+.f-logo{height:48px; width:auto; margin-bottom:.2rem}
 .footer .f-about p{margin-top:1.1rem; max-width:330px; font-size:.97rem; color:rgba(255,255,255,.72)}
 .f-col h4{font-family:'Josefin Sans'; font-size:.8rem; text-transform:uppercase; letter-spacing:.16em; color:var(--gold-soft); margin-bottom:1.1rem}
 .f-col a,.f-col p{display:block; color:rgba(255,255,255,.8); font-size:.98rem; margin-bottom:.6rem}
@@ -271,9 +270,9 @@ img{display:block; max-width:100%}
 
 /* teaser row on home */
 .teaser{display:grid; grid-template-columns:1fr 1fr; gap:clamp(1.5rem,4vw,3rem); align-items:center}
-.teaser-media img{width:100%; border-radius:var(--radius); box-shadow:var(--sh)}
+.teaser-media img{position:relative; z-index:2; display:block; width:100%; border-radius:var(--radius); box-shadow:var(--sh)}
 .teaser-media{position:relative}
-.teaser-media::after{content:""; position:absolute; inset:14px -14px -14px 14px; border:1px solid var(--gold); border-radius:var(--radius); z-index:-1}
+.teaser-media::after{content:""; position:absolute; inset:14px -14px -14px 14px; border:1.5px solid var(--gold); border-radius:var(--radius); z-index:1}
 .teaser h2{font-size:clamp(1.7rem,3.6vw,2.4rem); margin:.8rem 0 1rem}
 .teaser p{margin-bottom:1rem}
 .teaser .btn{margin-top:.6rem}
