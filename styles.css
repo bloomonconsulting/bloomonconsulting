@@ -286,3 +286,6 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 
 /* footer locality line */
 .f-locale{font-size:.85rem; color:rgba(255,255,255,.58); margin-top:.7rem; max-width:340px}
+
+/* hero reassurance line */
+.hero .cta-note{margin-top:1.1rem; font-size:.98rem; color:rgba(255,255,255,.82); font-family:'Lora',serif}
