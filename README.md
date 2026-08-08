@@ -3,7 +3,7 @@
 Static site (HTML/CSS/JS) for GitHub Pages. No build step required.
 
 ## Files
-- `index.html` — Home (hero, method, testimonials, FAQ, CTA)
+- `index.html` — Home (hero, method, testimonial, FAQ, CTA)
 - `about.html` — About Malak + values + method
 - `services.html` — Pricing + capabilities
 - `styles.css` — All styling (design tokens at the top under `:root`)
@@ -18,9 +18,9 @@ Replace the files in your repo with these and push. GitHub Pages serves them as-
 The old `bio photo.jpeg` and `about-header-bg.png` are no longer used and can be deleted.
 
 ## To update later
-- **Real testimonials:** in `index.html`, find the two cards labeled "Sample Client"
-  and replace the text, initials (`av`), name (`b`), and role (`small`). Remove the
-  `ph-note` line once they are all real.
+- **Add more testimonials:** in `index.html`, copy the `<figure class="feature-quote">`
+  block in the testimonials section and update the quote, initials (`av`), name (`b`),
+  and role (`small`).
 - **Booking link:** the Google Calendar URL appears in each page. Search for
   `calendar.google.com` to update it everywhere.
 - **Colors/fonts:** edit the variables under `:root` in `styles.css`.

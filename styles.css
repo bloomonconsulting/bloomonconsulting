@@ -283,3 +283,6 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 
 /* highlighted phrase inside featured testimonial */
 .feature-quote blockquote .hl{color:var(--gold-soft); font-weight:500}
+
+/* footer locality line */
+.f-locale{font-size:.85rem; color:rgba(255,255,255,.58); margin-top:.7rem; max-width:340px}
