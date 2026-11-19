@@ -10,7 +10,7 @@ Static site (HTML/CSS/JS) for GitHub Pages. No build step required.
 - `terms.html` — Terms of Use
 - `404.html` — Branded page for broken links (GitHub Pages uses it automatically)
 - `tips.html` + `tip-*.html` — Tips section, one page per tip (matches the Instagram posts)
-- `case-study-candidly-speaking.html` — Client case study
+- `client-stories.html` — Client stories (Candidly Speaking and a solo therapy practice). `case-study-candidly-speaking.html` forwards there
 - `styles.css` — All styling (design tokens at the top under `:root`)
 - `script.js` — Nav menu, FAQ accordion, scroll reveal, hero parallax, footer year, cookie choice notice
 - `about-header-bg.jpg` — Hero background (optimized)
