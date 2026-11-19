@@ -79,6 +79,24 @@
     }
   }
 
+  // Book button that stays visible on phones after scrolling
+  var bookLink = document.querySelector('.nav-cta a.btn');
+  if (bookLink) {
+    var mb = bookLink.cloneNode(true);
+    mb.className = 'btn btn-gold mobile-book';
+    mb.setAttribute('aria-hidden', 'true');
+    mb.setAttribute('tabindex', '-1');
+    document.body.appendChild(mb);
+    var bookBand = document.getElementById('book');
+    var bandVisible = false;
+    if (bookBand && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) { bandVisible = en[0].isIntersecting; toggleMb(); }).observe(bookBand);
+    }
+    var toggleMb = function () { mb.classList.toggle('show', window.scrollY > 500 && !bandVisible && !document.getElementById('cookieNotice')); };
+    window.addEventListener('scroll', toggleMb, { passive: true });
+    toggleMb();
+  }
+
   // Current year in the footer
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
@@ -99,7 +117,7 @@
     box.id = 'cookieNotice';
     box.setAttribute('role', 'region');
     box.setAttribute('aria-label', 'Cookie choice');
-    box.innerHTML = '<p>This site uses Google Analytics cookies to see which pages are helpful. <a href="/privacy.html">Privacy Policy</a></p>' +
+    box.innerHTML = '<p>This site uses Google Analytics cookies to see which pages are helpful. <a href="/privacy">Privacy Policy</a></p>' +
       '<div class="cookie-actions"><button type="button" class="btn btn-outline" data-choice="denied">Decline</button>' +
       '<button type="button" class="btn btn-gold" data-choice="granted">Accept</button></div>';
     box.querySelectorAll('button').forEach(function (b) {

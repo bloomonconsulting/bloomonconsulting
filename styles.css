@@ -317,3 +317,27 @@ a:focus-visible,button:focus-visible,.btn:focus-visible{outline:2px solid var(--
 .cookie-actions{display:flex; gap:.6rem}
 .cookie-notice .btn{padding:.6rem 1.1rem; font-size:.9rem}
 .cookie-notice .btn-outline{color:#fff; border-color:rgba(255,255,255,.5); background:transparent}
+
+/* how we work together */
+.story{max-width:720px; margin-inline:auto}
+.story p{font-size:1.12rem; line-height:1.8; color:var(--text); margin:0 0 1.2rem}
+
+/* tips */
+.tip-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:1.4rem}
+.tip-card{display:flex; flex-direction:column; gap:.6rem; background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:1.8rem 1.6rem; color:var(--text); transition:transform .25s var(--ease), box-shadow .25s var(--ease)}
+.tip-card:hover{transform:translateY(-4px); box-shadow:var(--sh)}
+.tip-card .bloom{color:var(--gold)}
+.tip-card h3{font-size:1.2rem; line-height:1.3; color:var(--ink); margin:0}
+.tip-card p{margin:0; color:var(--muted); flex:1}
+.tip-card .tip-more{font-family:'Josefin Sans',sans-serif; font-weight:600; color:var(--teal); font-size:.95rem}
+.tip-steps{padding-left:1.4rem; margin:0 0 1.2rem}
+.tip-steps li{margin:0 0 .8rem; line-height:1.7; padding-left:.3rem}
+.tip-steps li::marker{color:var(--gold-deep); font-family:'Josefin Sans',sans-serif; font-weight:700}
+.tip-next{margin-top:2rem; padding-top:1.2rem; border-top:1px solid var(--line)}
+
+/* mobile book button */
+.mobile-book{display:none}
+@media (max-width:768px){
+  .mobile-book{display:inline-flex; position:fixed; right:1rem; bottom:1rem; z-index:1400; box-shadow:var(--sh); opacity:0; transform:translateY(12px); pointer-events:none; transition:opacity .25s, transform .25s}
+  .mobile-book.show{opacity:1; transform:none; pointer-events:auto}
+}

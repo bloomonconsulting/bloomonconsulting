@@ -9,6 +9,8 @@ Static site (HTML/CSS/JS) for GitHub Pages. No build step required.
 - `privacy.html` — Privacy Policy (bookings, email, free resource signups, Google Analytics)
 - `terms.html` — Terms of Use
 - `404.html` — Branded page for broken links (GitHub Pages uses it automatically)
+- `tips.html` + `tip-*.html` — Tips section, one page per tip (matches the Instagram posts)
+- `case-study-candidly-speaking.html` — Client case study
 - `styles.css` — All styling (design tokens at the top under `:root`)
 - `script.js` — Nav menu, FAQ accordion, scroll reveal, hero parallax, footer year, cookie choice notice
 - `about-header-bg.jpg` — Hero background (optimized)
@@ -42,6 +44,9 @@ The Privacy Policy has a button to change the choice later.
 ## When you change something
 - **New page:** copy `terms.html`, swap the content inside `<main>`, update the
   title, description and canonical URL, then add it to `sitemap.xml`.
+- **New tip:** copy any `tip-*.html` page, update it, and add a card for it in `tips.html`.
+- **Links:** link to pages without `.html` (for example `about`, not `about.html`).
+  GitHub Pages serves the clean address automatically.
 - **CSS or JS changes:** bump the `?v=` date on `styles.css` and `script.js` in
   every page so visitors get the new version instead of a cached one.
 - **Policy updates:** change the "Effective" date at the top of `privacy.html` or `terms.html`.
